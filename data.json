@@ -1,0 +1,758 @@
+[
+  {
+    "id": 1,
+    "author_name": "Led Zeppelin",
+    "author_image": "https://hebdenbridgepicturehouse.co.uk/images/3865.jpg",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Stairway to Heaven",
+        "song_image": "https://i1.sndcdn.com/artworks-000094079983-w2pr1t-t500x500.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Whole Lotta Love",
+        "song_image": "https://i.scdn.co/image/ab67616d0000b273fe67aaf3f4f0545cec0c5e07",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "Kashmir",
+        "song_image": "https://i.etsystatic.com/20521415/r/il/69bcdf/4151585272/il_fullxfull.4151585272_g9fx.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Black Dog",
+        "song_image": "https://i.ytimg.com/vi/2KPEHohJMuw/maxresdefault.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Immigrant Song",
+        "song_image": "https://i.ytimg.com/vi/P3Y8OWkiUts/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "Dazed and Confused",
+        "song_image": "https://i.ytimg.com/vi/w772GXG5LnE/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 7,
+        "song_name": "Rock and Roll",
+        "song_image": "https://i.ytimg.com/vi/D2lSwosw9xY/maxresdefault.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 8,
+        "song_name": "Ramble On",
+        "song_image": "https://i1.sndcdn.com/artworks-000593792364-9ko8t8-t500x500.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 9,
+        "song_name": "The Song Remains the Same",
+        "song_image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8216_p_v13_au.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 10,
+        "song_name": "Good Times Bad Times",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/3/3d/Gtbtsingle.jpg",
+        "isTrending": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "author_name": "AC/DC",
+    "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Back In Black",
+        "song_image": "https://i.ebayimg.com/images/g/Ia8AAOSwe0BkozLN/s-l400.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Highway to Hell",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/ACDC_Highway_To_Hell_AUS.jpg/250px-ACDC_Highway_To_Hell_AUS.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "Thunderstruck",
+        "song_image": "https://i1.sndcdn.com/artworks-000129437053-bgvku6-t1080x1080.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "You Shook Me All Night Long",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BZTVkMjE5MjgtOWQwZi00NTg3LThiNzItMDNjNGQ2N2Q3MWJjXkEyXkFqcGc@._V1_.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "T.N.T.",
+        "song_image": "https://i.ytimg.com/vi/CiJeSSzu9Bo/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "For Those About to Rock",
+        "song_image": "https://i.ytimg.com/vi/nBM1-DwjA8I/maxresdefault.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "Dirty Deeds Done Dirt Cheap",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/ACDC_Dirty_Deeds_Done_Dirt_Cheap_Aus_Front.jpg/220px-ACDC_Dirty_Deeds_Done_Dirt_Cheap_Aus_Front.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "Hell's Bells",
+        "song_image": "https://lighthousetheatre.com/wp-content/uploads/2025/02/HELLS-BELLS-900-X-1125_726.png",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Shoot to Thrill",
+        "song_image": "https://i1.sndcdn.com/artworks-Rzc0mz4JKzvhFKea-j1MI2g-t500x500.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "Rock or Bust",
+        "song_image": "https://i.ebayimg.com/images/g/BNQAAOSw6fNjLJeQ/s-l400.jpg",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "author_name": "Guns N' Roses",
+    "author_image": "https://i.scdn.co/image/ab6761610000e5eb50defaf9fc059a1efc541f4c",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Sweet Child O' Mine",
+        "song_image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/sweet-child-o-mine-maya-charlton.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "November Rain",
+        "song_image": "https://i.scdn.co/image/ab67616d0000b273e44963b8bb127552ac761873",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "Welcome to the Jungle",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/d/d6/Welcometothejungle.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Paradise City",
+        "song_image": "https://m.media-amazon.com/images/I/71jvsnh0fFL._UF1000,1000_QL80_.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Knockin' on Heaven's Door",
+        "song_image": "https://www.emp.co.uk/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw41fad44e/images/3/8/2/3/382319a.jpg?sfrm=png",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "Civil War",
+        "song_image": "https://i1.sndcdn.com/artworks-000334792476-xokuld-t500x500.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "Don't Cry",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BNjAzMTQ2MzAtMTZkNi00YWE1LTliMGYtOTFiM2M1NTRjMjRiXkEyXkFqcGc@._V1_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "You Could Be Mine",
+        "song_image": "https://i.ebayimg.com/images/g/kNUAAOSwDLRjZV8R/s-l1200.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Rocket Queen",
+        "song_image": "https://i.ytimg.com/vi/nQZd4f-bdp0/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "Estranged",
+        "song_image": "https://uk.rarevinyl.com/cdn/shop/products/guns-n-roses-estranged-sealed-us-promo-cd-single-cd5-pro-cd-4497-411353_1000x963.jpg?v=1708065222",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "author_name": "Ocean Wisdom",
+    "author_image": "https://i.ytimg.com/vi/LAvv_hYlUcg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBDvLXW-aqnCScRkCQq1xxSndmopQ",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Righteousness",
+        "song_image": "https://images.genius.com/4dd8fdf4954f7aa967a4189ae5efe3e1.1000x667x1.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Revvin'",
+        "song_image": "https://admin.promonews.tv/sites/default/files/Ocean%20Wisdom%20ft%20Dizzee%20Rascal%20%27Revvin%27%27%20by%20Sophie%20Jones.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "Wishing Well",
+        "song_image": "https://i1.sndcdn.com/avatars-000569430228-33kdj6-t1080x1080.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Higher Learning",
+        "song_image": "https://www.blackhistorymonth.org.uk/wp-content/uploads/2021/05/Ocean-Wisdom.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Survival",
+        "song_image": "https://i.ytimg.com/vi/qDittXCxxSE/sddefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "Focus",
+        "song_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ICP68rhOMAmPmCCXT40vY2wrpGMkYuMsDw&s",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "Baited Breath",
+        "song_image": "https://cdn-images.dzcdn.net/images/artist/30c0dac719371da8c593c21f4f8315f9/1900x1900-000000-80-0-0.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "Darker Days",
+        "song_image": "https://cms.koko.co.uk/wp-content/uploads/2025/01/OceanWisdom-land.png",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Harder Than a Brick",
+        "song_image": "https://i.ytimg.com/vi/yB5a0faPTQA/hqdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "Tides",
+        "song_image": "https://resources.tidal.com/images/684e151a/58e5/4ebf/8c72/d179fc5fa1ac/750x750.jpg",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "author_name": "System of a Down",
+    "author_image": "https://www.ferroproductions.com/wp-content/uploads/2012/09/system-of-a-down1.jpg",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Chop Suey!",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/7/7b/ChopSueyEurope.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Toxicity",
+        "song_image": "https://i.scdn.co/image/ab67616d0000b27330d45198d0c9e8841f9a9578",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "B.Y.O.B.",
+        "song_image": "https://upload.wikimedia.org/wikipedia/it/0/05/System_of_a_Down_-_B.Y.O.B..jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Aerials",
+        "song_image": "https://images.genius.com/eaec80b7b75c76c5a4141b0c20a6e979.1000x1000x1.png",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Sugar",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/8/87/System_of_a_down_sugar.png",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "Hypnotize",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/System_Of_A_Down-Hypnotize.jpg/220px-System_Of_A_Down-Hypnotize.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "Spiders",
+        "song_image": "https://images.genius.com/263bf7683bab544908e6fe6087d04a98.1000x1000x1.png",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "Bounce",
+        "song_image": "https://i1.sndcdn.com/artworks-000400458381-zif5tm-t500x500.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Forest",
+        "song_image": "https://i.scdn.co/image/ab67616d00001e02ba00e990d1520a4cde41ce0c",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "War?",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BYmJiNGNlY2YtZTY5MS00NDcyLWJjYWQtYzlmZDM5ZWRhNmVlXkEyXkFqcGc@._V1_QL75_UY190_CR99,0,190,190_.jpg",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "author_name": "Rolling Stones",
+    "author_image": "https://m.media-amazon.com/images/I/71itZy5JAJS.jpg",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Paint It Black",
+        "song_image": "https://i.ytimg.com/vi/O4irXQhgMqg/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Sympathy for the Devil",
+        "song_image": "https://i1.sndcdn.com/artworks-000282759929-p3d5tn-t500x500.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "Angie",
+        "song_image": "https://cdn-images.dzcdn.net/images/cover/4928c5792c1d69fe440bb3d23b0b0a25/0x1900-000000-80-0-0.jpgg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Start Me Up",
+        "song_image": "https://content.tomplay.com/preview/2020/01/The-Rolling-Stones-Start-Me-Up.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Gimme Shelter",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BODRkZWY3ZTgtNGZkNS00ODhmLThlMGYtY2MwMDM5ZGM0MjlhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "Wild Horses",
+        "song_image": "https://i.ytimg.com/vi/SQTHB4jM-KQ/maxresdefault.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "Jumpin' Jack Flash",
+        "song_image": "https://i.ytimg.com/vi/G3dFpQzu54w/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "Miss You",
+        "song_image": "https://i1.sndcdn.com/artworks-hHu0UYmvNK2StGiR-iFJ8Bw-t500x500.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Brown Sugar",
+        "song_image": "https://static.stereogum.com/uploads/2019/01/The-Rolling-Stones-Brown-Sugar-1548695320.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "You Can't Always Get What You Want",
+        "song_image": "https://i.ytimg.com/vi/krxU5Y9lCS8/maxresdefault.jpg",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "author_name": "Black Sabbath",
+    "author_image": "https://m.media-amazon.com/images/M/MV5BNDkyMTVkZWEtNjgzMy00OWE4LTg0ZDAtMzQwNWI5NmVhOTRiXkEyXkFqcGc@._V1_.jpg",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Paranoid",
+        "song_image": "https://www.thisdayinmusic.com/wp-content/uploads/2018/05/paranoid.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Iron Man",
+        "song_image": "https://preview.redd.it/d9m523nfepn71.jpg?width=640&crop=smart&auto=webp&s=6375a2e497e3c7bd8170853afe03c28b4ff0be77",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "War Pigs",
+        "song_image": "https://i1.sndcdn.com/artworks-MCjHtW3ZEpWlvjyv-yByuIg-t1080x1080.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Black Sabbath",
+        "song_image": "https://m.media-amazon.com/images/I/81GADmw7TcL.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Children of the Grave",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/4/46/Black_Sabbath-_Children_of_the_Grave.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "Fairies Wear Boots",
+        "song_image": "https://m.media-amazon.com/images/I/91etje3gU5L._AC_UF894,1000_QL80_.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "Sabbath Bloody Sabbath",
+        "song_image": "https://redcat.ca/cdn/shop/products/OTEtOTQxMC5qcGVn.jpg?v=1683763240",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "N.I.B.",
+        "song_image": "https://cdn11.bigcommerce.com/s-c6ecdqcvkp/images/stencil/1280x1280/products/115584/127442/SLPTBKHO59__74136.1603202770.jpg?c=2&imbypass=on",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Heaven and Hell",
+        "song_image": "https://m.media-amazon.com/images/I/71y8IkqMGtL.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "Electric Funeral",
+        "song_image": "https://i1.sndcdn.com/artworks-000381836898-07oe46-t500x500.jpg",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "author_name": "Bon Jovi",
+    "author_image": "https://grimsbyauditorium.org.uk/wp-content/uploads/2024/07/The-Bon-Jovi-Experience-565.jpg",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Livin' on a Prayer",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BZjczYjg0ZTMtYzNiMi00ZDY3LTg2ZjgtN2U5NzgyNzgzNTc0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Wanted Dead or Alive",
+        "song_image": "https://i1.sndcdn.com/artworks-000097057472-gnf7nx-t500x500.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "Bad Medicine",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BZDg4YzdkYzYtYTU4My00YTc0LWJhMzEtNTQxYjY1NDJhNTJlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "You Give Love a Bad Name",
+        "song_image": "https://shop.bonjovi.com/cdn/shop/files/JOVI_WOMENSTEE_DETAIL.png?v=1687463480&width=1000",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "It's My Life",
+        "song_image": "https://i.ytimg.com/vi/B4KCdo4NYI4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBvX-WuDuWsBZkyfIsMIhNCRBaBYg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "I'll Be There for You",
+        "song_image": "https://lastfm.freetls.fastly.net/i/u/ar0/1a115438f92339180ab5d61440a0108e.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "Runaway",
+        "song_image": "https://static.wixstatic.com/media/12890f_e6f9a8df0d7243f5897e3e40fe0dc865~mv2.jpg/v1/fill/w_480,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Runaway%20Logo%204.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "Born to Be My Baby",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/3/32/Btbmb_uk.jpeg",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Keep the Faith",
+        "song_image": "https://i.discogs.com/keC5LHmWyMHR_vcHdQpQq1rM00x06SSa1iALIG-8dZw/rs:fit/g:sm/q:90/h:586/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkwMzQ4/NDgtMTQ3MzYzMTc2/My00NzExLmpwZWc.jpeg",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "Blood on Blood",
+        "song_image": "https://i.ytimg.com/vi/n_l6x759QFE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD84pOs6txNcs0pp8TPeV37G9tI4w",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "author_name": "Iron Maiden",
+    "author_image": "https://www.ironmaiden.com/files/2025/03/book_thumbnail.jpg",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "The Trooper",
+        "song_image": "https://m.media-amazon.com/images/I/816eZ-nJGeL._AC_UF894,1000_QL80_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Fear of the Dark",
+        "song_image": "https://i.ytimg.com/vi/bePCRKGUwAY/maxresdefault.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "Hallowed Be Thy Name",
+        "song_image": "https://i.ytimg.com/vi/HAQQUDbuudY/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Aces High",
+        "song_image": "https://i1.sndcdn.com/artworks-000094901940-ogei23-t1080x1080.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Run to the Hills",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/f/f9/Iron_Maiden_-_Run_to_the_Hills.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "2 Minutes to Midnight",
+        "song_image": "https://townsquare.media/site/295/files/2019/07/2Minutes.jpg?w=780&q=75",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "The Number of the Beast",
+        "song_image": "https://townsquare.media/site/295/files/2022/09/attachment-Maiden-Number.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "Wasted Years",
+        "song_image": "https://i1.sndcdn.com/artworks-000094563719-y6vr9q-t1080x1080.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Iron Maiden",
+        "song_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7m5xLUNrxmdX1_Afwq8bkVesWX6YnMdXc7A&s",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "Phantom of the Opera",
+        "song_image": "https://static.wikia.nocookie.net/eddieslair/images/f/f8/Phantom.jpg/revision/latest?cb=20120817210814",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "author_name": "KISS",
+    "author_image": "https://www.digitalmusicnews.com/wp-content/uploads/2023/03/kiss-announce-absolute-final-shows-of-the-end-of-the-road-tour-feat.png",
+    "category": "music",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Rock and Roll All Nite",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BMjJhN2IzODAtZTAyOS00ZjRjLThkODAtNTkyYjAxYzgxNTBlXkEyXkFqcGc@._V1_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "song_name": "Detroit Rock City",
+        "song_image": "https://preview.redd.it/detroit-rock-city-1999-v0-xbc2u6cr5t6d1.png?width=640&crop=smart&auto=webp&s=9f92cafd222d1539c5cd2f27c0da6a33c4faeca6",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "song_name": "I Was Made for Lovin' You",
+        "song_image": "https://i.discogs.com/KKgCtrm91RbHTtq7oN5xaCJkE9I-MMMCqUtnDqDHzrE/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3Mzc5/MTAtMTU3ODc1NjQ3/NC01Mjc2LmpwZWc.jpeg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "song_name": "Shout It Out Loud",
+        "song_image": "https://m.media-amazon.com/images/I/61ly6aRG2YL._SL500_.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "song_name": "Beth",
+        "song_image": "https://newmusicunited.com/wp-content/uploads/2012/07/kissbeth.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 6,
+        "song_name": "Cold Gin",
+        "song_image": "https://brandsforfans.com/app/uploads/sites/10/2022/08/kiss-coldgin-navyedt-hi-res-whitebackground-low.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 7,
+        "song_name": "God of Thunder",
+        "song_image": "https://i.ytimg.com/vi/RfDVKSBxw48/maxresdefault.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 8,
+        "song_name": "Love Gun",
+        "song_image": "https://ih1.redbubble.net/image.1316495458.2306/flat,750x,075,f-pad,750x1000,f8f8f8.u1.webp",
+        "isTrending": false
+      },
+      {
+        "id": 9,
+        "song_name": "Heaven's on Fire",
+        "song_image": "https://m.media-amazon.com/images/M/MV5BNmM5OTZjNTUtYWI1Mi00NWM5LTk5MDAtNmE0MjI1MjkxMTg0XkEyXkFqcGc@._V1_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 10,
+        "song_name": "Lick It Up",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/e/e9/Lick_it_up_cover.jpg",
+        "isTrending": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "author_name": "Joe Rogan",
+    "author_image": "https://images.squarespace-cdn.com/content/v1/587aec812994ca23948fd074/b9f7c96f-39b0-46d6-90f1-4fb38212fd83/L1020217.jpg",
+    "category": "podcast",
+    "podcasts": [
+      {
+        "id": 1,
+        "podcast_name": "The Joe Rogan Experience #1750",
+        "podcast_image": "https://i.scdn.co/image/ab6765630000ba8abb80dd90b161707b8983560f",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "podcast_name": "The Joe Rogan Experience #1765",
+        "podcast_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3zpDJgsc8-Mz5uio_Gnn3ldjCOmn5VdySOw&s",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "podcast_name": "The Joe Rogan Experience #1772",
+        "podcast_image": "https://m.media-amazon.com/images/M/MV5BZDJmN2I2N2EtMTU4OC00ZGQ5LWI4NDgtMDU3YjI5ZTcwOWQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "podcast_name": "The Joe Rogan Experience #1780",
+        "podcast_image": "https://i.scdn.co/image/ab6765630000ba8a9bbbf05441a3e784c55808a5",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "podcast_name": "The Joe Rogan Experience #1800",
+        "podcast_image": "https://i.scdn.co/image/ab6765630000ba8a2190b58fa7c2325de8ee110d",
+        "isTrending": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "author_name": "Marc Maron",
+    "author_image": "https://variety.com/wp-content/uploads/2024/04/Marc-Maron-e1712861513660.jpeg?crop=766px%2C160px%2C2406px%2C1605px&resize=1000%2C667",
+    "category": "podcast",
+    "podcasts": [
+      {
+        "id": 1,
+        "podcast_name": "WTF with Marc Maron #1240",
+        "podcast_image": "https://images.squarespace-cdn.com/content/v1/566066cfe4b071b0153ad98b/ee30994a-b522-40a7-9796-08d1a935811d/aos8m8d4t06d1.png",
+        "isTrending": true
+      },
+      {
+        "id": 2,
+        "podcast_name": "WTF with Marc Maron #1255",
+        "podcast_image": "https://m.media-amazon.com/images/M/MV5BNmNhYTU5NDQtOWZjMi00M2M1LTk0MTktNTI5YWQ4ZGRmN2M5XkEyXkFqcGc@._V1_.jpg",
+        "isTrending": false
+      },
+      {
+        "id": 3,
+        "podcast_name": "WTF with Marc Maron #1300",
+        "podcast_image": "/images/wtf_marc_maron_1300.jpg",
+        "isTrending": true
+      },
+      {
+        "id": 4,
+        "podcast_name": "WTF with Marc Maron #1320",
+        "podcast_image": "https://thumborcdn.acast.com/DY1Plz1m6i0fseUnIm4ph1j08Fc=/1400x1400/https://ateam-pegasus-assets-bucket-prod.s3.eu-west-1.amazonaws.com/62a222737c02140013aa4c03/images/podcastimage-l8oqv63n-layer_12_image.png",
+        "isTrending": false
+      },
+      {
+        "id": 5,
+        "podcast_name": "WTF with Marc Maron #1350",
+        "podcast_image": "https://i.ytimg.com/vi/4PpCjLVBeeM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAeKPFQOEcwtUPS4Hr4TNX0yW2uBQ",
+        "isTrending": true
+      }
+    ]
+  }
+]

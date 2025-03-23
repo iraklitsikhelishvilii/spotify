@@ -1,27 +1,22 @@
 import Globus_icon from "@/app/common/icons/Globus_icon";
 import Music_icon from "@/app/common/icons/Music_icon";
 import Plus_icon from "@/app/common/icons/Plus_icon";
+import { useStates } from "@/app/common/store";
 import Link from "next/link";
-import React, { useState } from "react";
 
 function Library_div() {
-  const [playlist, setPlaylist] = useState(false);
-  const HandlePlatlistClick = () => {
-    setPlaylist(true);
-  };
-  const RemovePlaylistClick = () => {
-    setPlaylist(false);
-  };
-  const [plus, setPlus] = useState(false);
-  const handlePlus = () => {
-    setPlus(true);
-  };
-  const NewPlaylistClick = () => {
-    setPlus(false);
-    setPlaylist(true);
-  };
+  const {
+    playlist,
+    HandlePlatlistClick,
+    RemovePlaylistClick,
+    plus,
+    handlePlus,
+    NewPlaylistClick,
+    HandlePodcasts,
+  } = useStates();
+
   return (
-    <div className="min-w-[420px] bg-[#121212] rounded-[8px] px-[10px] py-[10px] flex flex-col flex-1 justify-between ">
+    <div className=" relative min-w-[300px] bg-[#121212] rounded-[8px] px-[10px] py-[10px] flex flex-col flex-1 justify-between ">
       <div>
         <div className="w-[100%] flex items-center justify-between px-[10px]">
           <p className="text-[16px] font-[700] text-[#fff]">Your Library</p>
@@ -53,7 +48,7 @@ function Library_div() {
           </button>
         </div>
         {playlist && (
-          <div className="max-w-[322px] p-[16px] w-[100%] bg-[#4cb3ff] absolute top-[130px] left-[435px] rounded-[20px]">
+          <div className="max-w-[322px] p-[16px] w-[100%] bg-[#4cb3ff] absolute top-[60px] left-[300px] rounded-[20px]">
             <h2 className="text-[16px] font-[700] text-[#000000] ">
               Create a playlist
             </h2>
@@ -80,7 +75,10 @@ function Library_div() {
           <p className="text-[14px] text-[#fff] font-[400]">
             We'll keep you updated on new episodes
           </p>
-          <button className="py-[4px] px-[16px] bg-[#ffff] max-w-[148px] text-[14px] text-[#000000] rounded-[20px] mt-[10px]">
+          <button
+            onClick={HandlePodcasts}
+            className="py-[4px] px-[16px] bg-[#ffff] max-w-[148px] text-[14px] text-[#000000] rounded-[20px] mt-[10px]"
+          >
             Browse podcasts
           </button>
         </div>

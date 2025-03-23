@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "category": "Arts & Entertainment",
+    "color": "#FF6347",
+    "title": "Arts & Entertainment Podcasts",
+    "topics": [
+      { "id": 1, "title": "Arts & Entertainment" },
+      { "id": 2, "title": "Books" },
+      { "id": 3, "title": "Celebrities" },
+      { "id": 4, "title": "Comedy" },
+      { "id": 5, "title": "Design" },
+      { "id": 6, "title": "Fiction" },
+      { "id": 7, "title": "Film" },
+      { "id": 8, "title": "Literature" },
+      { "id": 9, "title": "Pop Culture" },
+      { "id": 10, "title": "Stories" },
+      { "id": 11, "title": "TV" }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Business & Technology",
+    "color": "#32CD32",
+    "title": "Business & Technology Podcasts",
+    "topics": [
+      { "id": 1, "title": "Business" },
+      { "id": 2, "title": "Business & Technology" },
+      { "id": 3, "title": "Careers" },
+      { "id": 4, "title": "Economics" },
+      { "id": 5, "title": "Finance" },
+      { "id": 6, "title": "Marketing" },
+      { "id": 7, "title": "Technology" }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Educational",
+    "color": "#FFD700",
+    "title": "Educational Podcasts",
+    "topics": [
+      { "id": 1, "title": "Educational" },
+      { "id": 2, "title": "Government" },
+      { "id": 3, "title": "History" },
+      { "id": 4, "title": "Language" },
+      { "id": 5, "title": "Philosophy" },
+      { "id": 6, "title": "Science" }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Games",
+    "color": "#0000FF",
+    "title": "Games Podcasts",
+    "topics": [
+      { "id": 1, "title": "Games" },
+      { "id": 2, "title": "Video Games" }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Lifestyle & Health",
+    "color": "#FF69B4",
+    "title": "Lifestyle & Health Podcasts",
+    "topics": [
+      { "id": 1, "title": "Beauty" },
+      { "id": 2, "title": "Fashion" },
+      { "id": 3, "title": "Fitness & Nutrition" },
+      { "id": 4, "title": "Food" },
+      { "id": 5, "title": "Health" },
+      { "id": 6, "title": "Hobbies" },
+      { "id": 7, "title": "Lifestyle" },
+      { "id": 8, "title": "Meditation Podcasts" },
+      { "id": 9, "title": "Parenting" },
+      { "id": 10, "title": "Relationships" },
+      { "id": 11, "title": "Self-care" },
+      { "id": 12, "title": "Sex" }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Sports & Recreation",
+    "color": "#1E90FF",
+    "title": "Sports & Recreation Podcasts",
+    "topics": [
+      { "id": 1, "title": "Baseball" },
+      { "id": 2, "title": "Basketball" },
+      { "id": 3, "title": "Boxing" },
+      { "id": 4, "title": "Football" },
+      { "id": 5, "title": "Hockey" },
+      { "id": 6, "title": "MMA" },
+      { "id": 7, "title": "Outdoor" },
+      { "id": 8, "title": "Rugby" },
+      { "id": 9, "title": "Running" },
+      { "id": 10, "title": "Soccer" },
+      { "id": 11, "title": "Sports & Recreation" },
+      { "id": 12, "title": "Tennis" },
+      { "id": 13, "title": "Wrestling" }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "True Crime",
+    "color": "#8B0000",
+    "title": "True Crime Podcasts",
+    "topics": [{ "id": 1, "title": "True Crime" }]
+  },
+  {
+    "id": 8,
+    "category": "News & Politics",
+    "color": "#FFD700",
+    "title": "News & Politics Podcasts",
+    "topics": [
+      { "id": 1, "title": "News" },
+      { "id": 2, "title": "Politics" }
+    ]
+  }
+]

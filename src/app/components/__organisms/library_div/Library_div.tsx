@@ -26,7 +26,7 @@ function Library_div() {
           {plus && (
             <button
               onClick={NewPlaylistClick}
-              className="flex items-center px-[12px] py-[12px] gap-[10px] rounded-[5px] bg-[#282828] absolute top-[50px] left-[100px]"
+              className="flex items-center px-[12px] py-[12px] gap-[10px] rounded-[5px] bg-[#282828] absolute top-[50px] left-[px]"
             >
               <Music_icon classname="h-[16px] w-[16px]" />
               <p className="text-[#fff] text-[14px]">Create a new playlist</p>
@@ -41,7 +41,7 @@ function Library_div() {
             Create your first playlist
           </p>
           <p className="text-[14px] text-[#fff] font-[400]">
-            It's easy, we'll help you
+            {"  It's easy, we'll help you"}
           </p>
           <button className="py-[4px] px-[16px] bg-[#ffff] max-w-[125px] text-[14px] text-[#000000] rounded-[20px] mt-[10px]">
             Create playlist
@@ -70,10 +70,10 @@ function Library_div() {
         )}
         <div className="w-[100%] bg-[#1F1F1F] flex flex-col rounded-[8px] py-[16px] pl-[20px] mt-[25px] gap-[10px]">
           <p className="text-[16px] font-[700] text-[#fff]">
-            Let's find some podcasts to follow
+            {"  Let's find some podcasts to follow"}
           </p>
           <p className="text-[14px] text-[#fff] font-[400]">
-            We'll keep you updated on new episodes
+            {" We'll keep you updated on new episodes"}
           </p>
           <button
             onClick={HandlePodcasts}

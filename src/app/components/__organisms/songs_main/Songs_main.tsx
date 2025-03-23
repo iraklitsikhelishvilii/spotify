@@ -1,9 +1,68 @@
-import React from "react";
-import Data from "../../../../../data.json";
+import { useStates } from "@/app/common/store";
+
+interface Song {
+  id: number;
+  song_name: string;
+  song_image: string;
+}
+
+interface Album {
+  id: number;
+  music_name: string;
+  music_image: string;
+  artist: string;
+}
+
+interface Single {
+  id: number;
+  music_name: string;
+  music_image: string;
+  artist: string;
+}
+
+interface Radio {
+  id: number;
+  radio_name: string;
+  radio_image: string;
+  shows: Show[];
+}
+
+interface Show {
+  show_id: number;
+  host: string;
+}
+
+interface FeaturedChart {
+  id: number;
+  chart_name: string;
+  chart_image: string;
+  description: string;
+}
+
+interface Playlist {
+  id: number;
+  playlist_name: string;
+  playlist_image: string;
+}
+
+interface Artist {
+  id: number;
+  author_name: string;
+  author_image: string;
+  songs?: Song[];
+  albums?: Album[];
+  singles?: Single[];
+  radios?: Radio[];
+  featured_charts?: FeaturedChart[];
+  playlists?: Playlist[];
+}
 
 function Songs_main() {
+  const { HandleSelectedAuthor } = useStates();
+
+  const Data: Artist[] = require("../../../../../data.json");
   return (
-    <div className="max-w-[1700px] w-[100%] flex flex-col overflow-y-auto h-[2200px] ">
+    <div className="max-w-[1700px] w-[100%] flex flex-col overflow-y-auto h-[2200px]">
       <div className="flex w-[100%] items-center justify-between">
         <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
           Trending songs
@@ -12,14 +71,17 @@ function Songs_main() {
           Show all
         </p>
       </div>
-      <div className="flex w-[100%] justify-between overflow-auto  gap-[14px] mt-[20px]">
-        {Data.map((artist, key) => {
+      <div className="flex w-[100%] justify-between overflow-auto gap-[14px] mt-[20px]">
+        {Data.map((artist) => {
           return artist.songs?.slice(0, 1).map((song) => (
-            <div className="cursor-pointer" key={key}>
-              <div className="w-[150px] h-[150px] ">
-                {" "}
+            <div
+              onClick={() => HandleSelectedAuthor(artist.author_name)}
+              className="cursor-pointer"
+              key={song.id}
+            >
+              <div className="w-[150px] h-[150px]">
                 <img
-                  className=" w-[100%] h-[100%] rounded-[10px]"
+                  className="w-[100%] h-[100%] rounded-[10px]"
                   src={song.song_image}
                   alt={song.song_name}
                 />
@@ -43,16 +105,20 @@ function Songs_main() {
         </p>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
-        {Data.slice(0, 10).map((artist, key) => (
-          <div className=" cursor-pointer" key={key}>
-            <div className="w-[150px] h-[150px] rounded-[50%] ">
+        {Data.slice(0, 10).map((artist) => (
+          <div
+            className="cursor-pointer"
+            key={artist.id}
+            onClick={() => HandleSelectedAuthor(artist.author_name)}
+          >
+            <div className="w-[150px] h-[150px] rounded-[50%]">
               <img
-                className=" w-[100%] h-[100%] rounded-[50%]"
+                className="w-[100%] h-[100%] rounded-[50%]"
                 src={artist.author_image}
                 alt={artist.author_name}
               />
             </div>
-            <p className="text-[#fff] text-[15px]  font-[400]   mt-[5px]">
+            <p className="text-[#fff] text-[15px] font-[400] mt-[5px]">
               {artist.author_name}
             </p>
             <p className="text-[14px] text-[#B3B3B3] mt-[3px]">Artist</p>
@@ -68,17 +134,17 @@ function Songs_main() {
         </p>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
-        {Data.map((music, key) => {
-          return music.albums?.map((album, key) => (
-            <div className=" cursor-pointer" key={key}>
-              <div className="w-[150px] h-[150px] rounded-[50%] ">
+        {Data.map((music) => {
+          return music.albums?.map((album) => (
+            <div className="cursor-pointer" key={album.id}>
+              <div className="w-[150px] h-[150px] rounded-[50%]">
                 <img
-                  className=" w-[100%] h-[100%] rounded-[10px]"
+                  className="w-[100%] h-[100%] rounded-[10px]"
                   src={album.music_image}
                   alt={album.music_name}
                 />
               </div>
-              <p className="text-[#fff] text-[15px]  font-[400]   mt-[5px]">
+              <p className="text-[#fff] text-[15px] font-[400] mt-[5px]">
                 {album.music_name}
               </p>
               <p className="text-[14px] text-[#B3B3B3] mt-[3px]">
@@ -87,17 +153,17 @@ function Songs_main() {
             </div>
           ));
         })}
-        {Data.map((music, key) => {
-          return music.singles?.map((single, key) => (
-            <div className=" cursor-pointer" key={key}>
-              <div className="w-[150px] h-[150px] rounded-[50%] ">
+        {Data.map((music) => {
+          return music.singles?.map((single) => (
+            <div className="cursor-pointer" key={single.id}>
+              <div className="w-[150px] h-[150px] rounded-[50%]">
                 <img
-                  className=" w-[100%] h-[100%] rounded-[10px]"
+                  className="w-[100%] h-[100%] rounded-[10px]"
                   src={single.music_image}
                   alt={single.music_name}
                 />
               </div>
-              <p className="text-[#fff] text-[15px]  font-[400]   mt-[5px]">
+              <p className="text-[#fff] text-[15px] font-[400] mt-[5px]">
                 {single.music_name}
               </p>
               <p className="text-[14px] text-[#B3B3B3] mt-[3px]">
@@ -116,19 +182,21 @@ function Songs_main() {
         </p>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
-        {Data.map((music, key) => {
-          return music.radios?.map((radio, key) => (
-            <div className=" cursor-pointer" key={key}>
-              <div className="w-[150px] h-[150px] rounded-[50%] ">
+        {Data.map((music) => {
+          return music.radios?.map((radio) => (
+            <div className="cursor-pointer" key={radio.id}>
+              <div className="w-[150px] h-[150px] rounded-[50%]">
                 <img
-                  className=" w-[100%] h-[100%] rounded-[10px]"
+                  className="w-[100%] h-[100%] rounded-[10px]"
                   src={radio.radio_image}
                   alt={radio.radio_name}
                 />
               </div>
               <div className="mt-[10px]">
-                {radio.shows?.map((shows, key) => (
-                  <p className="text-[14px] text-[#B3B3B3] ">{shows.host}</p>
+                {radio.shows?.map((show) => (
+                  <p className="text-[14px] text-[#B3B3B3]" key={show.show_id}>
+                    {show.host}
+                  </p>
                 ))}
               </div>
             </div>
@@ -143,13 +211,13 @@ function Songs_main() {
           Show all
         </p>
       </div>
-      <div className="flex w-[100%] justify-start overflow-auto  gap-[14px] mt-[20px]">
-        {Data.map((music, key) => {
-          return music.featured_charts?.map((featured, key) => (
-            <div className=" cursor-pointer" key={key}>
-              <div className="w-[150px] h-[150px] rounded-[50%] ">
+      <div className="flex w-[100%] justify-start overflow-auto gap-[14px] mt-[20px]">
+        {Data.map((music) => {
+          return music.featured_charts?.map((featured) => (
+            <div className="cursor-pointer" key={featured.id}>
+              <div className="w-[150px] h-[150px] rounded-[50%]">
                 <img
-                  className=" w-[100%] h-[100%] rounded-[10px]"
+                  className="w-[100%] h-[100%] rounded-[10px]"
                   src={featured.chart_image}
                   alt={featured.chart_name}
                 />
@@ -169,19 +237,18 @@ function Songs_main() {
           Show all
         </p>
       </div>
-      <div className="flex w-[100%] justify-between overflow-auto  gap-[14px] mt-[20px]">
-        {Data.map((music, key) => {
+      <div className="flex w-[100%] justify-between overflow-auto gap-[14px] mt-[20px]">
+        {Data.map((music) => {
           return music.playlists?.map((playlist) => (
-            <div className="cursor-pointer" key={key}>
-              <div className="w-[150px] h-[150px] ">
-                {" "}
+            <div className="cursor-pointer" key={playlist.id}>
+              {" "}
+              <div className="w-[150px] h-[150px]">
                 <img
-                  className=" w-[100%] h-[100%] rounded-[10px]"
+                  className="w-[100%] h-[100%] rounded-[10px]"
                   src={playlist.playlist_image}
                   alt={playlist.playlist_name}
                 />
               </div>
-
               <p className="text-[14px] text-[#B3B3B3] mt-[3px]">
                 {playlist.playlist_name}
               </p>

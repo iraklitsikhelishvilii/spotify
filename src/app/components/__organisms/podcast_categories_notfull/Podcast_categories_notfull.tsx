@@ -12,9 +12,9 @@ function Podcast_categories_notfull() {
           <div
             key={key}
             style={{ backgroundColor: podcast.color }}
-            className=" h-[160px] w-[267px]  rounded-[10px] px-[16px] py-[16px]"
+            className=" h-[160px] w-[100%]  rounded-[10px] px-[16px] py-[16px]"
           >
-            <p className="text-[24px] text-[#fff] font-[800]">
+            <p className="text-[20px] text-[#fff] font-[800]">
               {podcast.title}
             </p>
           </div>

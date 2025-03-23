@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import logo from "../../../assets/images/logo.png";
@@ -7,11 +8,15 @@ import Folder_icon from "@/app/common/icons/Folder_icon";
 import Link from "next/link";
 import Download_icon from "@/app/common/icons/Download_icon";
 function Header() {
+  const Reload = () => {
+    window.location.reload();
+  };
   return (
     <header className="bg-[#000] w-[100%] flex items-center justify-between py-[10px] px-[15px] gap-[15px] ">
       <div className="flex items-center justify-center gap-[30px] max-w-[572px] w-[100%]  ">
         <Image
-          className="w-[32px] h-[32px]"
+          onClick={Reload}
+          className="w-[32px] h-[32px] cursor-pointer ml-[20px]"
           src={logo}
           alt="Spotify_icon"
           width={600}

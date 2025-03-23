@@ -1,16 +1,21 @@
 import { create } from "zustand";
+
 interface ZustandProps {
   playlist: boolean;
   plus: boolean;
   Podcasts: boolean;
   Allpodcasts: boolean;
+  artist: string;
+  InnerClick: boolean;
   HandlePlatlistClick: () => void;
   RemovePlaylistClick: () => void;
   handlePlus: () => void;
   NewPlaylistClick: () => void;
   HandlePodcasts: () => void;
   HandleAllPodcasts: () => void;
+  HandleSelectedAuthor: (artist: string) => void;
 }
+
 export const useStates = create<ZustandProps>((set) => ({
   playlist: false,
   HandlePlatlistClick: () => {
@@ -33,5 +38,10 @@ export const useStates = create<ZustandProps>((set) => ({
   Allpodcasts: false,
   HandleAllPodcasts: () => {
     set(() => ({ Allpodcasts: true }));
+  },
+  artist: "",
+  InnerClick: false,
+  HandleSelectedAuthor: (artist: string) => {
+    set(() => ({ artist, InnerClick: true }));
   },
 }));

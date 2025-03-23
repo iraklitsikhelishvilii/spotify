@@ -3,19 +3,481 @@
     "id": 1,
     "category": "Arts & Entertainment",
     "color": "#FF6347",
-    "title": "Arts & Entertainment Podcasts",
+    "title": "Arts & Entertainment",
     "topics": [
-      { "id": 1, "title": "Arts & Entertainment" },
-      { "id": 2, "title": "Books" },
-      { "id": 3, "title": "Celebrities" },
-      { "id": 4, "title": "Comedy" },
-      { "id": 5, "title": "Design" },
-      { "id": 6, "title": "Fiction" },
-      { "id": 7, "title": "Film" },
-      { "id": 8, "title": "Literature" },
-      { "id": 9, "title": "Pop Culture" },
-      { "id": 10, "title": "Stories" },
-      { "id": 11, "title": "TV" }
+      {
+        "id": 1,
+        "title": "Arts & Entertainment",
+        "color": "#FFD700",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "John Doe",
+            "title": "The Creative Hour",
+            "image": "arts1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Jane Smith",
+            "title": "Inside the Art World",
+            "image": "arts2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Emily Johnson",
+            "title": "Behind the Stage",
+            "image": "arts3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Michael Brown",
+            "title": "Entertainment Weekly",
+            "image": "arts4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Sarah White",
+            "title": "The Art Podcast",
+            "image": "arts5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Daniel Green",
+            "title": "Exploring Creativity",
+            "image": "arts6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Books",
+        "color": "#8A2BE2",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Chris Blake",
+            "title": "The Book Review",
+            "image": "books1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Samantha Lee",
+            "title": "Reading Nook",
+            "image": "books2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Paul Martin",
+            "title": "Fiction Uncovered",
+            "image": "books3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Nina Roberts",
+            "title": "Classic Reads",
+            "image": "books4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Tom Clark",
+            "title": "Literature Talks",
+            "image": "books5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Lisa Adams",
+            "title": "Bookworm Diaries",
+            "image": "books6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Celebrities",
+        "color": "#FFD700",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Alex Carter",
+            "title": "Hollywood Uncovered",
+            "image": "celeb1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Jessica Parker",
+            "title": "Star Gossip",
+            "image": "celeb2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "David Warner",
+            "title": "Beyond the Fame",
+            "image": "celeb3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophie Turner",
+            "title": "Celebrity Chronicles",
+            "image": "celeb4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Tom Hardy",
+            "title": "Inside the Spotlight",
+            "image": "celeb5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Emma Watson",
+            "title": "Red Carpet Talk",
+            "image": "celeb6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Comedy",
+        "color": "#32CD32",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Kevin Hart",
+            "title": "Laugh Out Loud",
+            "image": "comedy1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Amy Schumer",
+            "title": "Comedy Unscripted",
+            "image": "comedy2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "John Mulaney",
+            "title": "Stand-Up Stories",
+            "image": "comedy3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Tina Fey",
+            "title": "Saturday Laughs",
+            "image": "comedy4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Chris Rock",
+            "title": "Comedy Roast",
+            "image": "comedy5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Ricky Gervais",
+            "title": "British Humor",
+            "image": "comedy6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Design",
+        "color": "#FF4500",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Mark Jensen",
+            "title": "Design Insights",
+            "image": "design1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Sophia Adams",
+            "title": "Graphic Artistry",
+            "image": "design2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Daniel Green",
+            "title": "Interior Concepts",
+            "image": "design3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Olivia Harper",
+            "title": "Creative Spaces",
+            "image": "design4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Ethan Lee",
+            "title": "The Modern Aesthetic",
+            "image": "design5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Mia Roberts",
+            "title": "Digital Art Talks",
+            "image": "design6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Fiction",
+        "color": "#6A5ACD",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Lucas Black",
+            "title": "Fiction Factory",
+            "image": "fiction1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Eleanor Taylor",
+            "title": "Tales & Stories",
+            "image": "fiction2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Nathan Fox",
+            "title": "Imaginative Worlds",
+            "image": "fiction3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Clara Dawson",
+            "title": "Myth & Legends",
+            "image": "fiction4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Henry Carter",
+            "title": "Sci-Fi Narratives",
+            "image": "fiction5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Zoe Lane",
+            "title": "Fantasy Escapes",
+            "image": "fiction6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "History",
+        "color": "#B8860B",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "David Lewis",
+            "title": "The Past Unfolded",
+            "image": "history1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Laura Evans",
+            "title": "Ancient Secrets",
+            "image": "history2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Steve James",
+            "title": "Echoes of the Past",
+            "image": "history3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Anna White",
+            "title": "Time Travel Tales",
+            "image": "history4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Mark Smith",
+            "title": "Historical Moments",
+            "image": "history5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Megan Clark",
+            "title": "World War Chronicles",
+            "image": "history6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Music",
+        "color": "#1E90FF",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Tom Hardy",
+            "title": "Soundwaves",
+            "image": "music1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Sarah White",
+            "title": "Music Universe",
+            "image": "music2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Sophie Turner",
+            "title": "The Rhythm Report",
+            "image": "music3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "John Mayer",
+            "title": "Vibes & Sounds",
+            "image": "music4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Michael Green",
+            "title": "Acoustic Hour",
+            "image": "music5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "David Warner",
+            "title": "The Beat Drop",
+            "image": "music6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Movies",
+        "color": "#DC143C",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Sophia Adams",
+            "title": "Film Analysis",
+            "image": "movies1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Chris Brown",
+            "title": "Cinephile Talks",
+            "image": "movies2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Emma Roberts",
+            "title": "Movie Buffs",
+            "image": "movies3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "John Clark",
+            "title": "Behind the Screen",
+            "image": "movies4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Olivia Harris",
+            "title": "The Film Crew",
+            "image": "movies5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Natalie King",
+            "title": "Director's Chair",
+            "image": "movies6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Photography",
+        "color": "#20B2AA",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Mike Thompson",
+            "title": "Through the Lens",
+            "image": "photo1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Anna Jackson",
+            "title": "Picture Perfect",
+            "image": "photo2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Chris Evans",
+            "title": "The Shutter Speed",
+            "image": "photo3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Olivia Perez",
+            "title": "Capturing Moments",
+            "image": "photo4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Emily Green",
+            "title": "Photography 101",
+            "image": "photo5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Sophia Miller",
+            "title": "Photo Walks",
+            "image": "photo6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Theater",
+        "color": "#8B0000",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Charlotte Williams",
+            "title": "The Stage Talks",
+            "image": "theater1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Daniel Wilson",
+            "title": "Curtain Call",
+            "image": "theater2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Nina Roberts",
+            "title": "Broadway Bound",
+            "image": "theater3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "James Hamilton",
+            "title": "The Playwright's Pod",
+            "image": "theater4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Olivia Morgan",
+            "title": "Stage Left",
+            "image": "theater5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Sophia Scott",
+            "title": "Backstage Pass",
+            "image": "theater6.jpg"
+          }
+        ]
+      }
     ]
   },
   {
@@ -24,13 +486,307 @@
     "color": "#32CD32",
     "title": "Business & Technology Podcasts",
     "topics": [
-      { "id": 1, "title": "Business" },
-      { "id": 2, "title": "Business & Technology" },
-      { "id": 3, "title": "Careers" },
-      { "id": 4, "title": "Economics" },
-      { "id": 5, "title": "Finance" },
-      { "id": 6, "title": "Marketing" },
-      { "id": 7, "title": "Technology" }
+      {
+        "id": 1,
+        "title": "Business",
+        "color": "#FFD700",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Sarah Moore",
+            "title": "The Business Mind",
+            "image": "business1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "James Carter",
+            "title": "Success Strategies",
+            "image": "business2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Olivia Martin",
+            "title": "Entrepreneur's Corner",
+            "image": "business3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Michael Green",
+            "title": "Start-Up Success",
+            "image": "business4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Emily Roberts",
+            "title": "Corporate Insights",
+            "image": "business5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Daniel Parker",
+            "title": "The CEO Mindset",
+            "image": "business6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Business & Technology",
+        "color": "#00BFFF",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Jessica Adams",
+            "title": "Tech & Business Trends",
+            "image": "businesstech1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Alex White",
+            "title": "Innovators Podcast",
+            "image": "businesstech2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Liam Carter",
+            "title": "Business Digitalization",
+            "image": "businesstech3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophia Black",
+            "title": "Tech Meets Business",
+            "image": "businesstech4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Nathan Lee",
+            "title": "The Future of Work",
+            "image": "businesstech5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Emma Clark",
+            "title": "AI in Business",
+            "image": "businesstech6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Careers",
+        "color": "#FF6347",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Rachel Green",
+            "title": "Career Growth",
+            "image": "careers1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Matt Johnson",
+            "title": "Job Hunt Success",
+            "image": "careers2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Samantha White",
+            "title": "Workplace Insights",
+            "image": "careers3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Tom Harris",
+            "title": "Career Planning 101",
+            "image": "careers4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Eleanor Black",
+            "title": "Interview Secrets",
+            "image": "careers5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Jacob Carter",
+            "title": "Finding Your Passion",
+            "image": "careers6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Economics",
+        "color": "#FFD700",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Robert Smith",
+            "title": "The Economic Report",
+            "image": "economics1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Linda Martin",
+            "title": "Global Markets",
+            "image": "economics2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Charles Brown",
+            "title": "Economic Trends",
+            "image": "economics3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Olivia King",
+            "title": "The Finance Podcast",
+            "image": "economics4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Henry Wilson",
+            "title": "Understanding Inflation",
+            "image": "economics5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Sophia Green",
+            "title": "Markets & Policy",
+            "image": "economics6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Finance",
+        "color": "#32CD32",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Tom Walker",
+            "title": "Money Matters",
+            "image": "finance1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Emily Rose",
+            "title": "Wealth Strategies",
+            "image": "finance2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Nathan Carter",
+            "title": "Smart Investing",
+            "image": "finance3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Jessica Lee",
+            "title": "Personal Finance",
+            "image": "finance4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Michael Scott",
+            "title": "Financial Independence",
+            "image": "finance5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Sophia Adams",
+            "title": "Retirement Planning",
+            "image": "finance6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Marketing",
+        "color": "#00BFFF",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Chris Anderson",
+            "title": "Digital Marketing 101",
+            "image": "marketing1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Samantha Jones",
+            "title": "Social Media Hacks",
+            "image": "marketing2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "David Clarke",
+            "title": "SEO Mastery",
+            "image": "marketing3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophia Green",
+            "title": "Brand Building",
+            "image": "marketing4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Tom Hardy",
+            "title": "Content Strategy",
+            "image": "marketing5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Nina Roberts",
+            "title": "Email Marketing Pro",
+            "image": "marketing6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Technology",
+        "color": "#8A2BE2",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Alex Johnson",
+            "title": "Tech Today",
+            "image": "tech1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Rachel Adams",
+            "title": "The AI Revolution",
+            "image": "tech2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Michael Scott",
+            "title": "Cybersecurity Weekly",
+            "image": "tech3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophia Green",
+            "title": "Future of Tech",
+            "image": "tech4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "James Carter",
+            "title": "Blockchain Explained",
+            "image": "tech5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Emily White",
+            "title": "Gadgets & Innovations",
+            "image": "tech6.jpg"
+          }
+        ]
+      }
     ]
   },
   {
@@ -39,12 +795,264 @@
     "color": "#FFD700",
     "title": "Educational Podcasts",
     "topics": [
-      { "id": 1, "title": "Educational" },
-      { "id": 2, "title": "Government" },
-      { "id": 3, "title": "History" },
-      { "id": 4, "title": "Language" },
-      { "id": 5, "title": "Philosophy" },
-      { "id": 6, "title": "Science" }
+      {
+        "id": 1,
+        "title": "Educational",
+        "color": "#FF6347",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "John Doe",
+            "title": "Learn Something New",
+            "image": "edu1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Emily Smith",
+            "title": "The Knowledge Hub",
+            "image": "edu2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "James Green",
+            "title": "Education Unboxed",
+            "image": "edu3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sarah White",
+            "title": "Mindful Learning",
+            "image": "edu4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Daniel Brown",
+            "title": "Innovative Education",
+            "image": "edu5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Olivia Taylor",
+            "title": "The Education Revolution",
+            "image": "edu6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Government",
+        "color": "#4CAF50",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "David Clark",
+            "title": "Government Insights",
+            "image": "gov1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Rachel Adams",
+            "title": "Policy Matters",
+            "image": "gov2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Michael Johnson",
+            "title": "The Political Landscape",
+            "image": "gov3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophia Lee",
+            "title": "Governance Explained",
+            "image": "gov4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "James Wright",
+            "title": "Politics Unfolded",
+            "image": "gov5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Olivia White",
+            "title": "Global Governance",
+            "image": "gov6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "History",
+        "color": "#2196F3",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "John Smith",
+            "title": "History Unveiled",
+            "image": "hist1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "David Brown",
+            "title": "The Time Machine",
+            "image": "hist2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Emily Green",
+            "title": "Past and Present",
+            "image": "hist3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophia Johnson",
+            "title": "History of Civilization",
+            "image": "hist4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Daniel Lee",
+            "title": "Chronicles of History",
+            "image": "hist5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Olivia Taylor",
+            "title": "The History Files",
+            "image": "hist6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Language",
+        "color": "#9C27B0",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "James White",
+            "title": "Language and Culture",
+            "image": "lang1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Sophia Green",
+            "title": "The Language Lab",
+            "image": "lang2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Olivia Adams",
+            "title": "Words Matter",
+            "image": "lang3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "David Brown",
+            "title": "Language Evolution",
+            "image": "lang4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Emily Taylor",
+            "title": "The Linguistic Journey",
+            "image": "lang5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Daniel Smith",
+            "title": "Mastering Languages",
+            "image": "lang6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Philosophy",
+        "color": "#FF9800",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "James Clark",
+            "title": "The Philosophy of Life",
+            "image": "phi1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Sarah Green",
+            "title": "Philosophy Explained",
+            "image": "phi2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Daniel White",
+            "title": "Deep Thought",
+            "image": "phi3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Emily Roberts",
+            "title": "The Philosopher's Path",
+            "image": "phi4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Michael Adams",
+            "title": "Exploring Philosophy",
+            "image": "phi5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Olivia Lee",
+            "title": "Mindful Philosophy",
+            "image": "phi6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Science",
+        "color": "#00BCD4",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "James Roberts",
+            "title": "Science Matters",
+            "image": "sci1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Olivia Clark",
+            "title": "The Science Show",
+            "image": "sci2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Emily Green",
+            "title": "Exploring Science",
+            "image": "sci3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Daniel Taylor",
+            "title": "Science Unfolded",
+            "image": "sci4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Sophia White",
+            "title": "The World of Science",
+            "image": "sci5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Michael Johnson",
+            "title": "Scientific Breakthroughs",
+            "image": "sci6.jpg"
+          }
+        ]
+      }
     ]
   },
   {
@@ -53,8 +1061,92 @@
     "color": "#0000FF",
     "title": "Games Podcasts",
     "topics": [
-      { "id": 1, "title": "Games" },
-      { "id": 2, "title": "Video Games" }
+      {
+        "id": 1,
+        "title": "Games",
+        "color": "#FF6347",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Alex Jones",
+            "title": "The Game Zone",
+            "image": "game1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Jordan Green",
+            "title": "Game Talk Live",
+            "image": "game2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Chris Roberts",
+            "title": "Gaming World",
+            "image": "game3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Maya Lee",
+            "title": "The GameCast",
+            "image": "game4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Daniel White",
+            "title": "Level Up Gaming",
+            "image": "game5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Sophia Johnson",
+            "title": "Gaming Universe",
+            "image": "game6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Video Games",
+        "color": "#32CD32",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "John Smith",
+            "title": "Next Gen Gaming",
+            "image": "vidgame1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Olivia Brown",
+            "title": "Video Game Insights",
+            "image": "vidgame2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Daniel Clark",
+            "title": "The Gaming Arena",
+            "image": "vidgame3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Rachel Taylor",
+            "title": "Retro Games Rewind",
+            "image": "vidgame4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Michael White",
+            "title": "Video Game Culture",
+            "image": "vidgame5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Emily Green",
+            "title": "Epic Games Podcast",
+            "image": "vidgame6.jpg"
+          }
+        ]
+      }
     ]
   },
   {
@@ -63,18 +1155,487 @@
     "color": "#FF69B4",
     "title": "Lifestyle & Health Podcasts",
     "topics": [
-      { "id": 1, "title": "Beauty" },
-      { "id": 2, "title": "Fashion" },
-      { "id": 3, "title": "Fitness & Nutrition" },
-      { "id": 4, "title": "Food" },
-      { "id": 5, "title": "Health" },
-      { "id": 6, "title": "Hobbies" },
-      { "id": 7, "title": "Lifestyle" },
-      { "id": 8, "title": "Meditation Podcasts" },
-      { "id": 9, "title": "Parenting" },
-      { "id": 10, "title": "Relationships" },
-      { "id": 11, "title": "Self-care" },
-      { "id": 12, "title": "Sex" }
+      {
+        "id": 1,
+        "title": "Beauty",
+        "color": "#FFB6C1",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Emma Davis",
+            "title": "Beauty Insider",
+            "image": "beauty1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Sophia Williams",
+            "title": "The Glow Up",
+            "image": "beauty2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Olivia Martin",
+            "title": "Beauty Secrets Unveiled",
+            "image": "beauty3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Lily Rose",
+            "title": "Flawless Beauty",
+            "image": "beauty4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Ava Green",
+            "title": "Beauty Talk",
+            "image": "beauty5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Isabella Lee",
+            "title": "The Beauty Lab",
+            "image": "beauty6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Fashion",
+        "color": "#FF4500",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Megan Turner",
+            "title": "Fashion Forward",
+            "image": "fashion1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Chloe Harris",
+            "title": "Style Talk",
+            "image": "fashion2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Hannah Wright",
+            "title": "Fashion & You",
+            "image": "fashion3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Grace Moore",
+            "title": "Runway Trends",
+            "image": "fashion4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Bella Johnson",
+            "title": "The Fashion Edit",
+            "image": "fashion5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Ava Brown",
+            "title": "Style Spotlight",
+            "image": "fashion6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Fitness & Nutrition",
+        "color": "#32CD32",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Liam Walker",
+            "title": "Fit & Healthy",
+            "image": "fitness1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Ella White",
+            "title": "Nutrition Talk",
+            "image": "fitness2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Noah Scott",
+            "title": "The Fitness Journey",
+            "image": "fitness3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Mia Turner",
+            "title": "Eat Well, Live Well",
+            "image": "fitness4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Ethan Green",
+            "title": "Body & Health",
+            "image": "fitness5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Lily Martin",
+            "title": "Mind & Muscle",
+            "image": "fitness6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Food",
+        "color": "#FFD700",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "James Parker",
+            "title": "Foodie Finds",
+            "image": "food1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Olivia Baker",
+            "title": "The Taste Test",
+            "image": "food2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Isabella Cook",
+            "title": "Gourmet Talk",
+            "image": "food3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Chloe Smith",
+            "title": "Culinary Delights",
+            "image": "food4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Liam Scott",
+            "title": "Cook with Me",
+            "image": "food5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Mia Adams",
+            "title": "Healthy Eats",
+            "image": "food6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Health",
+        "color": "#00FA9A",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Sam Davis",
+            "title": "Your Health Matters",
+            "image": "health1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Grace Williams",
+            "title": "The Health Show",
+            "image": "health2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Ella Brown",
+            "title": "Wellness Talk",
+            "image": "health3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Olivia Green",
+            "title": "Holistic Healing",
+            "image": "health4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Zoe White",
+            "title": "Fitness & Wellbeing",
+            "image": "health5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Liam Johnson",
+            "title": "Health & Life",
+            "image": "health6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Hobbies",
+        "color": "#8A2BE2",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Sarah Clark",
+            "title": "Hobby Lovers",
+            "image": "hobbies1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Ethan Adams",
+            "title": "The Hobby Hour",
+            "image": "hobbies2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Lily Brown",
+            "title": "Weekend Fun",
+            "image": "hobbies3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Mason Taylor",
+            "title": "Crafting & Creating",
+            "image": "hobbies4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Mia Harris",
+            "title": "The Art of Hobbies",
+            "image": "hobbies5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Jacob Scott",
+            "title": "Passions & Projects",
+            "image": "hobbies6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Lifestyle",
+        "color": "#D2691E",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Ava Green",
+            "title": "The Lifestyle Podcast",
+            "image": "lifestyle1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Olivia Lee",
+            "title": "Living Better",
+            "image": "lifestyle2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Chloe Moore",
+            "title": "The Life Edit",
+            "image": "lifestyle3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Lily Brown",
+            "title": "Lifestyle Talk",
+            "image": "lifestyle4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Mia White",
+            "title": "Daily Life Hacks",
+            "image": "lifestyle5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Sophia Turner",
+            "title": "Live Your Best Life",
+            "image": "lifestyle6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Meditation Podcasts",
+        "color": "#ADD8E6",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Noah Scott",
+            "title": "Calm Mind",
+            "image": "meditation1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Grace Adams",
+            "title": "Peaceful Moments",
+            "image": "meditation2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Liam Turner",
+            "title": "Meditation Daily",
+            "image": "meditation3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophia Davis",
+            "title": "Mindful Life",
+            "image": "meditation4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Ethan Green",
+            "title": "Meditate with Me",
+            "image": "meditation5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Olivia White",
+            "title": "Breathe & Relax",
+            "image": "meditation6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Parenting",
+        "color": "#FFDAB9",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Rachel Scott",
+            "title": "Parenting 101",
+            "image": "parenting1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Sophia Lee",
+            "title": "The Parenting Pod",
+            "image": "parenting2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Olivia Green",
+            "title": "Raising Kids",
+            "image": "parenting3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "James Brown",
+            "title": "Parenting Today",
+            "image": "parenting4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Lily White",
+            "title": "The Modern Parent",
+            "image": "parenting5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Mia Adams",
+            "title": "Parenting with Purpose",
+            "image": "parenting6.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "News & Politics",
+    "color": "#FFD700",
+    "title": "News & Politics Podcasts",
+    "topics": [
+      {
+        "id": 1,
+        "title": "News",
+        "color": "#ADD8E6",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "John Smith",
+            "title": "Daily News Digest",
+            "image": "news1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Rachel Green",
+            "title": "The News Report",
+            "image": "news2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "David Brown",
+            "title": "Breaking News Today",
+            "image": "news3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Sophia White",
+            "title": "Global Headlines",
+            "image": "news4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Chloe Adams",
+            "title": "The World in Focus",
+            "image": "news5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Emma Lee",
+            "title": "News Update",
+            "image": "news6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Politics",
+        "color": "#FF4500",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "James Parker",
+            "title": "Political Talk",
+            "image": "politics1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Olivia Martin",
+            "title": "Politics Explained",
+            "image": "politics2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Liam Davis",
+            "title": "Inside Politics",
+            "image": "politics3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Mia White",
+            "title": "The Political Pulse",
+            "image": "politics4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Sophia Brown",
+            "title": "Politics Today",
+            "image": "politics5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Ethan Harris",
+            "title": "Political Insights",
+            "image": "politics6.jpg"
+          }
+        ]
+      }
     ]
   },
   {
@@ -83,19 +1644,393 @@
     "color": "#1E90FF",
     "title": "Sports & Recreation Podcasts",
     "topics": [
-      { "id": 1, "title": "Baseball" },
-      { "id": 2, "title": "Basketball" },
-      { "id": 3, "title": "Boxing" },
-      { "id": 4, "title": "Football" },
-      { "id": 5, "title": "Hockey" },
-      { "id": 6, "title": "MMA" },
-      { "id": 7, "title": "Outdoor" },
-      { "id": 8, "title": "Rugby" },
-      { "id": 9, "title": "Running" },
-      { "id": 10, "title": "Soccer" },
-      { "id": 11, "title": "Sports & Recreation" },
-      { "id": 12, "title": "Tennis" },
-      { "id": 13, "title": "Wrestling" }
+      {
+        "id": 1,
+        "title": "Baseball",
+        "color": "#FF6347",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "John Taylor",
+            "title": "Baseball Talk",
+            "image": "baseball1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Adam Greene",
+            "title": "The Baseball Show",
+            "image": "baseball2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Michael Evans",
+            "title": "Baseball Breakdown",
+            "image": "baseball3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Liam Clark",
+            "title": "Inside Baseball",
+            "image": "baseball4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "James Adams",
+            "title": "Diamond Discussions",
+            "image": "baseball5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Ethan Wilson",
+            "title": "The Pitcher's Mound",
+            "image": "baseball6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Basketball",
+        "color": "#32CD32",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Chris Johnson",
+            "title": "Hoops Central",
+            "image": "basketball1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Nick Brooks",
+            "title": "Basketball Breakdown",
+            "image": "basketball2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "David Scott",
+            "title": "The Court Report",
+            "image": "basketball3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Tyler Green",
+            "title": "Hoop Dreams",
+            "image": "basketball4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Jacob Mitchell",
+            "title": "Slam Dunk Podcast",
+            "image": "basketball5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Brian Hall",
+            "title": "The Basketball Hour",
+            "image": "basketball6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Boxing",
+        "color": "#FF4500",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Tommy Hughes",
+            "title": "The Fight Show",
+            "image": "boxing1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "James Foster",
+            "title": "Boxing Roundtable",
+            "image": "boxing2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Charlie Ward",
+            "title": "Knockout Talk",
+            "image": "boxing3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Mark Thompson",
+            "title": "Inside the Ring",
+            "image": "boxing4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Lucas James",
+            "title": "The Boxing Chronicles",
+            "image": "boxing5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Mike Rogers",
+            "title": "Fight Night Insights",
+            "image": "boxing6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Football",
+        "color": "#FFD700",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Michael Brooks",
+            "title": "The Football Show",
+            "image": "football1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "James Hamilton",
+            "title": "Football Focus",
+            "image": "football2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Chris Walker",
+            "title": "The Football Debate",
+            "image": "football3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Ethan Thomas",
+            "title": "The Touchdown Report",
+            "image": "football4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Ryan Clark",
+            "title": "Kickoff Conversations",
+            "image": "football5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "David Brooks",
+            "title": "The End Zone",
+            "image": "football6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Hockey",
+        "color": "#4682B4",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Andrew Smith",
+            "title": "Hockey Talk",
+            "image": "hockey1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Chris Allen",
+            "title": "Puck Talk",
+            "image": "hockey2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Ryan Davis",
+            "title": "The Ice Breakers",
+            "image": "hockey3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "David Ford",
+            "title": "The Hockey Show",
+            "image": "hockey4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Ethan Lee",
+            "title": "Power Play Podcast",
+            "image": "hockey5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Lucas Thompson",
+            "title": "Off the Ice",
+            "image": "hockey6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "MMA",
+        "color": "#A52A2A",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Jake Harris",
+            "title": "Fight Club",
+            "image": "mma1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Chris Garcia",
+            "title": "MMA Hour",
+            "image": "mma2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Tommy Lewis",
+            "title": "The MMA Breakdown",
+            "image": "mma3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "David Clark",
+            "title": "Octagon Insights",
+            "image": "mma4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Brandon Harris",
+            "title": "The Fight Analysis",
+            "image": "mma5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Ryan Foster",
+            "title": "MMA Weekly",
+            "image": "mma6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Outdoor",
+        "color": "#228B22",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Mark Brown",
+            "title": "The Outdoor Life",
+            "image": "outdoor1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "John Davis",
+            "title": "Backyard Adventures",
+            "image": "outdoor2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Tyler Green",
+            "title": "Outdoor Explorers",
+            "image": "outdoor3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "James White",
+            "title": "Adventure Trails",
+            "image": "outdoor4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Luke Allen",
+            "title": "The Hiking Journal",
+            "image": "outdoor5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Jake Mitchell",
+            "title": "Wilderness Adventures",
+            "image": "outdoor6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Rugby",
+        "color": "#32CD32",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Ryan Thomas",
+            "title": "Rugby Talk",
+            "image": "rugby1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Chris Scott",
+            "title": "The Rugby Breakdown",
+            "image": "rugby2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "David Lewis",
+            "title": "Rugby Review",
+            "image": "rugby3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Ben White",
+            "title": "Inside Rugby",
+            "image": "rugby4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Jack Harris",
+            "title": "Rugby Union",
+            "image": "rugby5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Jake Clark",
+            "title": "The Rugby Field",
+            "image": "rugby6.jpg"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Running",
+        "color": "#FF69B4",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Ella Wright",
+            "title": "Running Wild",
+            "image": "running1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Sophia Green",
+            "title": "The Running Podcast",
+            "image": "running2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Olivia Davis",
+            "title": "The Marathon Journey",
+            "image": "running3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "Mia Clark",
+            "title": "The Endurance Challenge",
+            "image": "running4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Zoe Lee",
+            "title": "Runner's World",
+            "image": "running5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Ava Adams",
+            "title": "The Finish Line",
+            "image": "running6.jpg"
+          }
+        ]
+      }
     ]
   },
   {
@@ -103,16 +2038,50 @@
     "category": "True Crime",
     "color": "#8B0000",
     "title": "True Crime Podcasts",
-    "topics": [{ "id": 1, "title": "True Crime" }]
-  },
-  {
-    "id": 8,
-    "category": "News & Politics",
-    "color": "#FFD700",
-    "title": "News & Politics Podcasts",
     "topics": [
-      { "id": 1, "title": "News" },
-      { "id": 2, "title": "Politics" }
+      {
+        "id": 1,
+        "title": "True Crime",
+        "color": "#8B0000",
+        "podcasts": [
+          {
+            "id": 1,
+            "author": "Sarah Williams",
+            "title": "Crime Stories",
+            "image": "truecrime1.jpg"
+          },
+          {
+            "id": 2,
+            "author": "Tommy Richards",
+            "title": "Murder Mysteries",
+            "image": "truecrime2.jpg"
+          },
+          {
+            "id": 3,
+            "author": "Jessica Adams",
+            "title": "Criminal Investigations",
+            "image": "truecrime3.jpg"
+          },
+          {
+            "id": 4,
+            "author": "James Lee",
+            "title": "Cold Cases",
+            "image": "truecrime4.jpg"
+          },
+          {
+            "id": 5,
+            "author": "Liam Harris",
+            "title": "Unsolved Crimes",
+            "image": "truecrime5.jpg"
+          },
+          {
+            "id": 6,
+            "author": "Olivia Scott",
+            "title": "Crime Scene Investigation",
+            "image": "truecrime6.jpg"
+          }
+        ]
+      }
     ]
   }
 ]

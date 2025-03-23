@@ -1,66 +1,12 @@
 import { useStates } from "@/app/common/store";
-
-interface Song {
-  id: number;
-  song_name: string;
-  song_image: string;
-}
-
-interface Album {
-  id: number;
-  music_name: string;
-  music_image: string;
-  artist: string;
-}
-
-interface Single {
-  id: number;
-  music_name: string;
-  music_image: string;
-  artist: string;
-}
-
-interface Radio {
-  id: number;
-  radio_name: string;
-  radio_image: string;
-  shows: Show[];
-}
-
-interface Show {
-  show_id: number;
-  host: string;
-}
-
-interface FeaturedChart {
-  id: number;
-  chart_name: string;
-  chart_image: string;
-  description: string;
-}
-
-interface Playlist {
-  id: number;
-  playlist_name: string;
-  playlist_image: string;
-}
-
-interface Artist {
-  id: number;
-  author_name: string;
-  author_image: string;
-  songs?: Song[];
-  albums?: Album[];
-  singles?: Single[];
-  radios?: Radio[];
-  featured_charts?: FeaturedChart[];
-  playlists?: Playlist[];
-}
+import Data from "../../../../../data.json";
 
 function Songs_main() {
-  const { HandleSelectedAuthor } = useStates();
+  const { HandleSelectedAuthor, artist } = useStates();
+  console.log(artist);
+  const InnerSong = Data.filter((item) => item.author_name === artist);
+  InnerSong.map((song) => console.log(song));
 
-  const Data: Artist[] = require("../../../../../data.json");
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col overflow-y-auto h-[2200px]">
       <div className="flex w-[100%] items-center justify-between">
@@ -106,11 +52,7 @@ function Songs_main() {
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
         {Data.slice(0, 10).map((artist) => (
-          <div
-            className="cursor-pointer"
-            key={artist.id}
-            onClick={() => HandleSelectedAuthor(artist.author_name)}
-          >
+          <div className="cursor-pointer" key={artist.id}>
             <div className="w-[150px] h-[150px] rounded-[50%]">
               <img
                 className="w-[100%] h-[100%] rounded-[50%]"

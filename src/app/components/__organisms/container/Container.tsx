@@ -7,19 +7,19 @@ import Podcasts_div from "../podcasts_div/Podcasts_div";
 import Inner_song from "../inner_song/Inner_song";
 
 function Container() {
-  const { Podcasts, Allpodcasts, InnerClick } = useStates();
+  const { Podcasts, Allpodcasts, InnerClick, artist } = useStates();
   return (
     <div className="flex px-[15px]  w-[100%] justify-between  flex-1 gap-[10px] overflow-y-auto">
       <Library_div />
       <div
         className={`w-full flex  justify-start bg-[#121212] rounded-[8px]  overflow-x-hidden ${
-          Podcasts ? "px-[0px] py-[0px]" : "px-[20px] pt-[20px]"
+          Podcasts || artist ? "px-[0px] py-[0px]" : "px-[20px] pt-[20px]"
         }`}
       >
         <div
           className={` w-[100%] flex items-center flex-col overflow-y-auto  ${
             Podcasts ? "h-[1300px]" : "h-[2200px]"
-          } ${Allpodcasts ? "h-[4800px]" : ""}`}
+          } ${Allpodcasts ? "h-[4800px]" : ""} `}
         >
           {Podcasts ? (
             <Podcasts_div />

@@ -2,11 +2,8 @@ import { useStates } from "@/app/common/store";
 import Data from "../../../../../data.json";
 
 function Songs_main() {
-  const { HandleSelectedAuthor, artist } = useStates();
-  console.log(artist);
-  const InnerSong = Data.filter((item) => item.author_name === artist);
-  InnerSong.map((song) => console.log(song));
-
+  const { HandleSelectedAuthor } = useStates();
+  //HandleSelectedAuthor2
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col overflow-y-auto h-[2200px]">
       <div className="flex w-[100%] items-center justify-between">
@@ -21,7 +18,7 @@ function Songs_main() {
         {Data.map((artist) => {
           return artist.songs?.slice(0, 1).map((song) => (
             <div
-              onClick={() => HandleSelectedAuthor(artist.author_name)}
+              onClick={() => HandleSelectedAuthor(song.author_name)}
               className="cursor-pointer"
               key={song.id}
             >
@@ -52,7 +49,11 @@ function Songs_main() {
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
         {Data.slice(0, 10).map((artist) => (
-          <div className="cursor-pointer" key={artist.id}>
+          <div
+            className="cursor-pointer"
+            key={artist.id}
+            // onClick={() => HandleSelectedAuthor2(artist.author_name)}
+          >
             <div className="w-[150px] h-[150px] rounded-[50%]">
               <img
                 className="w-[100%] h-[100%] rounded-[50%]"
@@ -78,7 +79,11 @@ function Songs_main() {
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
         {Data.map((music) => {
           return music.albums?.map((album) => (
-            <div className="cursor-pointer" key={album.id}>
+            <div
+              className="cursor-pointer"
+              key={album.id}
+              onClick={() => HandleSelectedAuthor(album.artist)}
+            >
               <div className="w-[150px] h-[150px] rounded-[50%]">
                 <img
                   className="w-[100%] h-[100%] rounded-[10px]"

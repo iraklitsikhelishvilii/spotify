@@ -5,8 +5,9 @@ interface ZustandProps {
   plus: boolean;
   Podcasts: boolean;
   Allpodcasts: boolean;
-  artist: string;
   InnerClick: boolean;
+  artist: string;
+  // artist2: string;
   HandlePlatlistClick: () => void;
   RemovePlaylistClick: () => void;
   handlePlus: () => void;
@@ -14,6 +15,7 @@ interface ZustandProps {
   HandlePodcasts: () => void;
   HandleAllPodcasts: () => void;
   HandleSelectedAuthor: (artist: string) => void;
+  // HandleSelectedAuthor2: (artist: string) => void;
 }
 
 export const useStates = create<ZustandProps>((set) => ({
@@ -40,8 +42,13 @@ export const useStates = create<ZustandProps>((set) => ({
     set(() => ({ Allpodcasts: true }));
   },
   artist: "",
+
   InnerClick: false,
   HandleSelectedAuthor: (artist: string) => {
-    set(() => ({ artist, InnerClick: true }));
+    set(() => ({ InnerClick: true, artist }));
   },
+  // artist2: "",
+  // HandleSelectedAuthor2: (artist2: string) => {
+  //   set(() => ({ InnerClick: true, artist2 }));
+  // },
 }));

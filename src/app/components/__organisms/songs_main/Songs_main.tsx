@@ -2,8 +2,9 @@ import { useStates } from "@/app/common/store";
 import Data from "../../../../../data.json";
 
 function Songs_main() {
-  const { HandleSelectedAuthor } = useStates();
-  //HandleSelectedAuthor2
+  const { HandleSelectedAuthor, HandleSelectedAuthor2, HandleSelectedAuthor3 } =
+    useStates();
+
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col overflow-y-auto h-[2200px]">
       <div className="flex w-[100%] items-center justify-between">
@@ -52,7 +53,7 @@ function Songs_main() {
           <div
             className="cursor-pointer"
             key={artist.id}
-            // onClick={() => HandleSelectedAuthor2(artist.author_name)}
+            onClick={() => HandleSelectedAuthor2(artist.author_name)}
           >
             <div className="w-[150px] h-[150px] rounded-[50%]">
               <img
@@ -82,7 +83,7 @@ function Songs_main() {
             <div
               className="cursor-pointer"
               key={album.id}
-              onClick={() => HandleSelectedAuthor(album.artist)}
+              onClick={() => HandleSelectedAuthor3(album.artist)}
             >
               <div className="w-[150px] h-[150px] rounded-[50%]">
                 <img
@@ -102,7 +103,11 @@ function Songs_main() {
         })}
         {Data.map((music) => {
           return music.singles?.map((single) => (
-            <div className="cursor-pointer" key={single.id}>
+            <div
+              className="cursor-pointer"
+              onClick={() => HandleSelectedAuthor3(single.artist)}
+              key={single.id}
+            >
               <div className="w-[150px] h-[150px] rounded-[50%]">
                 <img
                   className="w-[100%] h-[100%] rounded-[10px]"

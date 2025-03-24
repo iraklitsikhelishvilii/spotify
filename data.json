@@ -1182,6 +1182,7 @@
         "music_name": "30",
         "music_image": "https://upload.wikimedia.org/wikipedia/en/7/76/Adele_-_30.png",
         "artist": "Adele",
+        "color": "#FAD02E",
         "songs": [
           {
             "song_id": 1,
@@ -1205,6 +1206,7 @@
       },
       {
         "id": 2,
+        "color": "#F28D35",
         "music_name": "After Hours",
         "music_image": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_After_Hours.png",
         "artist": "The Weeknd",
@@ -1231,6 +1233,7 @@
       },
       {
         "id": 3,
+        "color": "#D83367",
         "music_name": "Future Nostalgia",
         "music_image": "https://www.metroweekly.com/wp-content/uploads/2020/04/Dua-Lipa.jpg",
         "artist": "Dua Lipa",
@@ -1257,6 +1260,7 @@
       },
       {
         "id": 4,
+        "color": "#1D4E89",
         "music_name": "folklore",
         "music_image": "https://kraftmusic.com/cdn/shop/files/00356804.jpg?v=1695408793",
         "artist": "Taylor Swift",
@@ -1283,6 +1287,7 @@
       },
       {
         "id": 5,
+        "color": "#6B8DFF",
         "music_name": "Divide",
         "music_image": "https://www.clashmusic.com/wp-content/uploads/2017/04/Clash103Web23.jpg",
         "artist": "Ed Sheeran",

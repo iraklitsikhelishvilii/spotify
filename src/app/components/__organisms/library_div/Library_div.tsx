@@ -26,7 +26,7 @@ function Library_div() {
           {plus && (
             <button
               onClick={NewPlaylistClick}
-              className="flex items-center px-[12px] py-[12px] gap-[10px] rounded-[5px] bg-[#282828] absolute top-[50px] left-[px]"
+              className="flex items-center px-[12px] py-[12px] gap-[10px] rounded-[5px] bg-[#282828] absolute top-[50px] left-[100px]"
             >
               <Music_icon classname="h-[16px] w-[16px]" />
               <p className="text-[#fff] text-[14px]">Create a new playlist</p>

@@ -17,9 +17,9 @@ function Inner_song() {
   const albumData = Data.flatMap((item) => item.albums).find(
     (item) => item?.artist === artist3
   );
-  const singleData = Data.flatMap((item) => item.singles).find(
-    (item) => item?.artist === artist3
-  );
+  // const singleData = Data.flatMap((item) => item.singles).find(
+  //   (item) => item?.artist === artist3
+  // );
 
   return (
     <div className="w-[100%] ">

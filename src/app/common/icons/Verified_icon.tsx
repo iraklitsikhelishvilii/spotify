@@ -1,8 +1,7 @@
 import React from "react";
-interface HomeIcon {
-  classname: string;
-}
-function Verified_icon({ classname }: HomeIcon) {
+import { Icon } from "../types";
+
+function Verified_icon({ classname }: Icon) {
   return (
     <svg
       data-encore-id="verifiedBadge"

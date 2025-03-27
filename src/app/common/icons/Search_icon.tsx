@@ -1,10 +1,7 @@
 import React from "react";
+import { Icon } from "../types";
 
-interface SearchIconProps {
-  classname: string;
-}
-
-function SearchIcon({ classname }: SearchIconProps) {
+function SearchIcon({ classname }: Icon) {
   return (
     <svg
       data-encore-id="icon"

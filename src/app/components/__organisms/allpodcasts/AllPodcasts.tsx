@@ -1,6 +1,6 @@
 "Use client";
 import React from "react";
-import Podcasts from "../../../../../podcasts.json";
+import Podcasts from "../../../../../json_file/podcasts.json";
 
 function AllPodcasts() {
   const ArtsAndEntertainment = Podcasts.find(

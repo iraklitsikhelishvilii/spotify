@@ -1,9 +1,7 @@
 import React from "react";
+import { Icon } from "../types";
 
-interface HomeIcon {
-  classname: string;
-}
-function HomeIcon({ classname }: HomeIcon) {
+function HomeIcon({ classname }: Icon) {
   return (
     <svg
       data-encore-id="icon"

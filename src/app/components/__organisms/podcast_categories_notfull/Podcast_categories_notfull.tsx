@@ -1,5 +1,5 @@
 import React from "react";
-import Podcasts from "../../../../../podcasts.json";
+import Podcasts from "../../../../../json_file/podcasts.json";
 import Arrow_icon from "@/app/common/icons/Arrow_icon";
 import { useStates } from "@/app/common/store";
 function Podcast_categories_notfull() {

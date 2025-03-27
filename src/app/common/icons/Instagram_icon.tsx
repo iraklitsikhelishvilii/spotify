@@ -1,8 +1,7 @@
 import React from "react";
-interface HomeIcon {
-  classname: string;
-}
-function Instagram_icon({ classname }: HomeIcon) {
+import { Icon } from "../types";
+
+function Instagram_icon({ classname }: Icon) {
   return (
     <svg
       data-encore-id="icon"

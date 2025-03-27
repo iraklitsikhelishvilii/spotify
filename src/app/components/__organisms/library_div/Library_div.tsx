@@ -1,8 +1,10 @@
+'use client'
 import Globus_icon from "@/app/common/icons/Globus_icon";
 import Music_icon from "@/app/common/icons/Music_icon";
 import Plus_icon from "@/app/common/icons/Plus_icon";
 import { useStates } from "@/app/common/store";
 import Link from "next/link";
+import Create_playlist_allert from "../../__atoms/create_playlist_allert/Create_playlist_allert";
 
 function Library_div() {
   const {
@@ -16,7 +18,7 @@ function Library_div() {
   } = useStates();
 
   return (
-    <div className=" relative min-w-[300px] bg-[#121212] rounded-[8px] px-[10px] py-[10px] flex flex-col flex-1 justify-between ">
+    <div className=" relative min-w-[300px] bg-[#121212] rounded-[8px] px-[10px] py-[10px] flex-1 h-full flex flex-col  justify-between ">
       <div>
         <div className="w-[100%] flex items-center justify-between px-[10px]">
           <p className="text-[16px] font-[700] text-[#fff]">Your Library</p>
@@ -48,25 +50,7 @@ function Library_div() {
           </button>
         </div>
         {playlist && (
-          <div className="max-w-[322px] p-[16px] w-[100%] bg-[#4cb3ff] absolute top-[60px] left-[300px] rounded-[20px]">
-            <h2 className="text-[16px] font-[700] text-[#000000] ">
-              Create a playlist
-            </h2>
-            <p className="text-[14px]  text-[#000000] mt-[5px]">
-              Log in to create and share playlists.
-            </p>
-            <div className="mt-[25px] flex gap-[15px]  justify-end">
-              <button
-                onClick={RemovePlaylistClick}
-                className="text-[14px] text-[#000000] font-[700]"
-              >
-                Not now
-              </button>
-              <button className="bg-[#fff] rounded-[20px] text-[14px] text-[#000000] font-[700] px-[16px] py-[4px]">
-                Log in
-              </button>
-            </div>
-          </div>
+          <Create_playlist_allert RemovePlaylistClick={RemovePlaylistClick} />
         )}
         <div className="w-[100%] bg-[#1F1F1F] flex flex-col rounded-[8px] py-[16px] pl-[20px] mt-[25px] gap-[10px]">
           <p className="text-[16px] font-[700] text-[#fff]">

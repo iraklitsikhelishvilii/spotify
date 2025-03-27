@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "../types";
 
-function Arrow_icon({ classname }: Icon) {
+function Burger_menu_icon({ classname }: Icon) {
   return (
     <svg
       data-encore-id="icon"
@@ -9,11 +9,11 @@ function Arrow_icon({ classname }: Icon) {
       aria-hidden="true"
       className={classname}
       viewBox="0 0 16 16"
-      fill="white"
+      fill="#FFFFFFB2"
     >
-      <path d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"></path>
+      <path d="M15.5 13.5H.5V12h15v1.5zm0-4.75H.5v-1.5h15v1.5zm0-4.75H.5V2.5h15V4z"></path>
     </svg>
   );
 }
 
-export default Arrow_icon;
+export default Burger_menu_icon;

@@ -1,24 +1,5 @@
 import { create } from "zustand";
-
-interface ZustandProps {
-  playlist: boolean;
-  plus: boolean;
-  Podcasts: boolean;
-  Allpodcasts: boolean;
-  InnerClick: boolean;
-  artist: string;
-  artist2: string;
-  artist3: string;
-  HandlePlatlistClick: () => void;
-  RemovePlaylistClick: () => void;
-  handlePlus: () => void;
-  NewPlaylistClick: () => void;
-  HandlePodcasts: () => void;
-  HandleAllPodcasts: () => void;
-  HandleSelectedAuthor: (artist: string) => void;
-  HandleSelectedAuthor2: (artist2?: string) => void;
-  HandleSelectedAuthor3: (artist3?: string) => void;
-}
+import { ZustandProps } from "./types";
 
 export const useStates = create<ZustandProps>((set) => ({
   playlist: false,
@@ -43,18 +24,34 @@ export const useStates = create<ZustandProps>((set) => ({
   HandleAllPodcasts: () => {
     set(() => ({ Allpodcasts: true }));
   },
-  artist: "",
 
-  InnerClick: false,
-  HandleSelectedAuthor: (artist: string) => {
-    set(() => ({ InnerClick: true, artist }));
-  },
-  artist2: "",
-  HandleSelectedAuthor2: (artist2?: string) => {
-    set(() => ({ InnerClick: true, artist2 }));
-  },
   artist3: "",
   HandleSelectedAuthor3: (artist3?: string) => {
     set(() => ({ InnerClick: true, artist3 }));
+  },
+  plusHover: false,
+  PlusEnter: () => {
+    set(() => ({ plusHover: true }));
+  },
+  PlusLeave: () => {
+    set(() => ({ plusHover: false }));
+  },
+  marked: false,
+  MarkedClick: () => {
+    set(() => ({ marked: true }));
+  },
+  MarkedClick2: () => {
+    set(() => ({ marked: false }));
+  },
+  dotsHover: false,
+  DotsEnter: () => {
+    set(() => ({ dotsHover: true }));
+  },
+  DotsLeave: () => {
+    set(() => ({ dotsHover: false }));
+  },
+  DotsClick: false,
+  DotsClickFunc: () => {
+    set((state) => ({ DotsClick: !state.DotsClick }));
   },
 }));

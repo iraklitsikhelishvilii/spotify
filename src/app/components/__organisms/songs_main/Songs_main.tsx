@@ -1,43 +1,39 @@
 import { useStates } from "@/app/common/store";
-import Data from "../../../../../data.json";
-
+import Data from "../../../../../json_file/data.json";
+import Link from "next/link";
+import Song_divs from "../../__molecules/song_divs/Song_divs";
 function Songs_main() {
-  const { HandleSelectedAuthor, HandleSelectedAuthor2, HandleSelectedAuthor3 } =
-    useStates();
+  const { HandleSelectedAuthor3 } = useStates();
 
   return (
-    <div className="max-w-[1700px] w-[100%] flex flex-col overflow-y-auto h-[2200px]">
+    <div className="max-w-[1700px] w-[100%] flex flex-col  ">
       <div className="flex w-[100%] items-center justify-between">
-        <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
+        <Link
+          href="/alltrendings"
+          className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
+        >
           Trending songs
-        </h1>
-        <p className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline">
+        </Link>
+        <Link
+          href="/alltrendings"
+          className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
+        >
           Show all
-        </p>
+        </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-auto gap-[14px] mt-[20px]">
-        {Data.map((artist) => {
-          return artist.songs?.slice(0, 1).map((song) => (
-            <div
-              onClick={() => HandleSelectedAuthor(song.author_name)}
-              className="cursor-pointer"
-              key={song.id}
-            >
-              <div className="w-[150px] h-[150px]">
-                <img
-                  className="w-[100%] h-[100%] rounded-[10px]"
-                  src={song.song_image}
-                  alt={song.song_name}
-                />
-              </div>
-              <p className="text-[#fff] text-[15px] font-[400] mt-[5px]">
-                {song.song_name}
-              </p>
-              <p className="text-[14px] text-[#B3B3B3] mt-[3px]">
-                {artist.author_name}
-              </p>
-            </div>
-          ));
+        {Data.map((artist, key) => {
+          return artist.songs
+            ?.slice(0, 1)
+            .map((song) => (
+              <Song_divs
+                href={`/trending_songs/${song.song_name}`}
+                id={key}
+                image={song.song_image}
+                songname={song.song_name}
+                artist={artist.author_name}
+              />
+            ));
         })}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
@@ -50,10 +46,10 @@ function Songs_main() {
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
         {Data.slice(0, 10).map((artist) => (
-          <div
+          <Link
+            href={`/artist_songs/${artist.author_name}`}
             className="cursor-pointer"
             key={artist.id}
-            onClick={() => HandleSelectedAuthor2(artist.author_name)}
           >
             <div className="w-[150px] h-[150px] rounded-[50%]">
               <img
@@ -66,7 +62,7 @@ function Songs_main() {
               {artist.author_name}
             </p>
             <p className="text-[14px] text-[#B3B3B3] mt-[3px]">Artist</p>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
@@ -78,11 +74,11 @@ function Songs_main() {
         </p>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
-        {Data.map((music) => {
+        {Data.map((music, key) => {
           return music.albums?.map((album) => (
             <div
               className="cursor-pointer"
-              key={album.id}
+              key={key}
               onClick={() => HandleSelectedAuthor3(album.artist)}
             >
               <div className="w-[150px] h-[150px] rounded-[50%]">

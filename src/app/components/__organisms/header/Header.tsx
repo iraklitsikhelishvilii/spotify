@@ -7,7 +7,10 @@ import Search_icon from "@/app/common/icons/Search_icon";
 import Folder_icon from "@/app/common/icons/Folder_icon";
 import Link from "next/link";
 import Download_icon from "@/app/common/icons/Download_icon";
+import { useStates } from "@/app/common/store";
+import Logged_out_alert from "../../__atoms/logged_out_alert/Logged_out_alert";
 function Header() {
+  const { marked } = useStates();
   const Reload = () => {
     window.location.reload();
   };
@@ -74,11 +77,12 @@ function Header() {
               Install App
             </Link>
           </div>
-          <div className="flex items-center justify-center gap-[10px]">
+          <div className="flex items-center justify-center gap-[10px] relative">
             <p className="text-[#b3b3b3]  text-[14px]">Sign Up</p>
             <button className="px-[32px] py-[8px] bg-[#fff] font-[700] text-[16px] text-[#000000] rounded-[20px]">
               Log in
             </button>
+            {marked && <Logged_out_alert />}
           </div>
         </div>
       </div>

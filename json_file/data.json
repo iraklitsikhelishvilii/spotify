@@ -110,7 +110,7 @@
   },
   {
     "id": 2,
-    "author_name": "AC/DC",
+    "author_name": "AC DC",
     "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0",
     "category": "music",
     "color": "#20B2AA",
@@ -122,7 +122,7 @@
         "isTrending": true,
         "popular": true,
         "color": "#FF4500",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -132,7 +132,7 @@
         "isTrending": false,
         "popular": false,
         "color": "#8A2BE2",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -142,7 +142,7 @@
         "isTrending": true,
         "popular": true,
         "color": "#E6E6FA",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -152,7 +152,7 @@
         "isTrending": false,
         "popular": false,
         "color": "#F4A300",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -162,7 +162,7 @@
         "isTrending": true,
         "popular": true,
         "color": "#FFC0CB",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -172,7 +172,7 @@
         "isTrending": false,
         "popular": false,
         "color": "#F5FFFA",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -182,7 +182,7 @@
         "isTrending": true,
         "popular": true,
         "color": "#FFDAB9",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -192,7 +192,7 @@
         "isTrending": false,
         "popular": false,
         "color": "#F0FFFF",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -202,7 +202,7 @@
         "isTrending": true,
         "popular": true,
         "color": "#E0B0FF",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       },
       {
@@ -212,7 +212,7 @@
         "isTrending": false,
         "popular": false,
         "color": "#D2691E",
-        "author_name": "AC/DC",
+        "author_name": "AC DC",
         "author_image": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
       }
     ]
@@ -574,7 +574,7 @@
       {
         "id": 3,
         "song_name": "Angie",
-        "song_image": "https://cdn-images.dzcdn.net/images/cover/4928c5792c1d69fe440bb3d23b0b0a25/0x1900-000000-80-0-0.jpgg",
+        "song_image": "https://cdn-images.dzcdn.net/images/cover/4928c5792c1d69fe440bb3d23b0b0a25/0x1900-000000-80-0-0.jpg",
         "isTrending": true,
         "popular": true,
         "color": "#B0C4DE",

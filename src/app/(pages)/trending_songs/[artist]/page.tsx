@@ -16,7 +16,7 @@ function page({ params }: Params) {
   );
 
   return (
-    <div className=" w-[100%] h-[100vh] bg-[#000000] flex flex-col pb-[10px] flex">
+    <div className=" w-[100%] h-[100vh] bg-[#000000]  flex-col pb-[10px] flex">
       <Header />
       <div className="w-[100%] flex-1 h-full flex gap-[10px] overflow-hidden ">
         <Library_div />

@@ -33,37 +33,35 @@ function Songs_main() {
                 image={song.song_image}
                 songname={song.song_name}
                 artist={artist.author_name}
+                imgclass="w-[100%] h-[100%] rounded-[10px]"
               />
             ));
         })}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
-        <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
+        <Link
+          href="/allartists"
+          className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
+        >
           Popular artists
-        </h1>
-        <p className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline">
+        </Link>
+        <Link
+          href="/allartists"
+          className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
+        >
           Show all
-        </p>
+        </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
-        {Data.slice(0, 10).map((artist) => (
-          <Link
+        {Data.slice(0, 10).map((artist, key) => (
+          <Song_divs
             href={`/artist_songs/${artist.author_name}`}
-            className="cursor-pointer"
-            key={artist.id}
-          >
-            <div className="w-[150px] h-[150px] rounded-[50%]">
-              <img
-                className="w-[100%] h-[100%] rounded-[50%]"
-                src={artist.author_image}
-                alt={artist.author_name}
-              />
-            </div>
-            <p className="text-[#fff] text-[15px] font-[400] mt-[5px]">
-              {artist.author_name}
-            </p>
-            <p className="text-[14px] text-[#B3B3B3] mt-[3px]">Artist</p>
-          </Link>
+            key={key}
+            image={artist?.author_image ?? "/path/to/default/image.jpg"}
+            songname={artist?.author_name ?? "undefined"}
+            artist={artist?.author_name ?? "undefined"}
+            imgclass="w-[100%] h-[100%] rounded-[50%]"
+          />
         ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">

@@ -65,6 +65,7 @@ export interface SongDivs {
   image: string;
   songname: string;
   artist: string;
+  imgclass:string
 }
 
 export interface Song {

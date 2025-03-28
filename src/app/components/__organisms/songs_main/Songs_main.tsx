@@ -1,11 +1,8 @@
-import { useStates } from "@/app/common/store";
 import Data from "../../../../../json_file/data.json";
 import Link from "next/link";
 import Song_divs from "../../__molecules/song_divs/Song_divs";
-
+import AlbumsData from "../../../../../json_file/albums.json";
 function Songs_main() {
-  const { HandleSelectedAuthor3 } = useStates();
-
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col  ">
       <div className="flex w-[100%] items-center justify-between">
@@ -65,60 +62,30 @@ function Songs_main() {
         ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
-        <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
+        <Link
+          href="/all_albums_singles"
+          className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
+        >
           Popular albums and singles
-        </h1>
-        <p className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline">
+        </Link>
+        <Link
+          href="/all_albums_singles"
+          className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
+        >
           Show all
-        </p>
+        </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
-        {Data.map((music, key) => {
-          return music.albums?.map((album) => (
-            <div
-              className="cursor-pointer"
-              key={key}
-              onClick={() => HandleSelectedAuthor3(album.artist)}
-            >
-              <div className="w-[150px] h-[150px] rounded-[50%]">
-                <img
-                  className="w-[100%] h-[100%] rounded-[10px]"
-                  src={album.music_image}
-                  alt={album.music_name}
-                />
-              </div>
-              <p className="text-[#fff] text-[15px] font-[400] mt-[5px]">
-                {album.music_name}
-              </p>
-              <p className="text-[14px] text-[#B3B3B3] mt-[3px]">
-                {album.artist}
-              </p>
-            </div>
-          ));
-        })}
-        {Data.map((music) => {
-          return music.singles?.map((single) => (
-            <div
-              className="cursor-pointer"
-              onClick={() => HandleSelectedAuthor3(single.artist)}
-              key={single.id}
-            >
-              <div className="w-[150px] h-[150px] rounded-[50%]">
-                <img
-                  className="w-[100%] h-[100%] rounded-[10px]"
-                  src={single.music_image}
-                  alt={single.music_name}
-                />
-              </div>
-              <p className="text-[#fff] text-[15px] font-[400] mt-[5px]">
-                {single.music_name}
-              </p>
-              <p className="text-[14px] text-[#B3B3B3] mt-[3px]">
-                {single.artist}
-              </p>
-            </div>
-          ));
-        })}
+        {AlbumsData.slice(0, 10).map((item, key) => (
+          <Song_divs
+            href={`/popular_albums_singles/${item?.author_name}`}
+            key={key}
+            image={item?.song_image ?? "/path/to/default/image.jpg"}
+            songname={item?.song_name ?? "undefined"}
+            artist={item?.author_name ?? "undefined"}
+            imgclass="w-[100%] h-[100%] rounded-[10px]"
+          />
+        ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
         <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">

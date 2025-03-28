@@ -31,12 +31,15 @@ export interface ZustandProps {
 
 export interface Trendingsongsinner {
   songData?: {
-    id: number;
-    song_image: string;
-    song_name: string;
-    author_image: string;
-    author_name: string;
-    color: string;
+    id?: number;
+    song_image?: string;
+    song_name?: string;
+    author_image?: string;
+    author_name?: string;
+    color?: string;
+    artist?: string;
+    isTrending?: boolean;
+    popular?: boolean;
   };
 }
 export interface Songslist {
@@ -65,7 +68,7 @@ export interface SongDivs {
   image: string;
   songname: string;
   artist: string;
-  imgclass:string
+  imgclass: string;
 }
 
 export interface Song {

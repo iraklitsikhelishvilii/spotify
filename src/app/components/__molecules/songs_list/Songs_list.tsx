@@ -16,9 +16,7 @@ function Songs_list({ info }: Songslist) {
         {info?.map((item: Song, key: number) => (
           <div key={key} className="w-[100%] flex mt-[15px]">
             <div className="flex items-center gap-[20px]">
-              <p className="text-[#b3b3b3] text-[16px] font-[600]">
-                {item?.id}
-              </p>
+              <p className="text-[#b3b3b3] text-[16px] font-[600]">{key + 1}</p>
               <div className="felx flex-col">
                 <h2 className="text-[16px] font-[700] text-[#fff]">
                   {item?.song_name}

@@ -2,54 +2,67 @@ import React from "react";
 import { Song, Trendingsongsinner } from "@/app/common/types";
 import Songs_list from "../songs_list/Songs_list";
 import Data from "../../../../../json_file/data.json";
+import AlbumsData from "../../../../../json_file/albums.json";
+
 interface DataItem {
   songs: Song[];
 }
 
 function Trending_songs_inner({ songData }: Trendingsongsinner) {
-  const ChosenData: Song[] = (Data as DataItem[]).flatMap((item) => item.songs);
+  const allSongs: Song[] = (Data as DataItem[]).flatMap((item) => item?.songs);
+  const allAlbumSongs: Song[] = (AlbumsData as DataItem[]).flatMap(
+    (item) => item?.songs
+  );
 
-  const FilteredChosenData: Song[] = ChosenData.filter(
-    (item): item is Song =>
-      item?.author_name === songData?.author_name &&
-      item?.song_name !== undefined
+  const filteredSongs = allSongs.filter(
+    (song) => song?.author_name === songData?.author_name
+  );
+
+  const filteredAlbumSongs = allAlbumSongs.filter(
+    (song) => song?.author_name === songData?.author_name
   );
 
   return (
-    <div className="w-[100%] flex flex-col flex-1 h-[100%]">
+    <div className="w-full flex flex-col flex-1 h-full">
       <div
         style={{ backgroundColor: songData?.color }}
-        className="w-[100%] flex justify-center"
+        className="w-full flex justify-center"
       >
         <div
-          className="flex gap-[20px] max-w-[1700px] w-[100%] px-[20px] py-[20px]"
+          className="flex gap-5 max-w-[1700px] w-full px-5 py-5"
           key={songData?.id}
         >
           <div className="w-[216px] h-[216px] cursor-pointer">
             <img
-              className="w-[100%] h-[100%] rounded-[10px]"
+              className="w-full h-full rounded-lg"
               src={songData?.song_image}
               alt={songData?.song_name}
             />
           </div>
           <div className="flex flex-col items-baseline justify-end">
-            <h1 className="font-[700] text-[#fff] text-[48px]">
+            <h1 className="font-bold text-white text-4xl">
               {songData?.song_name}
             </h1>
-            <div className="flex items-center justify-center gap-[10px]">
+            <div className="flex items-center gap-2.5">
               <img
-                className="w-[24px] h-[24px] rounded-[50%]"
-                src={songData?.author_image}
+                className="w-6 h-6 rounded-full"
+                src={
+                  songData?.author_image
+                    ? songData?.author_image
+                    : songData?.song_image
+                }
                 alt={songData?.author_name}
               />
-              <p className="text-[14px] font-[800] text-[#FFF] mt-[3px]">
+              <p className="text-sm font-bold text-white mt-1">
                 {songData?.author_name}
               </p>
             </div>
           </div>
         </div>
       </div>
-      <Songs_list info={FilteredChosenData} />
+      <Songs_list
+        info={filteredSongs.length ? filteredSongs : filteredAlbumSongs}
+      />
     </div>
   );
 }

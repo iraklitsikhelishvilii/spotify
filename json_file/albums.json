@@ -1,0 +1,289 @@
+[
+  {
+    "song_id": 1,
+    "song_name": "Easy on Me",
+    "author_name": "Adele",
+    "song_image": "https://i1.sndcdn.com/artworks-GSvPigmkmpKHRi8C-Sv4aJw-t500x500.jpg",
+    "duration": "3:44",
+    "color": "#40E0D0",
+    "songs": [
+      {
+        "song_id": 1,
+        "song_name": "Oh My God",
+        "author_name": "Adele",
+        "song_image": "https://www.billboard.com/wp-content/uploads/2022/01/04-Adele-Oh-My-God-screenshot-2022-billboard-1548.jpg",
+        "duration": "3:45",
+        "color": "#FF7F50"
+      },
+      {
+        "song_id": 2,
+        "song_name": "I Drink Wine",
+        "author_name": "Adele",
+        "song_image": "https://www.billboard.com/wp-content/uploads/2022/10/adele-i-drink-wine-2022-billboard-1548.jpg",
+        "duration": "6:16",
+        "color": "#FF7F50"
+      },
+      {
+        "id": 3,
+        "song_name": "30",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/7/76/Adele_-_30.png",
+        "author_name": "Adele",
+        "color": "#FAD02E"
+      },
+      {
+        "song_id": 4,
+        "song_name": "Easy on Me",
+        "author_name": "Adele",
+        "song_image": "https://i1.sndcdn.com/artworks-GSvPigmkmpKHRi8C-Sv4aJw-t500x500.jpg",
+        "duration": "3:44",
+        "color": "#40E0D0"
+      }
+    ]
+  },
+  {
+    "song_id": 2,
+    "author_name": "The Weeknd",
+    "song_name": "Save Your Tears",
+    "song_image": "https://tecoapple.com/wp-content/uploads/2021/01/theweekndsaveyourtearsv021.jpg",
+    "duration": "3:35",
+    "color": "#98FF98",
+    "songs": [
+      {
+        "song_id": 1,
+        "author_name": "The Weeknd",
+        "song_name": "Blinding Lights",
+        "song_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1MSSqplWCVZuaYY6x4j_sY5NgRgX_ZhYB5Q&s",
+        "duration": "3:20",
+        "color": "#98FF98"
+      },
+      {
+        "song_id": 2,
+        "author_name": "The Weeknd",
+        "song_name": "In Your Eyes",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/0/05/The_Weeknd_-_In_Your_Eyes_%28Kenny_G_Remix%29.png",
+        "duration": "4:05",
+        "color": "#87CEEB"
+      },
+      {
+        "id": 3,
+        "color": "#F28D35",
+        "song_name": "After Hours",
+        "song_image": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_After_Hours.png",
+        "author_name": "The Weeknd"
+      },
+      {
+        "song_id": 4,
+        "author_name": "The Weeknd",
+        "song_name": "Save Your Tears",
+        "song_image": "https://tecoapple.com/wp-content/uploads/2021/01/theweekndsaveyourtearsv021.jpg",
+        "duration": "3:35",
+        "color": "#98FF98"
+      }
+    ]
+  },
+
+  {
+    "song_id": 3,
+    "author_name": "Dua Lipa",
+    "song_name": "Levitating",
+    "song_image": "https://i1.sndcdn.com/artworks-YL3ua1FAzIzzSk0e-OWj0qw-t1080x1080.jpg",
+    "duration": "3:24",
+    "color": "#00FFFF",
+    "songs": [
+      {
+        "song_id": 1,
+        "author_name": "Dua Lipa",
+        "song_name": "Don't Start Now",
+        "song_image": "https://f4.bcbits.com/img/a0391041685_10.jpg",
+        "duration": "3:03",
+        "color": "#FF4500"
+      },
+      {
+        "song_id": 2,
+        "author_name": "Dua Lipa",
+        "song_name": "Physical",
+        "song_image": "https://i1.sndcdn.com/artworks-soTP54v5h1zr3RCd-krgt9Q-t500x500.jpg",
+        "duration": "3:13",
+        "color": "#FFDAB9"
+      },
+      {
+        "id": 3,
+        "color": "#D83367",
+        "song_name": "Future Nostalgia",
+        "song_image": "https://www.metroweekly.com/wp-content/uploads/2020/04/Dua-Lipa.jpg",
+        "author_name": "Dua Lipa"
+      },
+      {
+        "song_id": 4,
+        "author_name": "Dua Lipa",
+        "song_name": "Levitating",
+        "song_image": "https://i1.sndcdn.com/artworks-YL3ua1FAzIzzSk0e-OWj0qw-t1080x1080.jpg",
+        "duration": "3:24",
+        "color": "#00FFFF"
+      }
+    ]
+  },
+  {
+    "song_id": 4,
+    "author_name": "Taylor Swift",
+    "song_name": "cardigan",
+    "song_image": "https://static1.squarespace.com/static/593070a42994cad2710a6439/t/5f1d3045b4238228f9cd4301/1595748424275/?format=1500w",
+    "duration": "4:59",
+    "color": "#C8A2C8",
+    "songs": [
+      {
+        "song_id": 1,
+        "author_name": "Taylor Swift",
+        "song_name": "exile",
+        "song_image": "https://i1.sndcdn.com/artworks-GHAy11k3NvimdFbf-x7OoKQ-t500x500.jpg",
+        "duration": "4:45",
+        "color": "#F7E7CE"
+      },
+      {
+        "song_id": 2,
+        "author_name": "Taylor Swift",
+        "song_name": "betty",
+        "song_image": "https://i.ytimg.com/vi/orXAg5dIMa8/mqdefault.jpg",
+        "duration": "4:09",
+        "color": "#50C878"
+      },
+      {
+        "id": 3,
+        "color": "#1D4E89",
+        "song_name": "folklore",
+        "music_image": "https://kraftmusic.com/cdn/shop/files/00356804.jpg?v=1695408793",
+        "author_name": "Taylor Swift"
+      },
+      {
+        "song_id": 4,
+        "author_name": "Taylor Swift",
+        "song_name": "cardigan",
+        "song_image": "https://static1.squarespace.com/static/593070a42994cad2710a6439/t/5f1d3045b4238228f9cd4301/1595748424275/?format=1500w",
+        "duration": "4:59",
+        "color": "#C8A2C8"
+      }
+    ]
+  },
+
+  {
+    "song_id": 5,
+    "author_name": "Ed Sheeran",
+    "song_name": "Shape of You",
+    "song_image": "https://i1.sndcdn.com/artworks-000206844384-uzp8t5-t1080x1080.jpg",
+    "duration": "3:53",
+    "color": "#DC143C",
+    "songs": [
+      {
+        "song_id": 1,
+        "author_name": "Ed Sheeran",
+        "song_name": "Castle on the Hill",
+        "song_image": "https://i.ytimg.com/vi/7Qp5vcuMIlk/sddefault.jpg",
+        "duration": "4:21",
+        "color": "#8E4585"
+      },
+      {
+        "song_id": 2,
+        "author_name": "Ed Sheeran",
+        "song_name": "Galway Girl",
+        "song_image": "https://i1.sndcdn.com/artworks-000231939990-b23z6k-t500x500.jpg",
+        "duration": "2:46",
+        "color": "#2E8B57"
+      },
+      {
+        "id": 3,
+        "color": "#6B8DFF",
+        "song_name": "Divide",
+        "song_image": "https://www.clashmusic.com/wp-content/uploads/2017/04/Clash103Web23.jpg",
+        "author_name": "Ed Sheeran"
+      },
+      {
+        "song_id": 4,
+        "author_name": "Ed Sheeran",
+        "song_name": "Shape of You",
+        "song_image": "https://i1.sndcdn.com/artworks-000206844384-uzp8t5-t1080x1080.jpg",
+        "duration": "3:53",
+        "color": "#DC143C"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "song_name": "Watermelon Sugar",
+    "song_image": "https://www.rollingstone.com/wp-content/uploads/2020/12/harry-styles-watermelon-sugar.jpg?w=1000",
+    "author_name": "Harry Styles",
+    "color": "#9966CC",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Watermelon Sugar",
+        "song_image": "https://www.rollingstone.com/wp-content/uploads/2020/12/harry-styles-watermelon-sugar.jpg?w=1000",
+        "author_name": "Harry Styles",
+        "color": "#9966CC"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "song_name": "Good 4 U",
+    "author_name": "Olivia Rodrigo",
+    "color": "#DAA520",
+    "song_image": "https://thatgrapejuice.net/wp-content/uploads/2021/06/Olivia-Rodrigo-Good-4-U-behind-scenes-thatgrapejuice-2021.jpg",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Good 4 U",
+        "author_name": "Olivia Rodrigo",
+        "color": "#DAA520",
+        "song_image": "https://thatgrapejuice.net/wp-content/uploads/2021/06/Olivia-Rodrigo-Good-4-U-behind-scenes-thatgrapejuice-2021.jpg"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "song_name": "Bad Habits",
+    "song_image": "https://i.scdn.co/image/ab67616d0000b273006d456ac41a8dc73a0b67cc",
+    "author_name": "Ed Sheeran",
+    "color": "#0F52BA",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Bad Habits",
+        "song_image": "https://i.scdn.co/image/ab67616d0000b273006d456ac41a8dc73a0b67cc",
+        "author_name": "Ed Sheeran",
+        "color": "#0F52BA"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "song_name": "Blinding Lights",
+    "song_image": "https://f4.bcbits.com/img/a2542331661_10.jpg",
+    "author_name": "The Weeknd",
+    "color": "#B76E79",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Blinding Lights",
+        "song_image": "https://f4.bcbits.com/img/a2542331661_10.jpg",
+        "author_name": "The Weeknd",
+        "color": "#B76E79"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "song_name": "Save Your Tears",
+    "song_image": "https://i.scdn.co/image/ab67616d00001e0280880b62143e819e901d8465",
+    "author_name": "The Weeknd",
+    "color": "#007BA7",
+    "songs": [
+      {
+        "id": 1,
+        "song_name": "Save Your Tears",
+        "song_image": "https://i.scdn.co/image/ab67616d00001e0280880b62143e819e901d8465",
+        "author_name": "The Weeknd",
+        "color": "#007BA7"
+      }
+    ]
+  }
+]

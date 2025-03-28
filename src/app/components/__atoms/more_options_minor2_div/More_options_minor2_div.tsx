@@ -1,7 +1,8 @@
 import Play_btn_icon from "@/app/common/icons/Play_btn_icon";
+import { Moreoptionsminor2div } from "@/app/common/types";
 import React from "react";
 
-function More_options_minor2_div({ icon, text }: any) {
+function More_options_minor2_div({ icon, text }: Moreoptionsminor2div) {
   return (
     <div className="cursor-pointer w-[100%] px-[10px] flex items-center justify-between gap-[10px] py-[8px] hover:bg-[#282828] ">
       <div className="flex gap-[10px]">

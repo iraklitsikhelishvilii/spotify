@@ -1,16 +1,22 @@
 import React from "react";
-import Data from "../../../../../json_file/data.json";
-import { Trendingsongsinner } from "@/app/common/types";
+import { Song, Trendingsongsinner } from "@/app/common/types";
 import Songs_list from "../songs_list/Songs_list";
+import Data from "../../../../../json_file/data.json";
+interface DataItem {
+  songs: Song[];
+}
 
 function Trending_songs_inner({ songData }: Trendingsongsinner) {
-  const ChosenData = Data.flatMap((item) => item.songs);
-  const FilteredChosenData = ChosenData.filter(
-    (item) => item?.author_name === songData?.author_name
+  const ChosenData: Song[] = (Data as DataItem[]).flatMap((item) => item.songs);
+
+  const FilteredChosenData: Song[] = ChosenData.filter(
+    (item): item is Song =>
+      item?.author_name === songData?.author_name &&
+      item?.song_name !== undefined
   );
 
   return (
-    <div className="w-[100%] flex flex-col flex-1  h-[100%]">
+    <div className="w-[100%] flex flex-col flex-1 h-[100%]">
       <div
         style={{ backgroundColor: songData?.color }}
         className="w-[100%] flex justify-center"

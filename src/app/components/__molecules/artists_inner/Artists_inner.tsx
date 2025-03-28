@@ -1,23 +1,35 @@
 import React from "react";
 import Verified_icon from "@/app/common/icons/Verified_icon";
-import { Artistsinner } from "@/app/common/types";
+import { Artistsinner, Song } from "@/app/common/types";
 import Songs_list from "../songs_list/Songs_list";
 import Data from "../../../../../json_file/data.json";
+
 function Artists_inner({ Info }: Artistsinner) {
-  const Artistsongs = Data.flatMap((item) => item.songs).filter(
-    (item) => item?.author_name === Info.author_name
-  );
+  const isSong = (item: Song): item is Song => {
+    return (
+      typeof item?.author_name === "string" &&
+      typeof item?.song_name === "string" &&
+      typeof item?.song_image === "string" &&
+      typeof item?.id === "number"
+    );
+  };
+
+  const Artistsongs: Song[] = Data.flatMap((item) => item.songs || [])
+    .filter(isSong)
+    .filter((item) => item.author_name === Info.author_name);
   return (
-    <div className="w-[100%] ">
+    <div className="w-[100%]">
       <div className="w-[100%] relative justify-center">
         <img
-          className="w-[100%] max-h-[420px] min-[1700px]:object-cover  "
+          width={600}
+          height={600}
+          className="w-[100%] max-h-[420px] min-[1700px]:object-cover"
           src={Info?.author_image}
           alt={Info?.author_name}
         />
         <div className="max-w-[1700px] w-[100%] absolute bottom-0 left-1/2 -translate-x-1/2 px-[20px] py-[20px]">
-          <div className="flex flex-col   ">
-            <div className="flex items-center  gap-[15px]">
+          <div className="flex flex-col">
+            <div className="flex items-center gap-[15px]">
               <Verified_icon classname="w-[20px] h-[20px] bg-white rounded-[50%]" />
               <p className="text-[#fff] text-[14px] font-[700]">
                 Verified Artist

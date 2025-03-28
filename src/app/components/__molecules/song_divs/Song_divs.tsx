@@ -1,15 +1,11 @@
 import React from "react";
 import Link from "next/link";
-interface SongDivs {
-  href: string;
-  id?: number;
-  image?: string;
-  songname?: string;
-  artist?: String;
-}
-function Song_divs({ href, id, image, songname, artist }: SongDivs) {
+
+import { SongDivs } from "@/app/common/types";
+
+function Song_divs({ href, key, image, songname, artist }: SongDivs) {
   return (
-    <Link href={href} className="cursor-pointer" key={id}>
+    <Link href={href} className="cursor-pointer" key={key}>
       <div className="w-[170px] h-[170px]">
         <img
           className="w-[100%] h-[100%] rounded-[10px]"

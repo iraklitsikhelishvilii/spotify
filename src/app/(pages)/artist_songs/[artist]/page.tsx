@@ -9,7 +9,7 @@ import React from "react";
 import Data from "../../../../../json_file/data.json";
 
 function page({ params }: Params) {
-  const ArtistNameDecoded = decodeURIComponent(params.artistname);
+  const ArtistNameDecoded = decodeURIComponent(params.artist);
   console.log(ArtistNameDecoded);
 
   const ChosenArtist = Data.find(
@@ -21,7 +21,7 @@ function page({ params }: Params) {
   }
 
   return (
-    <div className=" w-[100%] h-[100vh] bg-[#000000] flex flex-col pb-[10px] flex">
+    <div className=" w-[100%] h-[100vh] bg-[#000000]  flex-col pb-[10px] flex">
       <Header />
       <div className="w-[100%] flex-1 h-full flex gap-[10px] overflow-hidden ">
         <Library_div />

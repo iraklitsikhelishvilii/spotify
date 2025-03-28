@@ -39,22 +39,42 @@ export interface Trendingsongsinner {
     color: string;
   };
 }
-
+export interface Songslist {
+  info: Song[];
+}
 export interface Artistsinner {
   Info: {
-    author_image?: string;
-    author_name?: string;
     id?: number;
-    song_image?: string;
-    song_name?: string;
-    isTreanding?: boolean;
-    popular?: boolean;
+    author_name?: string;
+    author_image?: string;
+    category?: string;
     color?: string;
+    songs?: Song[];
   };
 }
+
 export interface CreatePlaylistAllert {
   RemovePlaylistClick: () => void;
 }
 export interface Params {
   params: { song_name: string; artist: string; artistname: string };
+}
+export interface SongDivs {
+  href: string;
+  key: number;
+  image: string;
+  songname: string;
+  artist: string;
+}
+
+export interface Song {
+  song_name: string;
+  author_name: string;
+  song_image: string;
+  id: number;
+}
+
+export interface Moreoptionsminor2div {
+  icon: React.ReactNode;
+  text: string;
 }

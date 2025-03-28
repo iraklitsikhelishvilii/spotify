@@ -3,7 +3,6 @@ import Library_div from "../library_div/Library_div";
 import Footer from "../footer/Footer";
 import Songs_main from "../songs_main/Songs_main";
 import { useStates } from "@/app/common/store";
-import Podcasts_div from "../podcasts_div/Podcasts_div";
 
 function Container() {
   const { Podcasts, Allpodcasts, artist3 } = useStates();

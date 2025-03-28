@@ -10,7 +10,7 @@ function page() {
     (item) => item?.isTrending
   );
   return (
-    <div className=" w-[100%] h-[100vh] bg-[#000000] flex flex-col pb-[10px] flex">
+    <div className=" w-[100%] h-[100vh] bg-[#000000]  flex-col pb-[10px] flex">
       <Header />
       <div className="w-[100%] flex-1 h-full flex gap-[10px] overflow-hidden ">
         <Library_div />
@@ -24,10 +24,10 @@ function page() {
                 {AllTrendings.map((song, key) => (
                   <Song_divs
                     href={`/alltrendings/${song?.song_name}`}
-                    id={key}
-                    image={song?.song_image}
-                    songname={song?.song_name}
-                    artist={song?.author_name}
+                    key={key}
+                    image={song?.song_image ?? "/path/to/default/image.jpg"}
+                    songname={song?.song_name ?? "undefined"}
+                    artist={song?.author_name ?? "undefined"}
                   />
                 ))}
               </div>

@@ -2,6 +2,7 @@ import { useStates } from "@/app/common/store";
 import Data from "../../../../../json_file/data.json";
 import Link from "next/link";
 import Song_divs from "../../__molecules/song_divs/Song_divs";
+
 function Songs_main() {
   const { HandleSelectedAuthor3 } = useStates();
 
@@ -22,13 +23,13 @@ function Songs_main() {
         </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-auto gap-[14px] mt-[20px]">
-        {Data.map((artist, key) => {
+        {Data.map((artist) => {
           return artist.songs
             ?.slice(0, 1)
-            .map((song) => (
+            .map((song, key) => (
               <Song_divs
                 href={`/trending_songs/${song.song_name}`}
-                id={key}
+                key={key}
                 image={song.song_image}
                 songname={song.song_name}
                 artist={artist.author_name}

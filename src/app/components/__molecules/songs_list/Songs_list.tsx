@@ -1,12 +1,8 @@
 import React from "react";
 import Inner_functions_div from "../inner_functions_div/Inner_functions_div";
-interface Song {
-  song_name: string;
-  author_name: string;
-  song_image: string;
-  id: number;
-}
-function Songs_list({ info }: any) {
+import { Song, Songslist } from "@/app/common/types";
+
+function Songs_list({ info }: Songslist) {
   return (
     <div className="w-[100%] flex justify-center px-[20px] py-[20px]">
       <div className="w-[100%] max-w-[1700px]">
@@ -17,7 +13,7 @@ function Songs_list({ info }: any) {
           </div>
           <div className="w-[100%] h-[1px] bg-[#B3B3B3] mt-[10px] opacity-[0.5]"></div>
         </div>
-        {info?.map((item: any, key: any) => (
+        {info?.map((item: Song, key: number) => (
           <div key={key} className="w-[100%] flex mt-[15px]">
             <div className="flex items-center gap-[20px]">
               <p className="text-[#b3b3b3] text-[16px] font-[600]">
@@ -48,7 +44,7 @@ function Songs_list({ info }: any) {
           </p>
         </div>
         <div className="w-[100%] flex items-center gap-[30px] overflow-x-auto overflow-y-hidden mt-[70px]">
-          {info?.map((item: any, key: any) => (
+          {info?.map((item: Song, key: number) => (
             <div className="flex flex-col gap-[15px] cursor-pointer" key={key}>
               <div className="w-[162px] h-[162px]  ">
                 <img

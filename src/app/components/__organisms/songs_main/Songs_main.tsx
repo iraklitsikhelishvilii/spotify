@@ -2,6 +2,8 @@ import Data from "../../../../../json_file/data.json";
 import Link from "next/link";
 import Song_divs from "../../__molecules/song_divs/Song_divs";
 import AlbumsData from "../../../../../json_file/albums.json";
+import Radio_divs from "../../__molecules/radio_divs/Radio_divs";
+import RadioData from "../../../../../json_file/radios.json";
 function Songs_main() {
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col  ">
@@ -88,34 +90,29 @@ function Songs_main() {
         ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
-        <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
+        <Link
+          href="/radios"
+          className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
+        >
           Popular radio
-        </h1>
-        <p className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline">
+        </Link>
+        <Link
+          href="/allradios"
+          className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
+        >
           Show all
-        </p>
+        </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
-        {Data.map((music) => {
-          return music.radios?.map((radio) => (
-            <div className="cursor-pointer" key={radio.id}>
-              <div className="w-[150px] h-[150px] rounded-[50%]">
-                <img
-                  className="w-[100%] h-[100%] rounded-[10px]"
-                  src={radio.radio_image}
-                  alt={radio.radio_name}
-                />
-              </div>
-              <div className="mt-[10px]">
-                {radio.shows?.map((show) => (
-                  <p className="text-[14px] text-[#B3B3B3]" key={show.show_id}>
-                    {show.host}
-                  </p>
-                ))}
-              </div>
-            </div>
-          ));
-        })}
+        {RadioData.map((item, key) => (
+          <Radio_divs
+            key={key}
+            image={item?.radio_image}
+            radioname={item?.radio_name}
+            info={item}
+            href={`/radio/${item.radio_name}`}
+          />
+        ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
         <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">

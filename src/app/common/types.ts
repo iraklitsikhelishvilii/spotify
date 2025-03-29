@@ -40,6 +40,8 @@ export interface Trendingsongsinner {
     artist?: string;
     isTrending?: boolean;
     popular?: boolean;
+    radio_name?: string;
+    radio_image?: string;
   };
 }
 export interface Songslist {
@@ -55,12 +57,16 @@ export interface Artistsinner {
     songs?: Song[];
   };
 }
-
 export interface CreatePlaylistAllert {
   RemovePlaylistClick: () => void;
 }
 export interface Params {
-  params: { song_name: string; artist: string; artistname: string };
+  params: {
+    song_name: string;
+    artist: string;
+    artistname: string;
+    radioname: string;
+  };
 }
 export interface SongDivs {
   href: string;
@@ -72,13 +78,41 @@ export interface SongDivs {
 }
 
 export interface Song {
-  song_name: string;
-  author_name: string;
-  song_image: string;
+  song_name?: string;
+  author_name?: string;
+  song_image?: string;
   id: number;
+  show_name?: string;
+  show_image?: string;
+  radio_name?: string;
+  radio_image?: string;
+  show_id?: number;
 }
 
 export interface Moreoptionsminor2div {
   icon: React.ReactNode;
   text: string;
+}
+export interface Show {
+  show_id: number;
+  host: string;
+  show_name?: string;
+  show_image?: string;
+  radio_name?: string;
+  radio_image?: string;
+}
+
+interface Radio {
+  id: number;
+  radio_image: string;
+  radio_name: string;
+  shows?: Show[];
+}
+
+export interface RadioDivsProps {
+  key: number;
+  image: string;
+  radioname: string;
+  href: string;
+  info: Radio;
 }

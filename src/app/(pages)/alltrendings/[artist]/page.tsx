@@ -20,7 +20,7 @@ function page({ params }: Params) {
         <Library_div />
         <div className="w-full flex  flex-col overflow-auto bg-[#121212] rounded-[8px]  h-full ">
           <div className="flex flex-col h-[2000px]">
-            <Trending_songs_inner songData={isTreandingSong} />
+            <Trending_songs_inner songData={isTreandingSong || {}} />
             <Footer />
           </div>
         </div>

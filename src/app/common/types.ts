@@ -42,6 +42,9 @@ export interface Trendingsongsinner {
     popular?: boolean;
     radio_name?: string;
     radio_image?: string;
+    chart_name?: string;
+    chart_image?: string;
+    description?: string;
   };
 }
 export interface Songslist {
@@ -55,6 +58,9 @@ export interface Artistsinner {
     category?: string;
     color?: string;
     songs?: Song[];
+    chart_name?: string;
+    chart_image?: string;
+    description?: string;
   };
 }
 export interface CreatePlaylistAllert {
@@ -66,6 +72,9 @@ export interface Params {
     artist: string;
     artistname: string;
     radioname: string;
+    chart_name?: string;
+    chart_image?: string;
+    description?: string;
   };
 }
 export interface SongDivs {
@@ -75,6 +84,9 @@ export interface SongDivs {
   songname: string;
   artist: string;
   imgclass: string;
+  chart_name?: string;
+  chart_image?: string;
+  description?: string;
 }
 
 export interface Song {
@@ -87,6 +99,13 @@ export interface Song {
   radio_name?: string;
   radio_image?: string;
   show_id?: number;
+  chart_name?: string;
+  chart_image?: string;
+  description?: string;
+  song_id?: number;
+  artist?: string;
+  position?: number;
+  duration?: string;
 }
 
 export interface Moreoptionsminor2div {
@@ -115,4 +134,8 @@ export interface RadioDivsProps {
   radioname: string;
   href: string;
   info: Radio;
+}
+
+export interface DataItem {
+  songs: Song[];
 }

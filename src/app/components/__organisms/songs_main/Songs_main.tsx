@@ -4,6 +4,7 @@ import Song_divs from "../../__molecules/song_divs/Song_divs";
 import AlbumsData from "../../../../../json_file/albums.json";
 import Radio_divs from "../../__molecules/radio_divs/Radio_divs";
 import RadioData from "../../../../../json_file/radios.json";
+import FeaturedData from "../../../../../json_file/featured.json";
 function Songs_main() {
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col  ">
@@ -115,30 +116,30 @@ function Songs_main() {
         ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
-        <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
+        <Link
+          href={`/featured_charts`}
+          className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
+        >
           Featured Charts
-        </h1>
-        <p className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline">
+        </Link>
+        <Link
+          href={`/featured_charts`}
+          className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
+        >
           Show all
-        </p>
+        </Link>
       </div>
       <div className="flex w-[100%] justify-start overflow-auto gap-[14px] mt-[20px]">
-        {Data.map((music) => {
-          return music.featured_charts?.map((featured) => (
-            <div className="cursor-pointer" key={featured.id}>
-              <div className="w-[150px] h-[150px] rounded-[50%]">
-                <img
-                  className="w-[100%] h-[100%] rounded-[10px]"
-                  src={featured.chart_image}
-                  alt={featured.chart_name}
-                />
-              </div>
-              <p className="text-[10px] w-[150px] text-[#B3B3B3] mt-[3px]">
-                {featured.description}
-              </p>
-            </div>
-          ));
-        })}
+        {FeaturedData.map((music, key) => (
+          <Song_divs
+            href={`/featured_charts/${music?.chart_name}`}
+            key={key}
+            image={music?.chart_image ?? "/path/to/default/image.jpg"}
+            songname={music?.chart_name ?? "undefined"}
+            artist={music?.description ?? "undefined"}
+            imgclass="w-[100%] h-[100%] rounded-[10px]"
+          />
+        ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
         <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
@@ -152,7 +153,6 @@ function Songs_main() {
         {Data.map((music) => {
           return music.playlists?.map((playlist) => (
             <div className="cursor-pointer" key={playlist.id}>
-              {" "}
               <div className="w-[150px] h-[150px]">
                 <img
                   className="w-[100%] h-[100%] rounded-[10px]"

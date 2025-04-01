@@ -55,7 +55,7 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
       playlist_name: track.playlist_name,
       playlist_image: track.playlist_image,
     }))
-  );
+  ).filter((item) => item.playlist_name === songData?.playlist_name);
 
   const combinedInfo: (Song | Show)[] = [
     ...filteredSongs,

@@ -148,3 +148,6 @@ export interface FeaturedItem {
   color: string;
   songs: Song[];
 }
+export interface PodcastsDiv {
+  component: React.ReactNode;
+}

@@ -4,8 +4,6 @@ import Footer from "@/app/components/__organisms/footer/Footer";
 import Header from "@/app/components/__organisms/header/Header";
 import Library_div from "@/app/components/__organisms/library_div/Library_div";
 import React from "react";
-import Song_divs from "@/app/components/__molecules/song_divs/Song_divs";
-import PlaylistData from "../../../../json_file/playlists.json";
 import Podcasts_div from "@/app/components/__organisms/podcasts_div/Podcasts_div";
 import Podcast_categories_notfull from "@/app/components/__organisms/podcast_categories_notfull/Podcast_categories_notfull";
 function page() {

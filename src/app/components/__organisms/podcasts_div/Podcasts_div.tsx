@@ -1,6 +1,7 @@
+import { PodcastsDiv } from "@/app/common/types";
 import React from "react";
 
-function Podcasts_div({ component }) {
+function Podcasts_div({ component }: PodcastsDiv) {
   return (
     <div className="flex w-[100%] flex-col ">
       <div

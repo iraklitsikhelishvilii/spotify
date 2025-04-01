@@ -3,15 +3,7 @@ import Link from "next/link";
 
 import { SongDivs } from "@/app/common/types";
 
-function Song_divs({
-  href,
-  key,
-  image,
-  songname,
-  artist,
-  imgclass,
-  chart_name,
-}: SongDivs) {
+function Song_divs({ href, key, image, songname, artist, imgclass }: SongDivs) {
   return (
     <Link href={href} className="cursor-pointer" key={key}>
       <div className="w-[170px] h-[170px]">

@@ -4,7 +4,6 @@ import Footer from "@/app/components/__organisms/footer/Footer";
 import Header from "@/app/components/__organisms/header/Header";
 import Library_div from "@/app/components/__organisms/library_div/Library_div";
 import React from "react";
-import FeaturedData from "../../../../json_file/featured.json";
 import Song_divs from "@/app/components/__molecules/song_divs/Song_divs";
 import PlaylistData from "../../../../json_file/playlists.json";
 function page() {

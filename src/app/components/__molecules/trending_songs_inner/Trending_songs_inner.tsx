@@ -1,18 +1,17 @@
+"use client";
 import Songs_list from "../songs_list/Songs_list";
 import Data from "../../../../../json_file/data.json";
 import AlbumsData from "../../../../../json_file/albums.json";
 import RadioData from "../../../../../json_file/radios.json";
 import FeaturedData from "../../../../../json_file/featured.json";
-import { DataItem, Show, Song, Trendingsongsinner } from "@/app/common/types";
-
-interface FeaturedItem {
-  id: number;
-  chart_name: string;
-  chart_image: string;
-  description: string;
-  color: string;
-  songs: Song[];
-}
+import {
+  DataItem,
+  FeaturedItem,
+  Show,
+  Song,
+  Trendingsongsinner,
+} from "@/app/common/types";
+import PlaylistData from "../../../../../json_file/playlists.json";
 
 function Trending_songs_inner({ songData }: Trendingsongsinner) {
   const allSongs: Song[] = (Data as DataItem[]).flatMap((item) => item?.songs);
@@ -44,13 +43,27 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
       }))
     : [];
 
+  console.log(songData?.playlist_name);
+
+  const playlists: Song[] = PlaylistData.flatMap((playlist) =>
+    (playlist.tracks || []).map((track) => ({
+      id: track.track_id,
+      song_name: track.song_name,
+      author_name: track.artist,
+      duration: track.duration,
+      song_image: track.song_image,
+      playlist_name: track.playlist_name,
+      playlist_image: track.playlist_image,
+    }))
+  );
+
   const combinedInfo: (Song | Show)[] = [
     ...filteredSongs,
     ...filteredAlbumSongs,
     ...Allradios,
     ...chosenFeatured.flatMap((item) => item.songs),
+    ...playlists,
   ];
-
   return (
     <div className="w-full flex flex-col flex-1 h-full">
       <div
@@ -67,18 +80,22 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
               src={
                 songData?.song_image ||
                 songData?.radio_image ||
-                songData?.chart_image
+                songData?.chart_image ||
+                songData?.playlist_image
               }
               alt={
                 songData?.song_name ||
                 songData?.radio_name ||
-                songData?.chart_name
+                songData?.chart_name ||
+                songData?.playlist_name
               }
             />
           </div>
           <div className="flex flex-col items-baseline justify-end">
             <h1 className="font-bold text-white text-4xl">
-              {songData?.song_name || songData?.radio_name}
+              {songData?.song_name ||
+                songData?.radio_name ||
+                songData?.playlist_name}
             </h1>
             <div className="flex items-center gap-2.5">
               <img
@@ -87,18 +104,21 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
                   songData?.author_image ||
                   songData?.song_image ||
                   songData?.radio_image ||
-                  songData?.chart_image
+                  songData?.chart_image ||
+                  songData?.playlist_image
                 }
                 alt={
                   songData?.author_name ||
                   songData?.radio_name ||
-                  songData?.chart_name
+                  songData?.chart_name ||
+                  songData?.playlist_name
                 }
               />
               <p className="text-sm font-bold text-white mt-1">
                 {songData?.author_name ||
                   songData?.radio_name ||
-                  songData?.chart_name}
+                  songData?.chart_name ||
+                  songData?.playlist_name}
               </p>
             </div>
           </div>

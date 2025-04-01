@@ -45,6 +45,8 @@ export interface Trendingsongsinner {
     chart_name?: string;
     chart_image?: string;
     description?: string;
+    playlist_name?: string;
+    playlist_image?: string;
   };
 }
 export interface Songslist {
@@ -87,6 +89,8 @@ export interface SongDivs {
   chart_name?: string;
   chart_image?: string;
   description?: string;
+  playlist_name?: string;
+  splaylist_image?: string;
 }
 
 export interface Song {
@@ -137,5 +141,14 @@ export interface RadioDivsProps {
 }
 
 export interface DataItem {
+  songs: Song[];
+}
+
+export interface FeaturedItem {
+  id: number;
+  chart_name: string;
+  chart_image: string;
+  description: string;
+  color: string;
   songs: Song[];
 }

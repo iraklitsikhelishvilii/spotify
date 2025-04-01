@@ -5,6 +5,7 @@ import AlbumsData from "../../../../../json_file/albums.json";
 import Radio_divs from "../../__molecules/radio_divs/Radio_divs";
 import RadioData from "../../../../../json_file/radios.json";
 import FeaturedData from "../../../../../json_file/featured.json";
+import PlaylistsData from "../../../../../json_file/playlists.json";
 function Songs_main() {
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col  ">
@@ -142,30 +143,30 @@ function Songs_main() {
         ))}
       </div>
       <div className="flex w-[100%] items-center justify-between mt-[50px]">
-        <h1 className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline">
+        <Link
+          href={`/playlists`}
+          className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
+        >
           Playlists from our Editors
-        </h1>
-        <p className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline">
+        </Link>
+        <Link
+          href={`/playlists`}
+          className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
+        >
           Show all
-        </p>
+        </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-auto gap-[14px] mt-[20px]">
-        {Data.map((music) => {
-          return music.playlists?.map((playlist) => (
-            <div className="cursor-pointer" key={playlist.id}>
-              <div className="w-[150px] h-[150px]">
-                <img
-                  className="w-[100%] h-[100%] rounded-[10px]"
-                  src={playlist.playlist_image}
-                  alt={playlist.playlist_name}
-                />
-              </div>
-              <p className="text-[14px] text-[#B3B3B3] mt-[3px]">
-                {playlist.playlist_name}
-              </p>
-            </div>
-          ));
-        })}
+        {PlaylistsData.map((music, key) => (
+          <Song_divs
+            href={`/playlists/${music?.playlist_name}`}
+            key={key}
+            image={music?.playlist_image ?? "/path/to/default/image.jpg"}
+            songname={music?.playlist_name ?? "undefined"}
+            artist={music?.playlist_name ?? "undefined"}
+            imgclass="w-[100%] h-[100%] rounded-[10px]"
+          />
+        ))}
       </div>
     </div>
   );

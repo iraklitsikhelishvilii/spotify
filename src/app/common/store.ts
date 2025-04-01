@@ -16,14 +16,6 @@ export const useStates = create<ZustandProps>((set) => ({
   NewPlaylistClick: () => {
     set(() => ({ plus: false, playlist: true }));
   },
-  Podcasts: false,
-  HandlePodcasts: () => {
-    set(() => ({ Podcasts: true }));
-  },
-  Allpodcasts: false,
-  HandleAllPodcasts: () => {
-    set(() => ({ Allpodcasts: true }));
-  },
 
   artist3: "",
   HandleSelectedAuthor3: (artist3?: string) => {

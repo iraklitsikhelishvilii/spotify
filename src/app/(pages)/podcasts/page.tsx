@@ -6,6 +6,8 @@ import Library_div from "@/app/components/__organisms/library_div/Library_div";
 import React from "react";
 import Song_divs from "@/app/components/__molecules/song_divs/Song_divs";
 import PlaylistData from "../../../../json_file/playlists.json";
+import Podcasts_div from "@/app/components/__organisms/podcasts_div/Podcasts_div";
+import Podcast_categories_notfull from "@/app/components/__organisms/podcast_categories_notfull/Podcast_categories_notfull";
 function page() {
   return (
     <div className=" w-[100%] h-[100vh] bg-[#000000]  flex-col pb-[10px] flex">
@@ -14,25 +16,7 @@ function page() {
         <Library_div />
         <div className="w-full flex  flex-col overflow-auto bg-[#121212] rounded-[8px]  h-full ">
           <div className="flex flex-col h-[2000px] items-center">
-            <div className="w-full max-w-[1700px] px-[15px]">
-              <h1 className="text-[#fff] text-[32px] font-[700] mt-[70px]">
-                Playlists from our Editors
-              </h1>
-              <div className="w-[100$] grid grid-cols-5 mt-[40px] gap-[30px]">
-                {PlaylistData.map((radio, key) => (
-                  <Song_divs
-                    href={`/playlists/${radio?.playlist_name}`}
-                    key={key}
-                    image={
-                      radio?.playlist_image ?? "/path/to/default/image.jpg"
-                    }
-                    songname={radio?.playlist_name ?? "undefined"}
-                    artist={radio?.description ?? "undefined"}
-                    imgclass="w-[100%] h-[100%] rounded-[10px]"
-                  />
-                ))}
-              </div>
-            </div>
+            <Podcasts_div component={<Podcast_categories_notfull />} />
             <Footer />
           </div>
         </div>

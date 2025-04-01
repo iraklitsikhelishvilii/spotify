@@ -6,8 +6,6 @@ export interface Icon {
 export interface ZustandProps {
   playlist: boolean;
   plus: boolean;
-  Podcasts: boolean;
-  Allpodcasts: boolean;
   artist3: string;
   plusHover: boolean;
   marked: boolean;
@@ -17,8 +15,6 @@ export interface ZustandProps {
   RemovePlaylistClick: () => void;
   handlePlus: () => void;
   NewPlaylistClick: () => void;
-  HandlePodcasts: () => void;
-  HandleAllPodcasts: () => void;
   HandleSelectedAuthor3: (artist3?: string) => void;
   PlusEnter: () => void;
   PlusLeave: () => void;

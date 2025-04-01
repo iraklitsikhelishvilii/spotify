@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Globus_icon from "@/app/common/icons/Globus_icon";
 import Music_icon from "@/app/common/icons/Music_icon";
 import Plus_icon from "@/app/common/icons/Plus_icon";
@@ -14,7 +14,6 @@ function Library_div() {
     plus,
     handlePlus,
     NewPlaylistClick,
-    HandlePodcasts,
   } = useStates();
 
   return (
@@ -59,12 +58,12 @@ function Library_div() {
           <p className="text-[14px] text-[#fff] font-[400]">
             {" We'll keep you updated on new episodes"}
           </p>
-          <button
-            onClick={HandlePodcasts}
+          <Link
+            href={`/podcasts`}
             className="py-[4px] px-[16px] bg-[#ffff] max-w-[148px] text-[14px] text-[#000000] rounded-[20px] mt-[10px]"
           >
             Browse podcasts
-          </button>
+          </Link>
         </div>
       </div>
       <div className="flex flex-col mb-[40px]">

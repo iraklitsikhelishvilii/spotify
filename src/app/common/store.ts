@@ -52,4 +52,7 @@ export const useStates = create<ZustandProps>((set) => ({
   },
   email: "",
   setEmail: (email) => set({ email }),
+
+  password: "",
+  setpassword: (password) => set({ password }),
 }));

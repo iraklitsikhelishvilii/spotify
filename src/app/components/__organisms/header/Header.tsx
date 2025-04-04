@@ -78,10 +78,18 @@ function Header() {
             </Link>
           </div>
           <div className="flex items-center justify-center gap-[10px] relative">
-            <p className="text-[#b3b3b3]  text-[14px]">Sign Up</p>
-            <button className="px-[32px] py-[8px] bg-[#fff] font-[700] text-[16px] text-[#000000] rounded-[20px]">
+            <Link
+              href={`/signup_page_email`}
+              className="text-[#b3b3b3]  text-[14px]"
+            >
+              Sign Up
+            </Link>
+            <Link
+              href={`/login_page`}
+              className="px-[32px] py-[8px] bg-[#fff] font-[700] text-[16px] text-[#000000] rounded-[20px]"
+            >
               Log in
-            </button>
+            </Link>
             {marked && <Logged_out_alert />}
           </div>
         </div>

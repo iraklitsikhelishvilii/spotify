@@ -11,6 +11,8 @@ export interface ZustandProps {
   marked: boolean;
   dotsHover: boolean;
   DotsClick: boolean;
+  email?: string;
+  validemail?: boolean;
   HandlePlatlistClick: () => void;
   RemovePlaylistClick: () => void;
   handlePlus: () => void;
@@ -23,6 +25,8 @@ export interface ZustandProps {
   DotsEnter: () => void;
   DotsLeave: () => void;
   DotsClickFunc: () => void;
+  setEmail?: (email: string) => void;
+  setvalidemail?: () => void;
 }
 
 export interface Trendingsongsinner {

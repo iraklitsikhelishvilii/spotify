@@ -46,4 +46,10 @@ export const useStates = create<ZustandProps>((set) => ({
   DotsClickFunc: () => {
     set((state) => ({ DotsClick: !state.DotsClick }));
   },
+  validemail: false,
+  setvalidemail: () => {
+    set(() => ({ validemail: true }));
+  },
+  email: "",
+  setEmail: (email) => set({ email }),
 }));

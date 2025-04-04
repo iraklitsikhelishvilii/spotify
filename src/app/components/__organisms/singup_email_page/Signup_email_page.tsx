@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Login_btns_div from "../../__atoms/login_btns_div/Login_btns_div";
 import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
 import Link from "next/link";

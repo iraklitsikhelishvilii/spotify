@@ -5,11 +5,10 @@ import React from "react";
 import Image from "next/image";
 import Black_logo from "../../assets/images/logo.png";
 import Loging_btn_green from "@/app/components/__atoms/login_btn_green/Loging_btn_green";
-import Login_btns_div from "@/app/components/__atoms/login_btns_div/Login_btns_div";
 import Link from "next/link";
 import Eye_icon from "@/app/common/icons/Eye_icon";
 
-function page() {
+function SignupPageEmail() {
   const { validemail } = useStates();
   return (
     <div className="bg-[#121212] w-[100%] h-[100vh] flex items-center justify-center">
@@ -67,4 +66,4 @@ function page() {
   );
 }
 
-export default page;
+export default SignupPageEmail;

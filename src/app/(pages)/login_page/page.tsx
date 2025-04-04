@@ -62,7 +62,7 @@ function page() {
         </p>
         <div className="flex items-center justify-center mt-[32px] gap-[7px] mb-[50px]">
           <p className="text-[#b3b3b3] text-[16px] font-[600] ">
-            Don't have an account?{" "}
+            {`Don't have an account?`}
           </p>{" "}
           <Link
             href={`/signup_page_email`}

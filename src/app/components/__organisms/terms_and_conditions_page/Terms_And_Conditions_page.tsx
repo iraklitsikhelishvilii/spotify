@@ -36,8 +36,8 @@ function Terms_And_Conditions_page() {
           <div className="flex w-[100%] items-start gap-[10px] bg-[#2a2a2a] py-[16px] pl-[16px] rounded-[5px]">
             <input type="checkbox" />
             <p className="text-[14px] text-[#fff] fonr-[700]">
-              Share my registration data with Spotify's <br /> content providers
-              for marketing <br /> purposes.
+              {"Share my registration data with Spotify's"} <br /> content
+              providers for marketing <br /> purposes.
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@ function Terms_And_Conditions_page() {
       <div className="max-w-[324px] w-[100%] flex flex-col mt-[20px] gap-[10px]">
         <div>
           <p className="text-[14px] text-[#fff] fonr-[700]">
-            By clicking on sign-up, you agree to Spotify's{" "}
+            {"  By clicking on sign-up, you agree to Spotify's"}
           </p>
           <Link
             className="text-[14px] text-[#1db954] fonr-[700] underline"
@@ -63,7 +63,7 @@ function Terms_And_Conditions_page() {
             className="text-[14px] text-[#1db954] fonr-[700] underline"
             href={"https://www.spotify.com/ge/legal/privacy-policy/"}
           >
-            Spotify's Privacy Policy
+            {"Spotify's Privacy Policy"}
           </Link>
         </div>
       </div>

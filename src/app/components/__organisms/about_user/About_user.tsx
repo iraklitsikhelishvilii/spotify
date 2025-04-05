@@ -35,7 +35,8 @@ function About_user({ setValidAbout }: About_user) {
     if (month === "") {
       setmontherror("Select your birth month.");
     } else {
-      setmontherror(""), setvalidmonth(true);
+      setmontherror("");
+      setvalidmonth(true);
     }
 
     const newData = new Date();

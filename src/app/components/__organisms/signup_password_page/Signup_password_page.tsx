@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Eye_icon from "@/app/common/icons/Eye_icon";
 import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
@@ -19,7 +19,7 @@ function Signup_password_page() {
     oneSymbolError,
     setTenChar,
     oneLetterError,
-    setOneLetterError,  
+    setOneLetterError,
     setOneSymbolError,
     tenCharError,
     setTenCharError,

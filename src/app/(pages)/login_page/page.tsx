@@ -10,7 +10,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebaseconfig";
 import { useRouter } from "next/navigation";
 
-function page() {
+function Page() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +23,7 @@ function page() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/");
-    } catch (error) {
+    } catch {
       console.log("error");
     }
   };
@@ -106,4 +106,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
 import Left_arrow_icon from "@/app/common/icons/Left_arrow_icon";
 import Image from "next/image";

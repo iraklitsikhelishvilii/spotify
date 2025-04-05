@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { ZustandProps } from "./types";
 
-export const useStates = create<ZustandProps>((set, get) => ({
+export const useStates = create<ZustandProps>((set) => ({
   playlist: false,
   HandlePlatlistClick: () => {
     set(() => ({ playlist: true }));

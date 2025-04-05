@@ -1,7 +1,7 @@
 "use client";
 import { useStates } from "@/app/common/store";
 import Signup_email_page from "@/app/components/__organisms/singup_email_page/Signup_email_page";
-import React, { useState } from "react";
+import React from "react";
 import Signup_password_page from "@/app/components/__organisms/signup_password_page/Signup_password_page";
 import About_user from "@/app/components/__organisms/about_user/About_user";
 import Terms_And_Conditions_page from "@/app/components/__organisms/terms_and_conditions_page/Terms_And_Conditions_page";

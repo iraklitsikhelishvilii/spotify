@@ -6,12 +6,11 @@ import Library_top_unothorized from "../library_top_unuthorized/Library_top_unot
 import Library_bottom_unothorized from "../library_bottom_unothorized/Library_bottom_unothorized";
 function Library_div() {
   const [user, setUser] = useState<User | null>(null);
-  const [userName, setUserName] = useState<string | null>(null);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        setUserName(user.displayName);
       } else {
         setUser(null);
       }

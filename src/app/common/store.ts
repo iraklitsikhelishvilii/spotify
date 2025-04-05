@@ -53,6 +53,26 @@ export const useStates = create<ZustandProps>((set) => ({
   email: "",
   setEmail: (email) => set({ email }),
 
-  password: "",
-  setpassword: (password) => set({ password }),
+  // password: "",
+  // tenChar: false,
+  // oneLetter: false,
+  // oneSymbol: false,
+  // vlidPassword: false,
+  // passwordisvalid: false,
+  // setpasswordisvalid: () => {
+  //   set({ passwordisvalid: true });
+  // },
+  // setPassword: (password: string) => {
+  //   const hasTenChar = password.length >= 10;
+  //   const hasLetter = /[a-zA-Z]/.test(password);
+  //   const hasSymbolOrNumber = /[0-9!@#$%^&*()_+=-]/.test(password);
+  //   const isValid = hasTenChar && hasLetter && hasSymbolOrNumber;
+  //   set({
+  //     password,
+  //     tenChar: hasTenChar,
+  //     oneLetter: hasLetter,
+  //     oneSymbol: hasSymbolOrNumber,
+  //     vlidPassword: isValid,
+  //   });
+  // },
 }));

@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "../types";
 
-function mark_icon({ classname }: Icon) {
+function Mark_icon({ classname }: Icon) {
   return (
     <svg
       data-encore-id="icon"
@@ -16,4 +16,4 @@ function mark_icon({ classname }: Icon) {
   );
 }
 
-export default mark_icon;
+export default Mark_icon;

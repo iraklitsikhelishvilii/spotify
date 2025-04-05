@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Login_btns_div from "../../__atoms/login_btns_div/Login_btns_div";
 import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
 import Link from "next/link";
 import Image from "next/image";
 import Black_logo from "../../../assets/images/logo.png";
 import { useStates } from "@/app/common/store";
+import Error_icon from "@/app/common/icons/Error_icon";
 
 function Signup_email_page() {
   const { email, setEmail, setvalidemail } = useStates();
+  const [emailerror, setemailerror] = useState("");
+  const emailRegex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
   const handleemail = () => {
-    if (email !== "") {
+    if (!email || !emailRegex.test(email)) {
+      setemailerror(
+        "This email is invalid. Make sure it's written like example@email.com"
+      );
+    } else {
+      setemailerror("");
       setvalidemail?.();
     }
   };
@@ -34,13 +42,28 @@ function Signup_email_page() {
         </label>
         <input
           onChange={(e) => setEmail?.(e.target.value)}
-          className="bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] px-[10px] outline-none  border-solid border-[2px] border-[#5c5c5c] rounded-[5px]"
+          className={`bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] px-[10px] outline-none  border-solid border-[2px] rounded-[5px] ${
+            emailerror ? "border-[#e91429] " : "border-[#5c5c5c] "
+          }`}
           type="text"
           name="email"
           id="email"
+          placeholder="name@domain.com"
         />
+        {emailerror && (
+          <div className="max-w-[324px] w-[100%] mt-[8px] flex items-center gap-[5px]">
+            <Error_icon classname="min-w-[16px] h-[20px]" />
+            <p className="text-[#f3727f] text-[14px] flex justify-start">
+              {emailerror}
+            </p>
+          </div>
+        )}
       </div>
-      <Loging_btn_green handleemail={handleemail} text="Next" />
+      <Loging_btn_green
+        classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]"
+        handle={handleemail}
+        text="Next"
+      />
       <div className="max-w-[324px] w-[100%] flex items-center mt-[32px]">
         <div className="bg-[#5c5c5c] w-[100%] h-[1px]"></div>
         <p className="text-[14px] font-[600] text-[#fff] mx-[10px]">or</p>

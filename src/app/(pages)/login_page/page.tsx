@@ -56,7 +56,7 @@ function page() {
             </div>
           </div>
         </div>
-        <Loging_btn_green text="Log in" />
+        <Loging_btn_green classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]" text="Log in" />
         <p className=" underline text-[16px] font-[700] text-[#fff] mt-[32px] hover:text-[#1ed760] cursor-pointer">
           Forgot your password?
         </p>

@@ -4,54 +4,50 @@ import Eye_icon from "@/app/common/icons/Eye_icon";
 import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
 import Black_logo from "../../../assets/images/logo.png";
 import Left_arrow_icon from "@/app/common/icons/Left_arrow_icon";
-import { useStates } from "@/app/common/store";
-function Signup_password_page() {
-  const { password, setpassword } = useStates();
-  const [tenchar, settenchar] = useState(false);
-  const [oneletter, setoneletter] = useState(false);
-  const [onesymbol, setonesymbol] = useState(false);
-  useEffect(() => {
-    const pass = password || "";
-    if (
-      pass?.length >= 10 &&
-      /[a-zA-Z]/.test(pass) &&
-      /[0-9!@#$%^&*()_+=-]/.test(pass)
-    ) {
-      settenchar(true);
-      setoneletter(true);
-      setonesymbol(true);
-    } else if (pass?.length >= 10 && /[a-zA-Z]/.test(pass)) {
-      settenchar(true);
-      setoneletter(true);
-      setonesymbol(false);
-    } else if (pass?.length >= 10 && /[0-9!@#$%^&*()_+=-]/.test(pass)) {
-      settenchar(true);
-      setoneletter(false);
-      setonesymbol(true);
-    } else if (/[a-zA-Z]/.test(pass) && /[0-9!@#$%^&*()_+=-]/.test(pass)) {
-      settenchar(false);
-      setoneletter(true);
-      setonesymbol(true);
-    } else if (/[a-zA-Z]/.test(pass)) {
-      settenchar(false);
-      setoneletter(true);
-      setonesymbol(false);
-    } else if (/[0-9!@#$%^&*()_+=-]/.test(pass)) {
-      settenchar(false);
-      setoneletter(false);
-      setonesymbol(true);
-    } else if (pass?.length >= 10) {
-      settenchar(true);
-      setoneletter(false);
-      setonesymbol(false);
-    } else {
-      settenchar(false);
-      setoneletter(false);
-      setonesymbol(false);
-    }
-  }, [password]);
-  console.log(password);
+import Mark_icon from "@/app/common/icons/Mark_icon";
+interface Signup_password_page {
+  setvalidpassword: (validpassword: boolean) => void;
+}
+function Signup_password_page({ setvalidpassword }: Signup_password_page) {
+  const [password, setPassword] = useState("");
+  const [oneLetter, setoneLetter] = useState(false);
+  const [oneSymbol, setoneSymbol] = useState(false);
+  const [tenChar, settenChar] = useState(false);
+  const [onelettererror, setonelettererror] = useState(false);
+  const [onesymbolerror, setonesymbolerror] = useState(false);
+  const [tencharerror, settencharerror] = useState(false);
+  const letters = /[a-zA-Z]/;
+  const symbols = /[0-9!@#\$%\^\&*\)\(+=._-]/;
 
+  useEffect(() => {
+    if (letters.test(password)) {
+      setoneLetter(true);
+      setonelettererror(false);
+    } else setoneLetter(false);
+    if (symbols.test(password)) {
+      setoneSymbol(true);
+      setonesymbolerror(false);
+    } else setoneSymbol(false);
+    if (password.length >= 10) {
+      settenChar(true);
+      settencharerror(false);
+    } else settenChar(false);
+  }, [password, setPassword]);
+
+  const handlepassword = () => {
+    if (oneLetter && oneSymbol && tenChar) {
+      setvalidpassword(true);
+    }
+    if (!oneLetter) {
+      setonelettererror(true);
+    } else setonelettererror(false);
+    if (!oneSymbol) {
+      setonesymbolerror(true);
+    } else setonesymbolerror(false);
+    if (!tenChar) {
+      settencharerror(true);
+    } else settencharerror(false);
+  };
   return (
     <div className="w-[100%] flex flex-col items-center">
       <Image
@@ -77,9 +73,11 @@ function Signup_password_page() {
         >
           Password
         </label>
-        <div className="w-[100%] flex items-center  border-solid border-[2px] border-[#5c5c5c] rounded-[5px] px-[10px]">
+        <div
+          className={`w-[100%] flex items-center  border-solid border-[2px]  rounded-[5px] px-[10px] border-[#5c5c5c]`}
+        >
           <input
-            onChange={(e) => setpassword?.(e.target.value)}
+            onChange={(e) => setPassword?.(e.target.value)}
             className="bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] pr-[15px] outline-none "
             type="password"
             name="password"
@@ -95,31 +93,59 @@ function Signup_password_page() {
         <div className="flex max-w-[324px] w-[100%] gap-[10px] items-center">
           <div
             className={`w-[12px] h-[12px] rounded-[50%] border-solid border-[1px] ${
-              oneletter ? "border-[#1ed760]" : "border-[#5c5c5c]"
+              oneLetter ? "border-[#1ed760]" : "border-[#5c5c5c]"
             }`}
-          ></div>
-          <p className="text-[13px] text-[#fff] font-[700]">1 letter</p>
+          >
+            {oneLetter && <Mark_icon classname="w-[100%] h-[100%]" />}
+          </div>
+          <p
+            className={`text-[13px] font-[700] ${
+              onelettererror ? "text-[#f3727f]" : " text-[#fff] "
+            }`}
+          >
+            1 letter
+          </p>
         </div>
         <div className="flex max-w-[324px] w-[100%] gap-[10px] items-center">
           <div
             className={`w-[12px] h-[12px] rounded-[50%] border-solid border-[1px] ${
-              onesymbol ? "border-[#1ed760]" : "border-[#5c5c5c]"
+              oneSymbol ? "border-[#1ed760]" : "border-[#5c5c5c]"
             }`}
-          ></div>
-          <p className="text-[13px] text-[#fff] font-[700]">
+          >
+            {" "}
+            {oneSymbol && <Mark_icon classname="w-[100%] h-[100%]" />}
+          </div>
+          <p
+            className={`text-[13px] font-[700] ${
+              onesymbolerror ? "text-[#f3727f]" : " text-[#fff] "
+            }`}
+          >
             1 number or special character (example: # ? ! &)
           </p>
         </div>{" "}
         <div className="flex max-w-[324px] w-[100%] gap-[10px] items-center">
           <div
             className={`w-[12px] h-[12px] rounded-[50%] border-solid border-[1px] ${
-              tenchar ? "border-[#1ed760]" : "border-[#5c5c5c]"
+              tenChar ? "border-[#1ed760]" : "border-[#5c5c5c]"
             }`}
-          ></div>
-          <p className="text-[13px] text-[#fff] font-[700]">10 characters</p>
+          >
+            {" "}
+            {tenChar && <Mark_icon classname="w-[100%] h-[100%]" />}
+          </div>
+          <p
+            className={`text-[13px] font-[700] ${
+              tencharerror ? "text-[#f3727f]" : " text-[#fff] "
+            }`}
+          >
+            10 characters
+          </p>
         </div>
       </div>
-      <Loging_btn_green text="Next" />
+      <Loging_btn_green
+        classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]"
+        handle={handlepassword}
+        text="Next"
+      />
     </div>
   );
 }

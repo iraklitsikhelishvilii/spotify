@@ -1,0 +1,19 @@
+import React from "react";
+import { Icon } from "../types";
+
+function Song_icon({ classname }: Icon) {
+  return (
+    <svg
+      data-encore-id="icon"
+      role="img"
+      aria-hidden="true"
+      className={classname}
+      viewBox="0 0 24 24"
+      fill="#fff"
+    >
+      <path d="M3 8V5H0V3h3V0h2v3h3v2H5v3H3zm8-4c0 .34-.024.673-.07 1H19v9.667h-1.5a3.5 3.5 0 1 0 3.5 3.5V3H10.93c.046.327.07.66.07 1zm8 12.667v1.5a1.5 1.5 0 1 1-1.5-1.5H19zM6 10.71a6.972 6.972 0 0 0 2-.965v8.422a3.5 3.5 0 1 1-3.5-3.5H6V10.71zm0 5.957H4.5a1.5 1.5 0 1 0 1.5 1.5v-1.5z"></path>
+    </svg>
+  );
+}
+
+export default Song_icon;

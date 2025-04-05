@@ -4,6 +4,8 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import { useEffect, useState } from "react";
 import Library_top_unothorized from "../library_top_unuthorized/Library_top_unothorized";
 import Library_bottom_unothorized from "../library_bottom_unothorized/Library_bottom_unothorized";
+import Library_div_authorized from "../library_div_authorized/Library_div_authorized";
+
 function Library_div() {
   const [user, setUser] = useState<User | null>(null);
 
@@ -19,8 +21,8 @@ function Library_div() {
     return () => unsubscribe();
   }, []);
   return (
-    <div className=" relative min-w-[300px] bg-[#121212] rounded-[8px] px-[10px] py-[10px] flex-1 h-full flex flex-col  justify-between ">
-      {user ? <div></div> : <Library_top_unothorized />}
+    <div className=" relative min-w-[300px] bg-[#121212] rounded-[8px] px-[20px] py-[10px] flex-1 h-full flex flex-col  justify-between ">
+      {user ? <Library_div_authorized /> : <Library_top_unothorized />}
       {!user && <Library_bottom_unothorized />}
     </div>
   );

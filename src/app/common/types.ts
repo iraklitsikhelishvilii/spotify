@@ -67,6 +67,8 @@ export interface ZustandProps {
   setYearError: (value: string) => void;
   setGenderError: (value: string) => void;
   setValidAbout: () => void;
+  authorizedplus: boolean;
+  handleauthorizedplus: () => void;
 }
 
 export interface Trendingsongsinner {

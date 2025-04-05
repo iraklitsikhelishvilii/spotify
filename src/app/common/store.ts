@@ -94,4 +94,9 @@ export const useStates = create<ZustandProps>((set) => ({
   setMonthError: (value) => set({ monthError: value }),
   setYearError: (value) => set({ yearError: value }),
   setGenderError: (value) => set({ genderError: value }),
+
+  authorizedplus: false,
+  handleauthorizedplus: () => {
+    set((state) => ({ authorizedplus: !state.authorizedplus }));
+  },
 }));

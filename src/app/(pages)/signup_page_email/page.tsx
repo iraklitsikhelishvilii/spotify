@@ -7,19 +7,23 @@ import About_user from "@/app/components/__organisms/about_user/About_user";
 import Terms_And_Conditions_page from "@/app/components/__organisms/terms_and_conditions_page/Terms_And_Conditions_page";
 
 function SignupPageEmail() {
-  const { validemail } = useStates();
-  const [validpassword, setvalidpassword] = useState(false);
-  const [validAbout, setValidAbout] = useState(false);
+  const { validemail, validPassword, password, email, validAbout, name } =
+    useStates();
+
+  console.log(password);
+  console.log(email);
+  console.log(name);
+
   return (
     <div className="bg-[#121212] w-[100%] h-[100vh] flex items-center justify-center">
       {validAbout ? (
         <Terms_And_Conditions_page />
-      ) : validpassword ? (
-        <About_user setValidAbout={setValidAbout} />
+      ) : validPassword ? (
+        <About_user />
       ) : !validemail ? (
         <Signup_email_page />
       ) : (
-        <Signup_password_page setvalidpassword={setvalidpassword} />
+        <Signup_password_page />
       )}
     </div>
   );

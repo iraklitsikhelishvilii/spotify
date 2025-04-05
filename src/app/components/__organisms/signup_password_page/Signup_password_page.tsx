@@ -5,49 +5,63 @@ import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
 import Black_logo from "../../../assets/images/logo.png";
 import Left_arrow_icon from "@/app/common/icons/Left_arrow_icon";
 import Mark_icon from "@/app/common/icons/Mark_icon";
-interface Signup_password_page {
-  setvalidpassword: (validpassword: boolean) => void;
-}
-function Signup_password_page({ setvalidpassword }: Signup_password_page) {
-  const [password, setPassword] = useState("");
-  const [oneLetter, setoneLetter] = useState(false);
-  const [oneSymbol, setoneSymbol] = useState(false);
-  const [tenChar, settenChar] = useState(false);
-  const [onelettererror, setonelettererror] = useState(false);
-  const [onesymbolerror, setonesymbolerror] = useState(false);
-  const [tencharerror, settencharerror] = useState(false);
+import { useStates } from "@/app/common/store";
+
+function Signup_password_page() {
+  const {
+    password,
+    oneLetter,
+    oneSymbol,
+    setPassword,
+    setOneLetter,
+    setOneSymbol,
+    tenChar,
+    oneSymbolError,
+    setTenChar,
+    oneLetterError,
+    setOneLetterError,  
+    setOneSymbolError,
+    tenCharError,
+    setTenCharError,
+    setValidPassword,
+  } = useStates();
+
   const letters = /[a-zA-Z]/;
   const symbols = /[0-9!@#\$%\^\&*\)\(+=._-]/;
 
   useEffect(() => {
     if (letters.test(password)) {
-      setoneLetter(true);
-      setonelettererror(false);
-    } else setoneLetter(false);
+      setOneLetter(true);
+      setOneLetterError(false);
+    } else {
+      setOneLetter(false);
+    }
+
     if (symbols.test(password)) {
-      setoneSymbol(true);
-      setonesymbolerror(false);
-    } else setoneSymbol(false);
+      setOneSymbol(true);
+      setOneSymbolError(false);
+    } else {
+      setOneSymbol(false);
+    }
+
     if (password.length >= 10) {
-      settenChar(true);
-      settencharerror(false);
-    } else settenChar(false);
-  }, [password, setPassword]);
+      setTenChar(true);
+      setTenCharError(false);
+    } else {
+      setTenChar(false);
+    }
+  }, [password]);
 
   const handlepassword = () => {
     if (oneLetter && oneSymbol && tenChar) {
-      setvalidpassword(true);
+      setValidPassword(true);
+    } else {
+      if (!oneLetter) setOneLetterError(true);
+      if (!oneSymbol) setOneSymbolError(true);
+      if (!tenChar) setTenCharError(true);
     }
-    if (!oneLetter) {
-      setonelettererror(true);
-    } else setonelettererror(false);
-    if (!oneSymbol) {
-      setonesymbolerror(true);
-    } else setonesymbolerror(false);
-    if (!tenChar) {
-      settencharerror(true);
-    } else settencharerror(false);
   };
+
   return (
     <div className="w-[100%] flex flex-col items-center">
       <Image
@@ -100,7 +114,7 @@ function Signup_password_page({ setvalidpassword }: Signup_password_page) {
           </div>
           <p
             className={`text-[13px] font-[700] ${
-              onelettererror ? "text-[#f3727f]" : " text-[#fff] "
+              oneLetterError ? "text-[#f3727f]" : " text-[#fff] "
             }`}
           >
             1 letter
@@ -117,7 +131,7 @@ function Signup_password_page({ setvalidpassword }: Signup_password_page) {
           </div>
           <p
             className={`text-[13px] font-[700] ${
-              onesymbolerror ? "text-[#f3727f]" : " text-[#fff] "
+              oneSymbolError ? "text-[#f3727f]" : " text-[#fff] "
             }`}
           >
             1 number or special character (example: # ? ! &)
@@ -134,7 +148,7 @@ function Signup_password_page({ setvalidpassword }: Signup_password_page) {
           </div>
           <p
             className={`text-[13px] font-[700] ${
-              tencharerror ? "text-[#f3727f]" : " text-[#fff] "
+              tenCharError ? "text-[#f3727f]" : " text-[#fff] "
             }`}
           >
             10 characters

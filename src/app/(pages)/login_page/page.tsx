@@ -1,11 +1,33 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Black_logo from "../../assets/images/logo.png";
 import Image from "next/image";
 import Eye_icon from "@/app/common/icons/Eye_icon";
 import Loging_btn_green from "@/app/components/__atoms/login_btn_green/Loging_btn_green";
 import Link from "next/link";
 import Login_btns_div from "@/app/components/__atoms/login_btns_div/Login_btns_div";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../firebaseconfig";
+import { useRouter } from "next/navigation";
+
 function page() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    if (!email || !password) {
+      alert("Please enter both email and password");
+      return;
+    }
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push("/");
+    } catch (error) {
+      console.log("error");
+    }
+  };
+
   return (
     <div className="w-[100%] h-[100vh] bg-black bg-gradient-to-b from-white/10 to-black flex items-center justify-center ">
       <div className="max-w-[740px] w-[100%]  bg-black bg-gradient-to-b from-black to-white/10 flex items-center justify-center flex-col px-[100px]">
@@ -36,8 +58,10 @@ function page() {
               type="text"
               name="email"
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-          </div>{" "}
+          </div>
           <div className="flex flex-col max-w-[324px] w-[100%] justify-center gap-[5px]">
             <label
               className="text-[14px] text-[#fff] font-[700] cursor-pointer"
@@ -51,12 +75,18 @@ function page() {
                 type="password"
                 name="password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <Eye_icon classname="w-[24px] h-[24px] cursor-pointer" />
             </div>
           </div>
         </div>
-        <Loging_btn_green classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]" text="Log in" />
+        <Loging_btn_green
+          classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]"
+          text="Log in"
+          handle={handleLogin}
+        />
         <p className=" underline text-[16px] font-[700] text-[#fff] mt-[32px] hover:text-[#1ed760] cursor-pointer">
           Forgot your password?
         </p>

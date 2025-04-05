@@ -1,10 +1,30 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Black_logo from "../../../assets/images/logo.png";
 import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
 import Left_arrow_icon from "@/app/common/icons/Left_arrow_icon";
+import { useStates } from "@/app/common/store";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../../../../firebaseconfig";
+import { useRouter } from "next/navigation";
 function Terms_And_Conditions_page() {
+  const { name, password, email } = useStates();
+  const router = useRouter();
+  const HandleSignup = async () => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await updateProfile(userCredential.user, { displayName: name });
+      router.push("/login_page");
+    } catch (error) {
+      console.error("Signup error:", error);
+    }
+  };
   return (
     <div className="w-[100%] flex flex-col items-center">
       <Image
@@ -70,6 +90,7 @@ function Terms_And_Conditions_page() {
       <Loging_btn_green
         classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]"
         text="Sign up"
+        handle={HandleSignup}
       />
     </div>
   );

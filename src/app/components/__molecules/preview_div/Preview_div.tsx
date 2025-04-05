@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 function Preview_div() {
   return (
     <div
@@ -16,9 +16,12 @@ function Preview_div() {
           credit card needed.
         </p>
       </div>
-      <button className="py-[8px] px-[32px] bg-[#fff] rounded-[20px] text-[16px] font-[700]">
+      <Link
+        href={`/signup_page_email`}
+        className="py-[8px] px-[32px] bg-[#fff] rounded-[20px] text-[16px] font-[700]"
+      >
         Sign up free
-      </button>
+      </Link>
     </div>
   );
 }

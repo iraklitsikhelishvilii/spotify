@@ -5,104 +5,93 @@ import Image from "next/image";
 import Black_logo from "../../../assets/images/logo.png";
 import Link from "next/link";
 import Error_icon from "@/app/common/icons/Error_icon";
-interface About_user {
-  setValidAbout: (validAbout: boolean) => void;
-}
-function About_user({ setValidAbout }: About_user) {
-  const [day, setday] = useState("");
-  const [month, setmonth] = useState("");
-  const [year, setyear] = useState("");
-  const [name, setname] = useState("");
-  const [gender, setgender] = useState("");
-  const [nameerro, setnameerror] = useState("");
-  const [montherror, setmontherror] = useState("");
-  const [yearerror, setyearerror] = useState("");
-  const [dayerror, setdayerror] = useState("");
-  const [gendererror, setgendererror] = useState("");
-  const [validname, setvalidname] = useState(false);
-  const [validmonth, setvalidmonth] = useState(false);
-  const [validday, setvalidday] = useState(false);
-  const [validyear, setvalidyear] = useState(false);
-  const [validgender, setvalidgender] = useState(false);
+import { useStates } from "@/app/common/store";
+
+function About_user() {
+  const {
+    name,
+    day,
+    month,
+    year,
+    gender,
+    dayError,
+    setName,
+    setDay,
+    setMonth,
+    monthError,
+    setYear,
+    setGender,
+    nameError,
+    yearError,
+    genderError,
+    setNameError,
+    setDayError,
+    setMonthError,
+    setYearError,
+    setGenderError,
+    setValidAbout,
+  } = useStates();
+
   const handleSubmit = () => {
+    let valid = true;
+
     if (name === "") {
-      setnameerror("Enter a name for your profile");
+      setNameError("Enter a name for your profile");
+      valid = false;
     } else {
-      setnameerror("");
-      setvalidname(true);
+      setNameError("");
     }
 
-    if (month === "") {
-      setmontherror("Select your birth month.");
+    if (month === "" || month === "Month") {
+      setMonthError("Select your birth month.");
+      valid = false;
     } else {
-      setmontherror("");
-      setvalidmonth(true);
+      setMonthError("");
     }
 
-    const newData = new Date();
-    const currentyear = newData.getFullYear();
-    const yearNumber = parseInt(year, 10);
-
-    if (
-      yearNumber < 1900 ||
-      yearNumber > currentyear ||
-      isNaN(yearNumber) ||
-      year === ""
-    ) {
-      setyearerror("Please enter a birth year from 1900 onwards.");
+    const yearNumber = parseInt(year);
+    const currentYear = new Date().getFullYear();
+    if (isNaN(yearNumber) || yearNumber < 1900 || yearNumber > currentYear) {
+      setYearError("Please enter a birth year from 1900 onwards.");
+      valid = false;
     } else {
-      setyearerror("");
-      setvalidyear(true);
+      setYearError("");
     }
 
-    const dayNumber = parseInt(day, 10);
-
+    const dayNumber = parseInt(day);
     if (isNaN(dayNumber) || dayNumber < 1 || dayNumber > 31) {
-      setdayerror(
-        "Please enter the day of your birth date by entering a number between 1 and 31."
-      );
+      setDayError("Please enter a valid day (1-31).");
+      valid = false;
     } else {
-      if (
-        (month === "February" &&
-          ((yearNumber % 4 === 0 && yearNumber % 100 !== 0) ||
-            yearNumber % 400 === 0) &&
-          dayNumber > 29) ||
-        (month === "February" &&
-          !(yearNumber % 4 === 0 && yearNumber % 100 !== 0) &&
-          dayNumber > 28) ||
-        (["April", "June", "September", "November"].includes(month) &&
-          dayNumber > 30)
-      ) {
-        setdayerror(
-          `${month} can't have more than ${
-            month === "February"
-              ? (yearNumber % 4 === 0 && yearNumber % 100 !== 0) ||
-                yearNumber % 400 === 0
-                ? "29"
-                : "28"
-              : "30"
-          } days.`
-        );
+      const thirtyDayMonths = ["April", "June", "September", "November"];
+      const isLeap =
+        yearNumber % 4 === 0 &&
+        (yearNumber % 100 !== 0 || yearNumber % 400 === 0);
+      const maxDay =
+        month === "February"
+          ? isLeap
+            ? 29
+            : 28
+          : thirtyDayMonths.includes(month)
+          ? 30
+          : 31;
+      if (dayNumber > maxDay) {
+        setDayError(`${month} can't have more than ${maxDay} days.`);
+        valid = false;
       } else {
-        setdayerror("");
-        setvalidday(true);
+        setDayError("");
       }
     }
+
     if (gender === "") {
-      setgendererror("Select your gender.");
+      setGenderError("Select your gender.");
+      valid = false;
     } else {
-      setgendererror("");
-      setvalidgender(true);
+      setGenderError("");
     }
 
-    if (
-      validname === true &&
-      validmonth === true &&
-      validyear === true &&
-      validday === true &&
-      validgender === true
-    ) {
-      setValidAbout(true);
+    if (valid) {
+      setValidAbout();
     }
   };
 
@@ -137,19 +126,19 @@ function About_user({ setValidAbout }: About_user) {
           </p>
         </div>
         <input
-          onChange={(e) => setname(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           type="text"
           id="name"
           className={`bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] px-[10px] outline-none  border-solid border-[2px]  rounded-[5px] ${
-            nameerro ? " border-[#e91429]" : "border-[#5c5c5c]"
+            nameError ? " border-[#e91429]" : "border-[#5c5c5c]"
           }`}
         />
       </div>
-      {nameerro && (
+      {nameError && (
         <div className="max-w-[324px] w-[100%] mt-[8px] flex items-center gap-[5px]">
           <Error_icon classname="w-[16px] h-[20px]" />
           <p className="text-[#f3727f] text-[14px] flex justify-start">
-            {nameerro}
+            {nameError}
           </p>
         </div>
       )}
@@ -174,19 +163,19 @@ function About_user({ setValidAbout }: About_user) {
           </div>
           <div className="flex gap-[7px] mt-[10px]">
             <input
-              onChange={(e) => setday(e.target.value)}
+              onChange={(e) => setDay(e.target.value)}
               type="text"
               maxLength={2}
               inputMode="numeric"
               placeholder="dd"
               className={`w-[60px] p-2 bg-transparent text-white outline-none border-solid border-[2px]  rounded-[5px] ${
-                dayerror ? "border-[#e91429]" : "border-[#5c5c5c]"
+                dayError ? "border-[#e91429]" : "border-[#5c5c5c]"
               }`}
             />
             <select
-              onChange={(e) => setmonth(e.target.value)}
+              onChange={(e) => setMonth(e.target.value)}
               className={`w-[100%] p-2 bg-transparent text-white outline-none border-solid border-[2px]  rounded-[5px] ${
-                montherror ? " border-[#e91429]" : "border-[#5c5c5c]"
+                monthError ? " border-[#e91429]" : "border-[#5c5c5c]"
               }`}
             >
               <option>Month</option>
@@ -204,37 +193,37 @@ function About_user({ setValidAbout }: About_user) {
               <option value="December">December</option>
             </select>
             <input
-              onChange={(e) => setyear(e.target.value)}
+              onChange={(e) => setYear(e.target.value)}
               type="text"
               maxLength={4}
               inputMode="numeric"
               placeholder="yyyy"
               className={`w-[91px] p-2 bg-transparent text-white outline-none border-solid border-[2px]  rounded-[5px] ${
-                yearerror ? "border-[#e91429]" : "border-[#5c5c5c]"
+                yearError ? "border-[#e91429]" : "border-[#5c5c5c]"
               }`}
             />
           </div>
-          {dayerror && (
+          {dayError && (
             <div className="max-w-[324px] w-[100%] mt-[8px] flex items-center gap-[5px]">
               <Error_icon classname="min-w-[16px] h-[20px]" />
               <p className="text-[#f3727f] text-[14px] flex justify-start">
-                {dayerror}
+                {dayError}
               </p>
             </div>
           )}
-          {montherror && (
+          {monthError && (
             <div className="max-w-[324px] w-[100%] mt-[8px] flex items-center gap-[5px]">
               <Error_icon classname="w-[16px] h-[20px]" />
               <p className="text-[#f3727f] text-[14px] flex justify-start">
-                {montherror}
+                {monthError}
               </p>
             </div>
           )}
-          {yearerror && (
+          {yearError && (
             <div className="max-w-[324px] w-[100%] mt-[8px] flex items-center gap-[5px]">
               <Error_icon classname="w-[16px] h-[20px]" />
               <p className="text-[#f3727f] text-[14px] flex justify-start">
-                {yearerror}
+                {yearError}
               </p>
             </div>
           )}
@@ -261,18 +250,18 @@ function About_user({ setValidAbout }: About_user) {
                     name="gender"
                     value={option}
                     className="accent-green-500"
-                    onChange={(e) => setgender(e.target.value)}
+                    onChange={(e) => setGender(e.target.value)}
                   />
                   {option}
                 </label>
               ))}
             </div>
           </div>
-          {gendererror && (
+          {genderError && (
             <div className="max-w-[324px] w-[100%] mt-[8px] flex items-center gap-[5px]">
               <Error_icon classname="w-[16px] h-[20px]" />
               <p className="text-[#f3727f] text-[14px] flex justify-start">
-                {gendererror}
+                {genderError}
               </p>
             </div>
           )}

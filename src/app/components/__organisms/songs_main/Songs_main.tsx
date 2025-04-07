@@ -6,7 +6,9 @@ import Radio_divs from "../../__molecules/radio_divs/Radio_divs";
 import RadioData from "../../../../../json_file/radios.json";
 import FeaturedData from "../../../../../json_file/featured.json";
 import PlaylistsData from "../../../../../json_file/playlists.json";
+import { useStates } from "@/app/common/store";
 function Songs_main() {
+  const { songs: librarySongs } = useStates();
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col  ">
       <div className="flex w-[100%] items-center justify-between">
@@ -168,6 +170,34 @@ function Songs_main() {
           />
         ))}
       </div>
+      {librarySongs.length > 0 && (
+        <>
+          <div className="flex w-[100%] items-center justify-between mt-[50px]">
+            <h2 className="text-[24px] text-[#fff] font-[700]">Users songs</h2>
+          </div>
+          <div className="flex w-[100%] justify-start overflow-auto gap-[14px] mt-[20px]">
+            {librarySongs.map((song) => (
+              <div
+                key={song.id}
+                className="bg-[#181818] hover:bg-[#252525] transition rounded-[12px] p-[16px] w-[280px] min-w-[280px] shadow-sm flex-shrink-0"
+              >
+                <img
+                  src={song.image}
+                  alt={song.name}
+                  className="w-full h-40 object-cover rounded-md mb-3"
+                />
+                <div className="text-white text-lg font-bold truncate">
+                  {song.name}
+                </div>
+                <div className="text-gray-400 text-sm truncate mb-2">
+                  by {song.author}
+                </div>
+                <audio controls className="w-full"></audio>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

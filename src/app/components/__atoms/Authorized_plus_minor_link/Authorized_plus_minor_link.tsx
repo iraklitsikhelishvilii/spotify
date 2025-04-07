@@ -1,19 +1,20 @@
 import React from "react";
 import Link from "next/link";
-interface Authorized_plus_minor_div {
+interface Authorized_plus_minor_link {
+  add?: () => void;
+  icon: React.ReactNode;
   text1: string;
   text2: string;
-  icon: React.ReactNode;
-  add?: () => void;
 }
-function Authorized_plus_minor_div({
+function Authorized_plus_minor_link({
+  add,
+  icon,
   text1,
   text2,
-  icon,
-  add,
-}: Authorized_plus_minor_div) {
+}: Authorized_plus_minor_link) {
   return (
-    <div
+    <Link
+      href={`/add_song`}
       onClick={add}
       className="w-[100%] flex items-center gap-[15px] cursor-pointer "
     >
@@ -24,8 +25,8 @@ function Authorized_plus_minor_div({
         <h3 className="text-[16px] text-[#fff] font-[700]">{text1}</h3>
         <p className="text-[13px] text-[#b3b3b3] font-[700]">{text2}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
-export default Authorized_plus_minor_div;
+export default Authorized_plus_minor_link;

@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBFLC90HEsqC3rbnuqfJvmGMuCOX0ZiocA",
   authDomain: "spotify-app-a0da1.firebaseapp.com",
@@ -11,7 +12,10 @@ const firebaseConfig = {
   appId: "1:6055342662:web:42ee46a68fd148b71b5047",
   measurementId: "G-M6TZ1LP7Z3",
 };
+
 const app = initializeApp(firebaseConfig);
-export const storage = getStorage(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 export const auth = getAuth(app);
+
+export { collection, addDoc };

@@ -62,9 +62,12 @@ function Header() {
         />
         {!user && (
           <div className="flex items-center justify-center gap-[25px] max-w-[572px] w-[100%]">
-            <div className="p-[12px]  bg-[#1F1F1F] flex items-center justify-center rounded-[50%]">
+            <Link
+              href={`/`}
+              className="p-[12px]  bg-[#1F1F1F] flex items-center justify-center rounded-[50%]"
+            >
               <HomeIcon classname="w-[20px] h-[20px]" />
-            </div>
+            </Link>
             <div className="bg-[#1F1F1F] max-w-[474px] w-[100%] p-[12px] rounded-[20px] flex items-center justify-between ">
               <div className="flex items-center justify-center">
                 <Search_icon classname="w-[21px] h-[21px]" />
@@ -84,9 +87,12 @@ function Header() {
       </div>
       {user && (
         <div className="flex items-center justify-center gap-[25px] max-w-[572px] w-[100%]">
-          <div className="p-[12px]  bg-[#1F1F1F] flex items-center justify-center rounded-[50%]">
+          <Link
+            href={`/`}
+            className="p-[12px]  bg-[#1F1F1F] flex items-center justify-center rounded-[50%]"
+          >
             <HomeIcon classname="w-[20px] h-[20px]" />
-          </div>
+          </Link>
           <div className="bg-[#1F1F1F] max-w-[474px] w-[100%] p-[12px] rounded-[20px] flex items-center justify-between ">
             <div className="flex items-center justify-center">
               <Search_icon classname="w-[21px] h-[21px]" />

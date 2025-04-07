@@ -3,6 +3,8 @@ import Authorized_plus_minor_div from "../../__atoms/Authorized_plus_minor_div/A
 import Song_icon from "@/app/common/icons/Song_icon";
 import Two_circle_icon from "@/app/common/icons/Two_circle_icon";
 import File_icon from "@/app/common/icons/File_icon";
+import Plus_icon2 from "@/app/common/icons/Plus_icon2";
+import Authorized_plus_minor_link from "../../__atoms/Authorized_plus_minor_link/Authorized_plus_minor_link";
 
 function Authorized_plus_div() {
   return (
@@ -26,6 +28,13 @@ function Authorized_plus_div() {
         text2="Organize your playlists"
         icon={
           <File_icon classname="w-[24px] h-[24px] fill-[#fff] hover:fill-[#1ed760] cursor-pointer" />
+        }
+      />{" "}
+      <Authorized_plus_minor_link
+        text1="Add song"
+        text2="Add your song "
+        icon={
+          <Plus_icon2 classname="w-[24px] h-[24px] fill-[#fff] hover:fill-[#1ed760] cursor-pointer" />
         }
       />
     </div>

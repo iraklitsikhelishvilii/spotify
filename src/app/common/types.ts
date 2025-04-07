@@ -73,6 +73,9 @@ export interface ZustandProps {
   HandleProfileIconClick: () => void;
   libraryMassive: (Song | Show)[];
   setlibraryMassive: (item: (Song | Show)[]) => void;
+  songs: Song[];
+  addSong: (song: Song) => void;
+  clearSongs: () => void;
 }
 
 export interface Trendingsongsinner {
@@ -144,7 +147,7 @@ export interface Song {
   song_name?: string;
   author_name?: string;
   song_image?: string;
-  id: number;
+  id: number | string;
   show_name?: string;
   show_image?: string;
   radio_name?: string;
@@ -157,6 +160,9 @@ export interface Song {
   artist?: string;
   position?: number;
   duration?: string;
+  image?: string;
+  name?: string;
+  author?: string;
 }
 
 export interface Moreoptionsminor2div {

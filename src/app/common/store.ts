@@ -107,4 +107,11 @@ export const useStates = create<ZustandProps>((set) => ({
 
   libraryMassive: [],
   setlibraryMassive: (items) => set({ libraryMassive: items }),
+
+  songs: [],
+  addSong: (song) =>
+    set((state) => ({
+      songs: [...state.songs, song],
+    })),
+  clearSongs: () => set({ songs: [] }),
 }));

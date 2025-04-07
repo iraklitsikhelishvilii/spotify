@@ -10,9 +10,7 @@ function Container() {
       <div
         className={`w-full flex  justify-start bg-[#121212] rounded-[8px]  overflow-x-hidden px-[20px] pt-[20px]`}
       >
-        <div
-          className={` w-[100%] flex items-center flex-col overflow-y-auto  h-[2400px]`}
-        >
+        <div className={` w-[100%] flex items-center flex-col overflow-y-auto`}>
           <Songs_main />
           <Footer />
         </div>

@@ -3,7 +3,6 @@ import Plus_icon from "@/app/common/icons/Plus_icon";
 import { useStates } from "@/app/common/store";
 import React from "react";
 import Authorized_plus_div from "../../__molecules/authorized_plus_div/Authorized_plus_div";
-import Link from "next/link";
 
 function Library_div_authorized() {
   const { authorizedplus, handleauthorizedplus } = useStates();

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+
 interface Authorized_plus_minor_div {
   text1: string;
   text2: string;

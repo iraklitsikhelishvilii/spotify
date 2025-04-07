@@ -99,4 +99,12 @@ export const useStates = create<ZustandProps>((set) => ({
   handleauthorizedplus: () => {
     set((state) => ({ authorizedplus: !state.authorizedplus }));
   },
+
+  ProfileIconClick: false,
+  HandleProfileIconClick: () => {
+    set((state) => ({ ProfileIconClick: !state.ProfileIconClick }));
+  },
+
+  libraryMassive: [],
+  setlibraryMassive: (items) => set({ libraryMassive: items }),
 }));

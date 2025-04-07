@@ -1,16 +1,19 @@
 import React from "react";
 import Inner_functions_div from "../inner_functions_div/Inner_functions_div";
 import { Show, Song } from "@/app/common/types";
+import Link from "next/link";
 
 interface SongslistProps {
   info: (Song | Show)[];
 }
 
 function Songs_list({ info }: SongslistProps) {
+  
+  
   return (
     <div className="w-[100%] flex justify-center px-[20px] py-[20px]">
       <div className="w-[100%] max-w-[1700px]">
-        <Inner_functions_div />
+        <Inner_functions_div  info={info}/>
         <div className="w-[100%] flex flex-col mt-[35px] ">
           <div>
             <p className="text-[14px] font-[600] text-[#b3b3b3]"># Title</p>
@@ -21,7 +24,7 @@ function Songs_list({ info }: SongslistProps) {
         {info?.map((item, key) => {
           if (item && "song_name" in item) {
             return (
-              <div key={key} className="w-[100%] flex mt-[15px]">
+              <Link href={``} key={key} className="w-[100%] flex mt-[15px]">
                 <div className="flex items-center gap-[20px]">
                   <p className="text-[#b3b3b3] text-[16px] font-[600]">
                     {key + 1}
@@ -35,11 +38,11 @@ function Songs_list({ info }: SongslistProps) {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           } else if (item && "show_name" in item) {
             return (
-              <div key={key} className="w-[100%] flex mt-[15px]">
+              <Link href={``} key={key} className="w-[100%] flex mt-[15px]">
                 <div className="flex items-center gap-[20px]">
                   <p className="text-[#b3b3b3] text-[16px] font-[600]">
                     {item.show_id}
@@ -53,7 +56,7 @@ function Songs_list({ info }: SongslistProps) {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           }
           return null;

@@ -43,8 +43,6 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
       }))
     : [];
 
-  console.log(songData?.playlist_name);
-
   const playlists: Song[] = PlaylistData.flatMap((playlist) =>
     (playlist.tracks || []).map((track) => ({
       id: track.track_id,

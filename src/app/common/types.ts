@@ -69,6 +69,10 @@ export interface ZustandProps {
   setValidAbout: () => void;
   authorizedplus: boolean;
   handleauthorizedplus: () => void;
+  ProfileIconClick: boolean;
+  HandleProfileIconClick: () => void;
+  libraryMassive: (Song | Show)[];
+  setlibraryMassive: (item: (Song | Show)[]) => void;
 }
 
 export interface Trendingsongsinner {
@@ -106,6 +110,7 @@ export interface Artistsinner {
     chart_image?: string;
     description?: string;
   };
+  href: string;
 }
 export interface CreatePlaylistAllert {
   RemovePlaylistClick: () => void;
@@ -159,12 +164,23 @@ export interface Moreoptionsminor2div {
   text: string;
 }
 export interface Show {
+  id?: number;
   show_id: number;
   host: string;
   show_name?: string;
   show_image?: string;
   radio_name?: string;
   radio_image?: string;
+  song_name?: string;
+  author_name?: string;
+  song_image?: string;
+  chart_name?: string;
+  chart_image?: string;
+  description?: string;
+  song_id?: number;
+  artist?: string;
+  position?: number;
+  duration?: string;
 }
 
 interface Radio {

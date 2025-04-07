@@ -29,7 +29,7 @@ function Songs_main() {
             ?.slice(0, 1)
             .map((song, key) => (
               <Song_divs
-                href={`/trending_songs/${song.song_name}`}
+                href={`/alltrendings/${song.song_name}`}
                 key={key}
                 image={song.song_image}
                 songname={song.song_name}
@@ -56,7 +56,7 @@ function Songs_main() {
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
         {Data.slice(0, 10).map((artist, key) => (
           <Song_divs
-            href={`/artist_songs/${artist.author_name}`}
+            href={`/allartists/${artist.author_name}`}
             key={key}
             image={artist?.author_image ?? "/path/to/default/image.jpg"}
             songname={artist?.author_name ?? "undefined"}
@@ -82,7 +82,7 @@ function Songs_main() {
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
         {AlbumsData.slice(0, 10).map((item, key) => (
           <Song_divs
-            href={`/popular_albums_singles/${item?.author_name}`}
+            href={`/all_albums_singles/${item?.author_name}`}
             key={key}
             image={item?.song_image ?? "/path/to/default/image.jpg"}
             songname={item?.song_name ?? "undefined"}
@@ -112,7 +112,7 @@ function Songs_main() {
             image={item?.radio_image}
             radioname={item?.radio_name}
             info={item}
-            href={`/radio/${item.radio_name}`}
+            href={`/radios/${item.radio_name}`}
           />
         ))}
       </div>

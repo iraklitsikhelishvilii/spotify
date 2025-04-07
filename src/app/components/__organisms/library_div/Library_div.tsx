@@ -21,7 +21,7 @@ function Library_div() {
     return () => unsubscribe();
   }, []);
   return (
-    <div className=" relative min-w-[300px] bg-[#121212] rounded-[8px] px-[20px] py-[10px] flex-1 h-full flex flex-col  justify-between ">
+    <div className=" relative min-w-[300px] bg-[#121212] rounded-[8px] px-[10px] py-[10px] flex-1 h-full flex flex-col  justify-between ">
       {user ? <Library_div_authorized /> : <Library_top_unothorized />}
       {!user && <Library_bottom_unothorized />}
     </div>

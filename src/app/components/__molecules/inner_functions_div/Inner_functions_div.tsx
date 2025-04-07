@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Plus_icon2 from "@/app/common/icons/Plus_icon2";
 import Three_dots_icon from "@/app/common/icons/Three_dots_icon";
@@ -7,7 +8,11 @@ import Mark_icon from "@/app/common/icons/Mark_icon";
 import Save_to_library_div from "../../__atoms/save_to_library_div/Save_to_library_div";
 import { useStates } from "@/app/common/store";
 import More_options_div from "../more_options_div/More_options_div";
-function Inner_functions_div() {
+import { Show, Song } from "@/app/common/types";
+interface SongslistProps {
+  info: (Song | Show)[];
+}
+function Inner_functions_div({ info }: SongslistProps) {
   const {
     plusHover,
     MarkedClick,
@@ -19,7 +24,19 @@ function Inner_functions_div() {
     dotsHover,
     DotsClick,
     DotsClickFunc,
+    libraryMassive,
+    setlibraryMassive,
   } = useStates();
+
+  const Addtomassive = () => {
+    setlibraryMassive([...libraryMassive, ...info]);
+  };
+
+  const handleAddToLibrary = () => {
+    MarkedClick?.();
+    Addtomassive();
+  };
+
   return (
     <div className=" flex w-[100%] justify-between">
       <div className="flex items-center gap-[20px] h-[60px] relative">
@@ -30,7 +47,7 @@ function Inner_functions_div() {
           </button>
         </div>
         <button
-          onClick={MarkedClick}
+          onClick={handleAddToLibrary}
           onMouseEnter={PlusEnter}
           onMouseLeave={PlusLeave}
           className="w-[32px] h-[32px]  rounded-[50%] "

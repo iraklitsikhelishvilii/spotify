@@ -12,9 +12,10 @@ import Logged_out_alert from "../../__atoms/logged_out_alert/Logged_out_alert";
 import { auth } from "../../../../firebaseconfig";
 import { onAuthStateChanged, User } from "firebase/auth";
 import Ring_icon from "@/app/common/icons/Ring_icon";
-
+import { signOut } from "firebase/auth";
+import Profile_settings_div from "../../__molecules/profile_settings_div/Profile_settings_div";
 function Header() {
-  const { marked } = useStates();
+  const { marked, ProfileIconClick, HandleProfileIconClick } = useStates();
   const Reload = () => {
     window.location.reload();
   };
@@ -34,6 +35,16 @@ function Header() {
     return () => unsubscribe();
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      setUser(null);
+      setUserName(null);
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
   return (
     <header className="bg-[#000] w-[100%] flex items-center justify-between py-[10px] px-[15px] gap-[15px] ">
       <div
@@ -116,7 +127,7 @@ function Header() {
           </div>
         )}
         {!user && <div className="h-[20px] w-[2px] bg-[#b3b3b3]"></div>}
-        <div className="flex items-center justify-center gap-[20px]">
+        <div className="flex items-center justify-center gap-[20px] relative">
           <div className="flex items-center justify-center gap-[8px]">
             <Download_icon classname="w-[16px] h-[16px]" />
             <Link
@@ -128,7 +139,10 @@ function Header() {
           </div>
           {user && <Ring_icon classname="w-[16px] h-[16px] cursor-pointer" />}
           {user && (
-            <div className="w-[48px] h-[48px] flex items-center justify-center rounded-[50%] bg-[#1f1f1f]">
+            <div
+              onClick={HandleProfileIconClick}
+              className="w-[48px] h-[48px] flex items-center justify-center rounded-[50%] bg-[#1f1f1f] cursor-pointer"
+            >
               <div className="w-[32px] h-[32px] rounded-[50%] bg-[#509bf5] flex items-center justify-center">
                 <p>{userName?.[0]}</p>
               </div>
@@ -151,6 +165,7 @@ function Header() {
               {marked && <Logged_out_alert />}
             </div>
           )}
+          {ProfileIconClick && <Profile_settings_div Handle={handleLogout} />}
         </div>
       </div>
     </header>

@@ -12,7 +12,6 @@ function page({ params }: Params) {
   const chosenArtist = Data.filter((item) => item.category === "music").find(
     (item) => item.author_name === ArtistNameDecoded
   );
-  console.log(chosenArtist);
 
   return (
     <div className=" w-[100%] h-[100vh] bg-[#000000]  flex-col pb-[10px] flex">
@@ -21,7 +20,10 @@ function page({ params }: Params) {
         <Library_div />
         <div className="w-full flex  flex-col overflow-auto bg-[#121212] rounded-[8px]  h-full ">
           <div className="flex flex-col h-[2000px]">
-            <Artists_inner Info={chosenArtist || {}} />
+            <Artists_inner
+              href={`/alltrendings/${chosenArtist?.author_name}`}
+              Info={chosenArtist || {}}
+            />
             <Footer />
           </div>
         </div>

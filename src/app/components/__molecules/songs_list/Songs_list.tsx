@@ -8,12 +8,10 @@ interface SongslistProps {
 }
 
 function Songs_list({ info }: SongslistProps) {
-  
-  
   return (
     <div className="w-[100%] flex justify-center px-[20px] py-[20px]">
       <div className="w-[100%] max-w-[1700px]">
-        <Inner_functions_div  info={info}/>
+        <Inner_functions_div />
         <div className="w-[100%] flex flex-col mt-[35px] ">
           <div>
             <p className="text-[14px] font-[600] text-[#b3b3b3]"># Title</p>

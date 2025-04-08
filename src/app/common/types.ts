@@ -5,46 +5,52 @@ export interface Icon {
 }
 export interface ZustandProps {
   playlist: boolean;
-  plus: boolean;
-  artist3: string;
-  plusHover: boolean;
-  marked: boolean;
-  dotsHover: boolean;
-  DotsClick: boolean;
-  email: string;
-  validemail?: boolean;
-  emailError: string;
   HandlePlatlistClick: () => void;
   RemovePlaylistClick: () => void;
+  plus: boolean;
   handlePlus: () => void;
   NewPlaylistClick: () => void;
+
+  artist3: string;
   HandleSelectedAuthor3: (artist3?: string) => void;
+  plusHover: boolean;
   PlusEnter: () => void;
   PlusLeave: () => void;
-  MarkedClick?: () => void;
+
+  marked: boolean;
+  MarkedClick: () => void;
   MarkedClick2: () => void;
+
+  dotsHover: boolean;
   DotsEnter: () => void;
   DotsLeave: () => void;
+  DotsClick: boolean;
   DotsClickFunc: () => void;
-  setEmail?: (email: string) => void;
-  setvalidemail?: () => void | undefined;
+
+  email: string;
+  setEmail: (email: string) => void;
+  validemail: boolean;
+  setvalidemail: () => void;
+  emailError: string;
   setEmailError: (emailError: string) => void;
+
   password: string;
   setPassword: (password: string) => void;
   oneLetter: boolean;
-  setOneLetter: (val: boolean) => void;
+  setOneLetter: (oneLetter: boolean) => void;
   oneSymbol: boolean;
-  setOneSymbol: (val: boolean) => void;
+  setOneSymbol: (oneSymbol: boolean) => void;
   tenChar: boolean;
-  setTenChar: (val: boolean) => void;
+  setTenChar: (tenChar: boolean) => void;
   oneLetterError: boolean;
-  setOneLetterError: (val: boolean) => void;
+  setOneLetterError: (error: boolean) => void;
   oneSymbolError: boolean;
-  setOneSymbolError: (val: boolean) => void;
+  setOneSymbolError: (error: boolean) => void;
   tenCharError: boolean;
-  setTenCharError: (val: boolean) => void;
+  setTenCharError: (error: boolean) => void;
   validPassword: boolean;
-  setValidPassword: (val: boolean) => void;
+  setValidPassword: (valid: boolean) => void;
+
   name: string;
   day: string;
   month: string;
@@ -56,6 +62,7 @@ export interface ZustandProps {
   yearError: string;
   genderError: string;
   validAbout: boolean;
+  setValidAbout: () => void;
   setName: (value: string) => void;
   setDay: (value: string) => void;
   setMonth: (value: string) => void;
@@ -66,18 +73,27 @@ export interface ZustandProps {
   setMonthError: (value: string) => void;
   setYearError: (value: string) => void;
   setGenderError: (value: string) => void;
-  setValidAbout: () => void;
+
   authorizedplus: boolean;
   handleauthorizedplus: () => void;
+
   ProfileIconClick: boolean;
   HandleProfileIconClick: () => void;
-  libraryMassive: (Song | Show)[];
-  setlibraryMassive: (item: (Song | Show)[]) => void;
-  songs: Song[];
-  addSong: (song: Song) => void;
-  clearSongs: () => void;
-}
 
+  libraryMassive: Song2[];
+  setlibraryMassive: (items: Song2[]) => void;
+
+  songs: Song[];
+  addSong: (newSong: Song2) => void;
+  loadSongs: () => Promise<void>;
+  removeSong: (songId: string) => Promise<void>;
+}
+export type Song2 = {
+  id: string;
+  name: string;
+  author: string;
+  image: string;
+};
 export interface Trendingsongsinner {
   songData?: {
     id?: number;

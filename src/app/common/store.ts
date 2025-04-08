@@ -1,5 +1,10 @@
 import { create } from "zustand";
-import { ZustandProps } from "./types";
+import { Song2, ZustandProps } from "./types";
+import {
+  saveSongToIndexedDB,
+  getSongsFromIndexedDB,
+  removeSongFromIndexedDB,
+} from "../common/functions";
 
 export const useStates = create<ZustandProps>((set) => ({
   playlist: false,
@@ -109,9 +114,38 @@ export const useStates = create<ZustandProps>((set) => ({
   setlibraryMassive: (items) => set({ libraryMassive: items }),
 
   songs: [],
-  addSong: (song) =>
-    set((state) => ({
-      songs: [...state.songs, song],
-    })),
-  clearSongs: () => set({ songs: [] }),
+
+  loadSongs: async () => {
+    try {
+      const songs = await getSongsFromIndexedDB();
+      set({ songs });
+    } catch (error) {
+      console.error("Error loading songs from IndexedDB:", error);
+    }
+  },
+
+  addSong: async (newSong: Song2) => {
+    try {
+      await saveSongToIndexedDB(newSong);
+
+      set((state) => {
+        const updatedSongs = [...state.songs, newSong];
+        return { songs: updatedSongs };
+      });
+    } catch (error) {
+      console.error("Error saving song:", error);
+    }
+  },
+
+  removeSong: async (songId: string) => {
+    try {
+      await removeSongFromIndexedDB(songId);
+      set((state) => {
+        const updatedSongs = state.songs.filter((song) => song.id !== songId);
+        return { songs: updatedSongs };
+      });
+    } catch (error) {
+      console.error("Error removing song:", error);
+    }
+  },
 }));

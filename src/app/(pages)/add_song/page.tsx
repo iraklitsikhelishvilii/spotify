@@ -1,14 +1,17 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useStates } from "@/app/common/store";
 
 export default function UploadSongForm() {
-  const { songs: librarySongs, addSong } = useStates();
+  const { songs, loadSongs, addSong, removeSong } = useStates();
 
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
   const [image, setImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    loadSongs();
+  }, [loadSongs]);
 
   const handleFileUpload = (file: File, setFile: (val: string) => void) => {
     const reader = new FileReader();
@@ -16,7 +19,7 @@ export default function UploadSongForm() {
     reader.readAsDataURL(file);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (name && author && image) {
       const newSong = {
         id: `${Date.now()}`,
@@ -35,11 +38,19 @@ export default function UploadSongForm() {
     }
   };
 
+  const handleRemoveSong = async (songId: string) => {
+    try {
+      await removeSong(songId);
+    } catch (error) {
+      console.error("Error removing song:", error);
+    }
+  };
+
   return (
     <div className="h-[100vh] bg-black text-white p-[24px]">
       <div className="max-w-[765px] mx-auto">
         <h1 className="text-[30px] font-[700] mb-[24px]">
-          🎵 Upload to Your Spotify Library
+          🎵 Upload to Your Music Library
         </h1>
 
         <div className="bg-[#121212] p-[24px] rounded-[1px] shadow-md flex flex-col gap-[20px]">
@@ -77,13 +88,13 @@ export default function UploadSongForm() {
           </button>
         </div>
 
-        {librarySongs.length > 0 && (
+        {songs.length > 0 && (
           <div className="mt-10">
             <h2 className="text-[24px] font-[600] mb-[16px]">
               🎧 Your Library
             </h2>
             <div className="flex gap-[20px] overflow-x-auto scrollbar-thin scrollbar-thumb-[#4caf50] pb-[8px]">
-              {librarySongs.map((song) => (
+              {songs.map((song) => (
                 <div
                   key={song.id}
                   className="bg-[#181818] hover:bg-[#252525] transition rounded-[12px] p-[16px] w-[280px] min-w-[280px] shadow-sm flex-shrink-0"
@@ -93,11 +104,21 @@ export default function UploadSongForm() {
                     alt={song.name}
                     className="w-full h-[160px] object-cover rounded-[6px] mb-[12px]"
                   />
-                  <div className="text-white text-[28px] font-[700] truncate">
-                    {song.name}
-                  </div>
-                  <div className="text-gray-400 text-[14px] truncate mb-[8px]">
-                    by {song.author}
+                  <div className="flex justify-between items-center">
+                    <div className="max-w-[150px]">
+                      <div className="text-white text-[28px] font-[700] truncate">
+                        {song.name}
+                      </div>
+                      <div className="text-gray-400 text-[14px] truncate mb-[8px]">
+                        by {song.author}
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => handleRemoveSong(String(song.id))}
+                      className="mt-4 bg-red-500 text-white py-2 px-4 rounded-full"
+                    >
+                      Remove
+                    </button>
                   </div>
                   <audio controls className="w-full"></audio>
                 </div>

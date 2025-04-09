@@ -1,6 +1,6 @@
 import React from "react";
 import Login_btn from "../login_btn/Login_btn";
-import Google_icon from "../../../assets/images/Logo-google-icon-PNG-fotor-bg-remover-20250404214610.png";
+import Google_icon from "../../../assets/images/8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000-fotor-bg-remover-20250404215852.png";
 import Facebook_icon from "../../../assets/images/facebook-logo-facebook-icon-transparent-free-png.webp";
 import Apple_icon from "../../../assets/images/8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000-fotor-bg-remover-20250404215852.png";
 function Login_btns_div() {

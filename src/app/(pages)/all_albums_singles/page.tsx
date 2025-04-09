@@ -24,7 +24,7 @@ function page() {
                     href={`/all_albums_singles/${song?.author_name}`}
                     key={key}
                     image={song?.song_image ?? "/path/to/default/image.jpg"}
-                    songname={song?.song_name ?? "undefined"}
+                    songname={song?.song_name_al ?? "undefined"}
                     artist={song?.author_name ?? "undefined"}
                     imgclass="w-[100%] h-[100%] rounded-[10px]"
                   />

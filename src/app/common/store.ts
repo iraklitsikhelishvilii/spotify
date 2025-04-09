@@ -1,11 +1,11 @@
 import { create } from "zustand";
-import { Song2, ZustandProps } from "./types";
+import { Show, Song, Song2, ZustandProps } from "./types";
 import {
   saveSongToIndexedDB,
   getSongsFromIndexedDB,
   removeSongFromIndexedDB,
 } from "../common/functions";
-
+type TargetItem = Song | Show;
 export const useStates = create<ZustandProps>((set) => ({
   playlist: false,
   HandlePlatlistClick: () => {
@@ -147,5 +147,43 @@ export const useStates = create<ZustandProps>((set) => ({
     } catch (error) {
       console.error("Error removing song:", error);
     }
+  },
+
+  targetArray: JSON.parse(
+    localStorage.getItem("targetArray") || "[]"
+  ) as TargetItem[],
+
+  addToTarget: (objectToAdd: Song | Show) =>
+    set((state) => {
+      const isDuplicate = state.targetArray.some(
+        (item) =>
+          item.id === objectToAdd.id &&
+          item.song_name === objectToAdd.song_name &&
+          item.author_name === objectToAdd.author_name
+      );
+
+      if (!isDuplicate) {
+        const newArray = [...state.targetArray, objectToAdd];
+        localStorage.setItem("targetArray", JSON.stringify(newArray)); // Save to localStorage
+        return { targetArray: newArray };
+      }
+      return state;
+    }),
+
+  deleteFromTargetByName: (name: string) => {
+    set((state) => {
+      const updatedTargetArray = state.targetArray.filter((item) => {
+        const displayName =
+          item.song_name ||
+          item.chart_name ||
+          item.radio_name ||
+          item.show_name ||
+          item.artist ||
+          item.song_name_al;
+        return displayName !== name;
+      });
+      localStorage.setItem("targetArray", JSON.stringify(updatedTargetArray));
+      return { targetArray: updatedTargetArray };
+    });
   },
 }));

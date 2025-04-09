@@ -87,6 +87,10 @@ export interface ZustandProps {
   addSong: (newSong: Song2) => void;
   loadSongs: () => Promise<void>;
   removeSong: (songId: string) => Promise<void>;
+  targetArray: (Song | Show)[];
+  addToTarget: (objectToAdd: Song | Show) => void;
+
+  deleteFromTargetByName: (id: string) => void;
 }
 export type Song2 = {
   id: string;
@@ -96,6 +100,7 @@ export type Song2 = {
 };
 export interface Trendingsongsinner {
   songData?: {
+    song_name_al?: string;
     id?: number;
     song_image?: string;
     song_name?: string;
@@ -117,6 +122,7 @@ export interface Trendingsongsinner {
 export interface Songslist {
   info: Song[];
 }
+export type HandleAddToTarget = (song: Song) => void;
 export interface Artistsinner {
   Info: {
     id?: number;
@@ -160,10 +166,14 @@ export interface SongDivs {
 }
 
 export interface Song {
+  song_name_pl?: string;
+  song_name_al?: string;
+  song_name_char?: string;
+  playlist_name?: string;
   song_name?: string;
   author_name?: string;
   song_image?: string;
-  id: number | string;
+  id?: string | number;
   show_name?: string;
   show_image?: string;
   radio_name?: string;
@@ -179,6 +189,10 @@ export interface Song {
   image?: string;
   name?: string;
   author?: string;
+  isTrending?: boolean;
+  popular?: boolean;
+  color?: string;
+  author_image?: string;
 }
 
 export interface Moreoptionsminor2div {
@@ -186,9 +200,13 @@ export interface Moreoptionsminor2div {
   text: string;
 }
 export interface Show {
-  id?: number;
-  show_id: number;
-  host: string;
+  song_name_pl?: string;
+  song_name_al?: string;
+  song_name_char?: string;
+  playlist_name?: string;
+  id?: number | string;
+  show_id?: number;
+  host?: string;
   show_name?: string;
   show_image?: string;
   radio_name?: string;
@@ -205,7 +223,7 @@ export interface Show {
   duration?: string;
 }
 
-interface Radio {
+export interface Radio {
   id: number;
   radio_image: string;
   radio_name: string;
@@ -221,16 +239,21 @@ export interface RadioDivsProps {
 }
 
 export interface DataItem {
+  id: number;
+  author_name: string;
+  author_image: string;
+  category: string;
+  color: string;
   songs: Song[];
 }
 
 export interface FeaturedItem {
-  id: number;
-  chart_name: string;
-  chart_image: string;
-  description: string;
-  color: string;
-  songs: Song[];
+  id?: number;
+  chart_name?: string;
+  chart_image?: string;
+  description?: string;
+  color?: string;
+  songs?: Song | Show[];
 }
 export interface PodcastsDiv {
   component: React.ReactNode;

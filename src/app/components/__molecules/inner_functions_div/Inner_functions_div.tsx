@@ -8,11 +8,18 @@ import Mark_icon from "@/app/common/icons/Mark_icon";
 import Save_to_library_div from "../../__atoms/save_to_library_div/Save_to_library_div";
 import { useStates } from "@/app/common/store";
 import More_options_div from "../more_options_div/More_options_div";
+import { Show, Song } from "@/app/common/types";
 
-function Inner_functions_div() {
+interface Inner_functions_div {
+  handleAddToTarget: (objectToAdd: Song | Show) => void;
+  currentItem: Song | Show;
+}
+function Inner_functions_div({
+  handleAddToTarget,
+  currentItem,
+}: Inner_functions_div) {
   const {
     plusHover,
-
     PlusEnter,
     PlusLeave,
     marked,
@@ -22,15 +29,6 @@ function Inner_functions_div() {
     DotsClick,
     DotsClickFunc,
   } = useStates();
-
-  // const Addtomassive = () => {
-  //   setlibraryMassive([...libraryMassive, ...info]);
-  // };
-
-  // const handleAddToLibrary = () => {
-  //   MarkedClick?.();
-  //   Addtomassive();
-  // };
 
   return (
     <div className=" flex w-[100%] justify-between">
@@ -42,7 +40,7 @@ function Inner_functions_div() {
           </button>
         </div>
         <button
-          // onClick={handleAddToLibrary}
+          onClick={() => handleAddToTarget(currentItem)}
           onMouseEnter={PlusEnter}
           onMouseLeave={PlusLeave}
           className="w-[32px] h-[32px]  rounded-[50%] "

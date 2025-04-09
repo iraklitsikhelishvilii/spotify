@@ -5,13 +5,19 @@ import Link from "next/link";
 
 interface SongslistProps {
   info: (Song | Show)[];
+  handleAddToTarget?: (objectToAdd: Song | Show) => void;
 }
 
-function Songs_list({ info }: SongslistProps) {
+function Songs_list({ info, handleAddToTarget }: SongslistProps) {
   return (
     <div className="w-[100%] flex justify-center px-[20px] py-[20px]">
       <div className="w-[100%] max-w-[1700px]">
-        <Inner_functions_div />
+        {info[0] && handleAddToTarget && (
+          <Inner_functions_div
+            currentItem={info[0]}
+            handleAddToTarget={handleAddToTarget}
+          />
+        )}
         <div className="w-[100%] flex flex-col mt-[35px] ">
           <div>
             <p className="text-[14px] font-[600] text-[#b3b3b3]"># Title</p>
@@ -20,7 +26,12 @@ function Songs_list({ info }: SongslistProps) {
         </div>
 
         {info?.map((item, key) => {
-          if (item && "song_name" in item) {
+          if (
+            (item && "song_name") ||
+            (item && "song_name_char" in item) ||
+            (item && "song_name_al" in item) ||
+            (item && "song_name_pl" in item)
+          ) {
             return (
               <Link href={``} key={key} className="w-[100%] flex mt-[15px]">
                 <div className="flex items-center gap-[20px]">
@@ -29,7 +40,10 @@ function Songs_list({ info }: SongslistProps) {
                   </p>
                   <div className="flex flex-col">
                     <h2 className="text-[16px] font-[700] text-[#fff]">
-                      {item.song_name}
+                      {item.song_name ||
+                        item.song_name_char ||
+                        item.song_name_pl ||
+                        item.song_name_al}
                     </h2>
                     <p className="text-[14px] text-[#B3B3B3] font-[600]">
                       {item.author_name}

@@ -87,7 +87,7 @@ function Songs_main() {
             href={`/all_albums_singles/${item?.author_name}`}
             key={key}
             image={item?.song_image ?? "/path/to/default/image.jpg"}
-            songname={item?.song_name ?? "undefined"}
+            songname={item?.song_name_al ?? "undefined"}
             artist={item?.author_name ?? "undefined"}
             imgclass="w-[100%] h-[100%] rounded-[10px]"
           />

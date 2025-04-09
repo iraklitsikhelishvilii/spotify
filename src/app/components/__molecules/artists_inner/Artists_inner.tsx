@@ -17,6 +17,7 @@ function Artists_inner({ Info }: Artistsinner) {
   const Artistsongs: Song[] = Data.flatMap((item) => item.songs || [])
     .filter(isSong)
     .filter((item) => item.author_name === Info.author_name);
+
   return (
     <div className="w-[100%]">
       <div className="w-[100%] relative justify-center">

@@ -1,67 +1,65 @@
-"use client";
 import Songs_list from "../songs_list/Songs_list";
 import Data from "../../../../../json_file/data.json";
 import AlbumsData from "../../../../../json_file/albums.json";
 import RadioData from "../../../../../json_file/radios.json";
 import FeaturedData from "../../../../../json_file/featured.json";
-import {
-  DataItem,
-  FeaturedItem,
-  Show,
-  Song,
-  Trendingsongsinner,
-} from "@/app/common/types";
 import PlaylistData from "../../../../../json_file/playlists.json";
+import { useStates } from "@/app/common/store";
+import {
+  Song,
+  Show,
+  Trendingsongsinner,
+  FeaturedItem,
+} from "@/app/common/types";
+interface DataItem {
+  songs?: Song[];
+}
 
 function Trending_songs_inner({ songData }: Trendingsongsinner) {
-  const allSongs: Song[] = (Data as DataItem[]).flatMap((item) => item?.songs);
-  const allAlbumSongs: Song[] = (AlbumsData as DataItem[]).flatMap(
-    (item) => item?.songs
+  const allSongs: Song[] = (Data as DataItem[]).flatMap(
+    (item) => item.songs ?? []
   );
-  const Allradios: Show[] = RadioData.flatMap((item) => item.shows).filter(
+  const allAlbumSongs: Song[] = (
+    JSON.parse(JSON.stringify(AlbumsData)) as DataItem[]
+  ).flatMap((item) => item.songs ?? []);
+
+  const filteredSongs = allSongs.filter(
+    (song) => song.author_name === songData?.author_name
+  );
+  const filteredAlbumSongs = allAlbumSongs.filter(
+    (song) => song.author_name === songData?.author_name
+  );
+  const Allradios = RadioData.flatMap((item) => item.shows).filter(
     (item) => item.radio_name === songData?.radio_name
   );
 
-  const filteredSongs = allSongs.filter(
-    (song) => song?.author_name === songData?.author_name
-  );
-
-  const filteredAlbumSongs = allAlbumSongs.filter(
-    (song) => song?.author_name === songData?.author_name
-  );
-
   const chosenFeatured: FeaturedItem[] = Array.isArray(FeaturedData)
-    ? (FeaturedData as FeaturedItem[]).map((item) => ({
-        id: item.id,
-        chart_name: item.chart_name,
-        chart_image: item.chart_image,
-        description: item.description,
-        color: item.color,
+    ? FeaturedData.map((item) => ({
+        ...item,
         songs: item.songs.filter(
           (song) => song.chart_name === songData?.chart_name
         ),
       }))
     : [];
 
-  const playlists: Song[] = PlaylistData.flatMap((playlist) =>
-    (playlist.tracks || []).map((track) => ({
-      id: track.track_id,
-      song_name: track.song_name,
-      author_name: track.artist,
-      duration: track.duration,
-      song_image: track.song_image,
-      playlist_name: track.playlist_name,
-      playlist_image: track.playlist_image,
-    }))
-  ).filter((item) => item.playlist_name === songData?.playlist_name);
+  const playlists = PlaylistData.flatMap((item) => item.tracks).filter(
+    (item) => item.playlist_name === songData?.playlist_name
+  );
 
   const combinedInfo: (Song | Show)[] = [
     ...filteredSongs,
     ...filteredAlbumSongs,
     ...Allradios,
-    ...chosenFeatured.flatMap((item) => item.songs),
+    ...chosenFeatured.flatMap((item) => item.songs ?? []),
     ...playlists,
   ];
+
+  const { addToTarget } = useStates();
+
+  const handleAddToTarget = (objectToAdd: Song | Show) => {
+    addToTarget(objectToAdd);
+  };
+
   return (
     <div className="w-full flex flex-col flex-1 h-full">
       <div
@@ -83,6 +81,7 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
               }
               alt={
                 songData?.song_name ||
+                songData?.song_name_al ||
                 songData?.radio_name ||
                 songData?.chart_name ||
                 songData?.playlist_name
@@ -92,6 +91,7 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
           <div className="flex flex-col items-baseline justify-end">
             <h1 className="font-bold text-white text-4xl">
               {songData?.song_name ||
+                songData?.song_name_al ||
                 songData?.radio_name ||
                 songData?.playlist_name}
             </h1>
@@ -122,7 +122,7 @@ function Trending_songs_inner({ songData }: Trendingsongsinner) {
           </div>
         </div>
       </div>
-      <Songs_list info={combinedInfo} />
+      <Songs_list handleAddToTarget={handleAddToTarget} info={combinedInfo} />
     </div>
   );
 }

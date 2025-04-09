@@ -7,20 +7,20 @@
     "color": "#FF6B6B",
     "songs": [
       {
-        "song_id": 1,
+        "id": 1,
         "chart_name": "Top Songs Global",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg",
-        "song_name": "Flowers",
+        "song_name_char": "Flowers",
         "artist": "Miley Cyrus",
         "position": 1,
         "duration": "3:21",
         "song_image": "https://i1.sndcdn.com/artworks-YOSTbh90ESawTlzu-s9fROg-t500x500.jpg"
       },
       {
-        "song_id": 2,
+        "id": 2,
         "chart_name": "Top Songs Global",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg",
-        "song_name": "Calm Down",
+        "song_name_char": "Calm Down",
         "artist": "Rema & Selena Gomez",
         "position": 2,
         "duration": "3:59",
@@ -36,20 +36,20 @@
     "color": "#6BFFB3",
     "songs": [
       {
-        "song_id": 1,
+        "id": 1,
         "chart_name": "Top Songs USA",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_us_default.jpg",
-        "song_name": "Kill Bill",
+        "song_name_char": "Kill Bill",
         "artist": "SZA",
         "position": 1,
         "duration": "2:33",
         "song_image": "https://static.wixstatic.com/media/d19474_ba8c85461372468fb2a38c5e87bc88d4~mv2.png/v1/fill/w_568,h_694,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/d19474_ba8c85461372468fb2a38c5e87bc88d4~mv2.png"
       },
       {
-        "song_id": 2,
+        "id": 2,
         "chart_name": "Top Songs USA",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_us_default.jpg",
-        "song_name": "Rich Flex",
+        "song_name_char": "Rich Flex",
         "artist": "Drake & 21 Savage",
         "position": 2,
         "duration": "3:59",
@@ -65,20 +65,20 @@
     "color": "#6B8EFF",
     "songs": [
       {
-        "song_id": 1,
+        "id": 1,
         "chart_name": "Top 50 Global",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg",
-        "song_name": "As It Was",
+        "song_name_char": "As It Was",
         "artist": "Harry Styles",
         "position": 1,
         "duration": "2:47",
         "song_image": "https://images.booksense.com/images/192/343/9781915343192.jpg"
       },
       {
-        "song_id": 2,
+        "id": 2,
         "chart_name": "Top 50 Global",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg",
-        "song_name": "TQG",
+        "song_name_char": "TQG",
         "artist": "Karol G & Shakira",
         "position": 2,
         "duration": "3:45",
@@ -94,20 +94,20 @@
     "color": "#FFC75F",
     "songs": [
       {
-        "song_id": 1,
+        "id": 1,
         "chart_name": "Top 50 USA",
         "chart_image": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84bc634720bce4d83c7b4bc16b",
-        "song_name": "Die For You",
+        "song_name_char": "Die For You",
         "artist": "The Weeknd",
         "position": 1,
         "duration": "4:20",
         "song_image": "https://i1.sndcdn.com/artworks-000372796662-7fftrd-t500x500.jpg"
       },
       {
-        "song_id": 2,
+        "id": 2,
         "chart_name": "Top 50 USA",
         "chart_image": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84bc634720bce4d83c7b4bc16b",
-        "song_name": "Made You Look",
+        "song_name_char": "Made You Look",
         "artist": "Meghan Trainor",
         "position": 2,
         "duration": "2:14",
@@ -123,20 +123,20 @@
     "color": "#A379C9",
     "songs": [
       {
-        "song_id": 1,
+        "id": 1,
         "chart_name": "Viral 50 Global",
         "chart_image": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84854f97088c382f9a6d93de7e",
-        "song_name": "Bzrp Music Sessions, Vol. 53",
+        "song_name_char": "Bzrp Music Sessions, Vol. 53",
         "artist": "Shakira & Bizarrap",
         "position": 1,
         "duration": "3:20",
         "song_image": "https://i1.sndcdn.com/artworks-5BdjVm6qp6b7PgFc-mtsAjw-t500x500.jpg"
       },
       {
-        "song_id": 2,
+        "id": 2,
         "chart_name": "Viral 50 Global",
         "chart_image": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84854f97088c382f9a6d93de7e",
-        "song_name": "Golden Hour",
+        "song_name_char": "Golden Hour",
         "artist": "JVKE",
         "position": 2,
         "duration": "3:50",
@@ -152,20 +152,20 @@
     "color": "#FF9AA2",
     "songs": [
       {
-        "song_id": 1,
+        "id": 1,
         "chart_name": "Viral 50 USA",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/viral/daily/region_us_default.jpg",
-        "song_name": "Unholy",
+        "song_name_char": "Unholy",
         "artist": "Sam Smith & Kim Petras",
         "position": 1,
         "duration": "2:36",
         "song_image": "https://i1.sndcdn.com/artworks-wuxv8wGa8m3rOjgT-XQSixA-t500x500.jpg"
       },
       {
-        "song_id": 2,
+        "id": 2,
         "chart_name": "Viral 50 USA",
         "chart_image": "https://charts-images.scdn.co/assets/locale_en/viral/daily/region_us_default.jpg",
-        "song_name": "Ceilings",
+        "song_name_char": "Ceilings",
         "artist": "Lizzy McAlpine",
         "position": 2,
         "duration": "3:02",

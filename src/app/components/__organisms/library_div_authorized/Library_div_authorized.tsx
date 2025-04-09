@@ -14,15 +14,27 @@ function Library_div_authorized() {
     deleteFromTargetByName,
   } = useStates();
 
-  const handleDelete = (name: string) => {
-    deleteFromTargetByName(name);
-  };
   const [searchletter, setsearchletter] = useState("");
 
   const handlesearchletter = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setsearchletter(e.target.value);
+    setsearchletter(e.target.value.toLowerCase());
   };
-  console.log(searchletter);
+
+  const filteredArray = targetArray.filter((item) => {
+    const displayName =
+      item.song_name ||
+      item.chart_name ||
+      item.radio_name ||
+      item.show_name ||
+      item.artist ||
+      item.song_name_al;
+
+    return displayName?.toLowerCase().includes(searchletter);
+  });
+
+  const handleDelete = (name: string) => {
+    deleteFromTargetByName(name);
+  };
 
   return (
     <div className="flex flex-col items-center">
@@ -45,17 +57,22 @@ function Library_div_authorized() {
         </div>
         {authorizedplus && <Authorized_plus_div />}
       </div>
-      <div className="flex  w-[100%] bg-[#1f1f1f] w-[100%] items-center gap-[15px] px-[10px] self-baseline mt-[20px]">
-        <SearchIcon classname="w-[16px] h-[16px]" />{" "}
+
+      <div className="flex w-full bg-[#1f1f1f] items-center gap-[15px] px-[10px] self-baseline mt-[20px] py-[7px]">
+        <SearchIcon classname="w-[16px] h-[16px]" />
         <input
           onChange={handlesearchletter}
-          className="bg-transparent outline-none text-[#b3b3b3] w-[100%]"
+          value={searchletter}
+          placeholder="Search your library"
+          className="bg-transparent outline-none text-[#b3b3b3] w-full placeholder:text-[#666]"
           type="text"
         />
       </div>
-      <div className="flex flex-col w-[100%] mt-[15px] gap-[10px] overflow-y-auto">
-        {targetArray.length > 0 &&
-          targetArray.map((item, key) => {
+
+      {/* Filtered content */}
+      <div className="flex flex-col w-full mt-[15px] gap-[10px] overflow-y-auto">
+        {filteredArray.length > 0 ? (
+          filteredArray.map((item, key) => {
             const displayName =
               item.song_name ||
               item.chart_name ||
@@ -80,11 +97,7 @@ function Library_div_authorized() {
               <div className="flex justify-between" key={item.id ?? key}>
                 <Link href={page}>
                   <p className="text-white text-[20px] font-[700] cursor-pointer hover:text-[#b3b3b3]">
-                    {item.song_name ||
-                      item.radio_name ||
-                      item.show_name ||
-                      item.artist ||
-                      item.song_name_al}
+                    {displayName}
                   </p>
                 </Link>
                 <button
@@ -95,7 +108,10 @@ function Library_div_authorized() {
                 </button>
               </div>
             );
-          })}
+          })
+        ) : (
+          <p className="text-[#999] text-center mt-[20px]">No results found</p>
+        )}
       </div>
     </div>
   );

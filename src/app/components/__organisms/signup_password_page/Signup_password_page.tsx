@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Eye_icon from "@/app/common/icons/Eye_icon";
 import Loging_btn_green from "../../__atoms/login_btn_green/Loging_btn_green";
@@ -6,7 +6,7 @@ import Black_logo from "../../../assets/images/logo.png";
 import Left_arrow_icon from "@/app/common/icons/Left_arrow_icon";
 import Mark_icon from "@/app/common/icons/Mark_icon";
 import { useStates } from "@/app/common/store";
-import { translations } from "@/app/common/translation"; // Import translations
+import { translations } from "@/app/common/translation";
 
 function Signup_password_page() {
   const {
@@ -65,7 +65,10 @@ function Signup_password_page() {
 
   const { language } = useStates();
   const t = translations[language];
-
+  const [eyeclick, seteyeclick] = useState(false);
+  const HandleEyeclick = () => {
+    seteyeclick(!eyeclick);
+  };
   return (
     <div className="w-[100%] flex flex-col items-center">
       <Image
@@ -97,11 +100,13 @@ function Signup_password_page() {
           <input
             onChange={(e) => setPassword?.(e.target.value)}
             className="bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] pr-[15px] outline-none "
-            type="password"
+            type={`${eyeclick ? "text" : "password"}`}
             name="password"
             id="password"
           />
-          <Eye_icon classname="w-[24px] h-[24px] cursor-pointer" />
+          <button onClick={HandleEyeclick}>
+            <Eye_icon classname="w-[24px] h-[24px] cursor-pointer" />
+          </button>
         </div>
       </div>
       <div className="flex flex-col max-w-[324px] w-[100%] mt-[20px] gap-[10px]">

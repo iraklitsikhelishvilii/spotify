@@ -147,6 +147,7 @@ export const translations: Record<Language, Record<string, string>> = {
     libraryHeader: "🎧 Your Library",
     removeButton: "Remove",
     alertFillFields: "Please FILL all fields.",
+    invalidEmail: "Invalid Email",
   },
   ქართული: {
     legal: "იურიდიული ინფორმაცია",
@@ -296,5 +297,6 @@ export const translations: Record<Language, Record<string, string>> = {
     libraryHeader: "🎧 თქვენი ბიბლიოთეკა",
     removeButton: "წაშლა",
     alertFillFields: "გთხოვთ შეავსოთ ყველა ველი.",
+    invalidEmail: "იმეილი არასწორია",
   },
 };

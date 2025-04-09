@@ -13,7 +13,7 @@ import { translations } from "@/app/common/translation";
 
 function Terms_And_Conditions_page() {
   const { name, password, email, language } = useStates();
-  const t = translations[language]; // Get translations based on current language
+  const t = translations[language]; 
   const router = useRouter();
 
   const HandleSignup = async () => {

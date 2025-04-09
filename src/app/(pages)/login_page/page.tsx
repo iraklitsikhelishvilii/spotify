@@ -9,21 +9,39 @@ import Login_btns_div from "@/app/components/__atoms/login_btns_div/Login_btns_d
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebaseconfig";
 import { useRouter } from "next/navigation";
-import { useStates } from "@/app/common/store"; // Assuming Zustand for state management
-import { translations } from "@/app/common/translation"; // Import translations
+import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation";
 
 function Page() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { language } = useStates(); // Get current language from Zustand
-  const t = translations[language]; // Fetch translations based on language
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const { language } = useStates();
+  const t = translations[language];
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      alert(t.pleaseEnterEmailPassword);
+    setEmailError("");
+    setPasswordError("");
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!email) {
+      setEmailError(t.pleaseEnterEmail);
+      return;
+    } else if (!emailRegex.test(email) || email === "") {
+      setEmailError(t.invalidEmail);
       return;
     }
+
+    if (!password) {
+      setPasswordError(t.pleaseEnterPassword);
+      return;
+    } else if (password.length < 6) {
+      setPasswordError(t.passwordMinLength);
+      return;
+    }
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/");
@@ -31,10 +49,13 @@ function Page() {
       console.log("error");
     }
   };
-
+  const [eyeclick, seteyeclick] = useState(false);
+  const handleeyeclick = () => {
+    seteyeclick(!eyeclick);
+  };
   return (
     <div className="w-[100%] h-[100vh] bg-black bg-gradient-to-b from-white/10 to-black flex items-center justify-center ">
-      <div className="max-w-[740px] w-[100%]  bg-black bg-gradient-to-b from-black to-white/10 flex items-center justify-center flex-col px-[100px]">
+      <div className="max-w-[740px] w-[100%] bg-black bg-gradient-to-b from-black to-white/10 flex items-center justify-center flex-col px-[100px]">
         <div className="flex flex-col items-center justify-center gap-[8px] w-[100%] pt-[32px]">
           <Image
             className="w-[36px] h-[36px]"
@@ -56,13 +77,18 @@ function Page() {
               {t.emailOrUsername}
             </label>
             <input
-              className="bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] px-[10px] outline-none  border-solid border-[2px] border-[#5c5c5c] rounded-[5px]"
+              className={`bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] px-[10px] outline-none  border-solid border-[2px]  rounded-[5px] ${
+                emailError ? "border-[#e91429]" : "border-[#5c5c5c]"
+              }`}
               type="text"
               name="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            {emailError && (
+              <p className="text-[#f3727f] text-[12px]">{emailError}</p>
+            )}
           </div>
           <div className="flex flex-col max-w-[324px] w-[100%] justify-center gap-[5px]">
             <label
@@ -71,17 +97,26 @@ function Page() {
             >
               {t.password}
             </label>
-            <div className="w-[100%] flex items-center  border-solid border-[2px] border-[#5c5c5c] rounded-[5px] px-[10px]">
+            <div
+              className={`w-[100%] flex items-center  border-solid border-[2px]  rounded-[5px] px-[10px] ${
+                passwordError ? "border-[#e91429]" : "border-[#5c5c5c]"
+              }`}
+            >
               <input
                 className="bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] pr-[15px] outline-none "
-                type="password"
+                type={`${eyeclick ? "text" : "password"}`}
                 name="password"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <Eye_icon classname="w-[24px] h-[24px] cursor-pointer" />
+              <button onClick={handleeyeclick}>
+                <Eye_icon classname="w-[24px] h-[24px] cursor-pointer" />
+              </button>
             </div>
+            {passwordError && (
+              <p className="text-[#f3727f] text-[12px]">{passwordError}</p>
+            )}
           </div>
         </div>
         <Loging_btn_green
@@ -89,7 +124,7 @@ function Page() {
           text={t.loginButton}
           handle={handleLogin}
         />
-        <p className=" underline text-[16px] font-[700] text-[#fff] mt-[32px] hover:text-[#1ed760] cursor-pointer">
+        <p className="underline text-[16px] font-[700] text-[#fff] mt-[32px] hover:text-[#1ed760] cursor-pointer">
           {t.forgotPassword}
         </p>
         <div className="flex items-center justify-center mt-[32px] gap-[7px] mb-[50px]">
@@ -109,4 +144,3 @@ function Page() {
 }
 
 export default Page;
-  

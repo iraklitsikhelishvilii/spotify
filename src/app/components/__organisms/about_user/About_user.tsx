@@ -6,6 +6,7 @@ import Black_logo from "../../../assets/images/logo.png";
 import Link from "next/link";
 import Error_icon from "@/app/common/icons/Error_icon";
 import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation";
 
 function About_user() {
   const {
@@ -30,20 +31,23 @@ function About_user() {
     setYearError,
     setGenderError,
     setValidAbout,
+    language,
   } = useStates();
+
+  const t = translations[language];
 
   const handleSubmit = () => {
     let valid = true;
 
     if (name === "") {
-      setNameError("Enter a name for your profile");
+      setNameError(t.enterName);
       valid = false;
     } else {
       setNameError("");
     }
 
-    if (month === "" || month === "Month") {
-      setMonthError("Select your birth month.");
+    if (month === "" || month === t.monthPlaceholder) {
+      setMonthError(t.selectMonth);
       valid = false;
     } else {
       setMonthError("");
@@ -52,7 +56,7 @@ function About_user() {
     const yearNumber = parseInt(year);
     const currentYear = new Date().getFullYear();
     if (isNaN(yearNumber) || yearNumber < 1900 || yearNumber > currentYear) {
-      setYearError("Please enter a birth year from 1900 onwards.");
+      setYearError(t.enterValidYear);
       valid = false;
     } else {
       setYearError("");
@@ -60,7 +64,7 @@ function About_user() {
 
     const dayNumber = parseInt(day);
     if (isNaN(dayNumber) || dayNumber < 1 || dayNumber > 31) {
-      setDayError("Please enter a valid day (1-31).");
+      setDayError(t.enterValidDay);
       valid = false;
     } else {
       const thirtyDayMonths = ["April", "June", "September", "November"];
@@ -76,7 +80,7 @@ function About_user() {
           ? 30
           : 31;
       if (dayNumber > maxDay) {
-        setDayError(`${month} can't have more than ${maxDay} days.`);
+        setDayError(`${month} ${t.maxDay} ${maxDay}.`);
         valid = false;
       } else {
         setDayError("");
@@ -84,7 +88,7 @@ function About_user() {
     }
 
     if (gender === "") {
-      setGenderError("Select your gender.");
+      setGenderError(t.selectGender);
       valid = false;
     } else {
       setGenderError("");
@@ -107,9 +111,9 @@ function About_user() {
       <div className="flex max-w-[436px] w-[100%] items-center gap-[20px] mt-[25px]">
         <Left_arrow_icon classname="w-[24px] h-[24px]" />
         <div className="flex flex-col ">
-          <p className="text-[16px] text-[#b3b3b3] font-[700]">Step 2 of 3</p>
+          <p className="text-[16px] text-[#b3b3b3] font-[700]">{t.step2}</p>
           <h2 className="text-[16px] text-[#fff] font-[700]">
-            Tell us about yourself
+            {t.tellUsAboutYourself}
           </h2>
         </div>
       </div>
@@ -119,10 +123,10 @@ function About_user() {
             className="text-[14px] text-[#fff] font-[700] cursor-pointer"
             htmlFor="name"
           >
-            Name
+            {t.name}
           </label>
           <p className="text-[14px] font-[700] text-[#b3b3b3]">
-            This name will appear on your profile
+            {t.nameDescription}
           </p>
         </div>
         <input
@@ -148,17 +152,17 @@ function About_user() {
             className="text-[14px] text-[#fff] font-[700] cursor-pointer"
             htmlFor="name"
           >
-            Date of birth
+            {t.dateOfBirth}
           </label>
           <div className="flex items-center">
             <p className="text-[14px] font-[700] text-[#b3b3b3]">
-              Why do we need your date of birth?
+              {t.whyNeedDob}
             </p>
             <Link
               className="text-[14px] font-[700] text-[#b3b3b3] underline"
               href={"https://www.spotify.com/ge/legal/end-user-agreement/"}
             >
-              Learn more
+              {t.learnMore}
             </Link>
           </div>
           <div className="flex gap-[7px] mt-[10px]">
@@ -167,7 +171,7 @@ function About_user() {
               type="text"
               maxLength={2}
               inputMode="numeric"
-              placeholder="dd"
+              placeholder={t.dayPlaceholder}
               className={`w-[60px] p-2 bg-transparent text-white outline-none border-solid border-[2px]  rounded-[5px] ${
                 dayError ? "border-[#e91429]" : "border-[#5c5c5c]"
               }`}
@@ -178,7 +182,7 @@ function About_user() {
                 monthError ? " border-[#e91429]" : "border-[#5c5c5c]"
               }`}
             >
-              <option>Month</option>
+              <option>{t.month}</option>
               <option value="January">January</option>
               <option value="February">February</option>
               <option value="March">March</option>
@@ -197,7 +201,7 @@ function About_user() {
               type="text"
               maxLength={4}
               inputMode="numeric"
-              placeholder="yyyy"
+              placeholder={t.yearPlaceholder}
               className={`w-[91px] p-2 bg-transparent text-white outline-none border-solid border-[2px]  rounded-[5px] ${
                 yearError ? "border-[#e91429]" : "border-[#5c5c5c]"
               }`}
@@ -228,18 +232,17 @@ function About_user() {
             </div>
           )}
           <div className="flex flex-col mt-[20px]">
-            <h2 className="text-[14px] text-[#fff] font-[700] ">Gender</h2>
+            <h2 className="text-[14px] text-[#fff] font-[700] ">{t.gender}</h2>
             <p className="text-[14px] font-[700] text-[#b3b3b3]">
-              We use your gender to help personalize our content recommendations
-              and ads for you.
+              {t.genderDescription}
             </p>
             <div className="flex flex-wrap gap-4 mt-4">
               {[
-                "Man",
-                "Woman",
-                "Non-binary",
-                "Something else",
-                "Prefer not to say",
+                t.man,
+                t.woman,
+                t.nonBinary,
+                t.somethingElse,
+                t.preferNotToSay,
               ].map((option) => (
                 <label
                   key={option}
@@ -270,7 +273,7 @@ function About_user() {
       <Loging_btn_green
         handle={handleSubmit}
         classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[50px]"
-        text="Next"
+        text={t.next}
       />
     </div>
   );

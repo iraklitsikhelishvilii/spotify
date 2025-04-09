@@ -6,6 +6,7 @@ import Black_logo from "../../../assets/images/logo.png";
 import Left_arrow_icon from "@/app/common/icons/Left_arrow_icon";
 import Mark_icon from "@/app/common/icons/Mark_icon";
 import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation"; // Import translations
 
 function Signup_password_page() {
   const {
@@ -62,6 +63,9 @@ function Signup_password_page() {
     }
   };
 
+  const { language } = useStates();
+  const t = translations[language];
+
   return (
     <div className="w-[100%] flex flex-col items-center">
       <Image
@@ -74,9 +78,9 @@ function Signup_password_page() {
       <div className="flex max-w-[436px] w-[100%] items-center gap-[20px] mt-[25px]">
         <Left_arrow_icon classname="w-[24px] h-[24px]" />
         <div className="flex flex-col ">
-          <p className="text-[16px] text-[#b3b3b3] font-[700]">Step 1 of 3</p>
+          <p className="text-[16px] text-[#b3b3b3] font-[700]">{t.step}</p>
           <h2 className="text-[16px] text-[#fff] font-[700]">
-            Create a password
+            {t.createPassword}
           </h2>
         </div>
       </div>
@@ -85,7 +89,7 @@ function Signup_password_page() {
           className="text-[14px] text-[#fff] font-[700] cursor-pointer"
           htmlFor="password"
         >
-          Password
+          {t.password}
         </label>
         <div
           className={`w-[100%] flex items-center  border-solid border-[2px]  rounded-[5px] px-[10px] border-[#5c5c5c]`}
@@ -102,7 +106,7 @@ function Signup_password_page() {
       </div>
       <div className="flex flex-col max-w-[324px] w-[100%] mt-[20px] gap-[10px]">
         <h3 className="text-[14px] text-[#fff] font-[700]">
-          Your password must contain at least
+          {t.yourPasswordMustContain}
         </h3>
         <div className="flex max-w-[324px] w-[100%] gap-[10px] items-center">
           <div
@@ -117,7 +121,7 @@ function Signup_password_page() {
               oneLetterError ? "text-[#f3727f]" : " text-[#fff] "
             }`}
           >
-            1 letter
+            {t.oneLetter}
           </p>
         </div>
         <div className="flex max-w-[324px] w-[100%] gap-[10px] items-center">
@@ -126,7 +130,6 @@ function Signup_password_page() {
               oneSymbol ? "border-[#1ed760]" : "border-[#5c5c5c]"
             }`}
           >
-            {" "}
             {oneSymbol && <Mark_icon classname="w-[100%] h-[100%]" />}
           </div>
           <p
@@ -134,16 +137,15 @@ function Signup_password_page() {
               oneSymbolError ? "text-[#f3727f]" : " text-[#fff] "
             }`}
           >
-            1 number or special character (example: # ? ! &)
+            {t.oneSymbol}
           </p>
-        </div>{" "}
+        </div>
         <div className="flex max-w-[324px] w-[100%] gap-[10px] items-center">
           <div
             className={`w-[12px] h-[12px] rounded-[50%] border-solid border-[1px] ${
               tenChar ? "border-[#1ed760]" : "border-[#5c5c5c]"
             }`}
           >
-            {" "}
             {tenChar && <Mark_icon classname="w-[100%] h-[100%]" />}
           </div>
           <p
@@ -151,14 +153,14 @@ function Signup_password_page() {
               tenCharError ? "text-[#f3727f]" : " text-[#fff] "
             }`}
           >
-            10 characters
+            {t.tenChar}
           </p>
         </div>
       </div>
       <Loging_btn_green
         classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]"
         handle={handlepassword}
-        text="Next"
+        text={t.next}
       />
     </div>
   );

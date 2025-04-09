@@ -7,8 +7,10 @@ import RadioData from "../../../../../json_file/radios.json";
 import FeaturedData from "../../../../../json_file/featured.json";
 import PlaylistsData from "../../../../../json_file/playlists.json";
 import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation";
 function Songs_main() {
-  const { songs } = useStates();
+  const { songs, language } = useStates();
+  const t = translations[language];
   return (
     <div className="max-w-[1700px] w-[100%] flex flex-col  ">
       <div className="flex w-[100%] items-center justify-between">
@@ -16,13 +18,13 @@ function Songs_main() {
           href="/alltrendings"
           className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
         >
-          Trending songs
+          {t.Trendingsongs}
         </Link>
         <Link
           href="/alltrendings"
           className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
         >
-          Show all
+          {t.Showall}
         </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-auto gap-[14px] mt-[20px]">
@@ -46,13 +48,13 @@ function Songs_main() {
           href="/allartists"
           className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
         >
-          Popular artists
+          {t.Popularartists}
         </Link>
         <Link
           href="/allartists"
           className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
         >
-          Show all
+          {t.Showall}
         </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
@@ -72,13 +74,13 @@ function Songs_main() {
           href="/all_albums_singles"
           className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
         >
-          Popular albums and singles
+          {t.Popularalbumsandsingles}
         </Link>
         <Link
           href="/all_albums_singles"
           className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
         >
-          Show all
+          {t.Showall}
         </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
@@ -98,13 +100,13 @@ function Songs_main() {
           href="/radios"
           className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
         >
-          Popular radio
+          {t.Popularradio}
         </Link>
         <Link
           href="/allradios"
           className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
         >
-          Show all
+          {t.Showall}
         </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-y-hidden gap-[14px] mt-[20px]">
@@ -123,13 +125,13 @@ function Songs_main() {
           href={`/featured_charts`}
           className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
         >
-          Featured Charts
+          {t.FeaturedCharts}
         </Link>
         <Link
           href={`/featured_charts`}
           className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
         >
-          Show all
+          {t.Showall}
         </Link>
       </div>
       <div className="flex w-[100%] justify-start overflow-auto gap-[14px] mt-[20px]">
@@ -149,13 +151,13 @@ function Songs_main() {
           href={`/playlists`}
           className="text-[24px] text-[#fff] font-[700] cursor-pointer hover:underline"
         >
-          Playlists from our Editors
+          {t.PlaylistsfromourEditors}
         </Link>
         <Link
           href={`/playlists`}
           className="font-[700] text-[14px] text-[#B3B3B3] cursor-pointer hover:underline"
         >
-          Show all
+          {t.Showall}
         </Link>
       </div>
       <div className="flex w-[100%] justify-between overflow-auto gap-[14px] mt-[20px]">
@@ -173,7 +175,9 @@ function Songs_main() {
       {songs.length > 0 && (
         <>
           <div className="flex w-[100%] items-center justify-between mt-[50px]">
-            <h2 className="text-[24px] text-[#fff] font-[700]">Users songs</h2>
+            <h2 className="text-[24px] text-[#fff] font-[700]">
+              {t.Userssongs}
+            </h2>
           </div>
           <div className="flex w-[100%] justify-start overflow-auto gap-[14px] mt-[20px]">
             {songs.map((song) => (

@@ -4,8 +4,12 @@ import Link from "next/link";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "@/firebaseconfig";
 import Music_Player from "../music_player/Music_player";
+import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation";
 
 function Preview_div() {
+  const { language } = useStates();
+  const t = translations[language];
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -34,18 +38,15 @@ function Preview_div() {
         >
           <div className="flex flex-col">
             <p className="text-[14px] font-[700] text-[#fff]">
-              Preview of Spotify
+              {t.previewSpotify}
             </p>
-            <p className="text-[16px] text-[#fff]">
-              Sign up to get unlimited songs and podcasts with occasional ads.
-              No credit card needed.
-            </p>
+            <p className="text-[16px] text-[#fff]">{t.signUpText}</p>
           </div>
           <Link
             href={`/signup_page_email`}
             className="py-[8px] px-[32px] bg-[#fff] rounded-[20px] text-[16px] font-[700]"
           >
-            Sign up free
+            {t.signUpButton}
           </Link>
         </div>
       )}

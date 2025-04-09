@@ -14,19 +14,25 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import Ring_icon from "@/app/common/icons/Ring_icon";
 import { signOut } from "firebase/auth";
 import Profile_settings_div from "../../__molecules/profile_settings_div/Profile_settings_div";
+import { translations } from "@/app/common/translation";
+
 function Header() {
   const {
     marked,
     ProfileIconClick,
     HandleProfileIconClick,
     handleHeaderinput,
+    language,
   } = useStates();
+
+  const t = translations[language];
   const Reload = () => {
     window.location.reload();
   };
 
   const [user, setUser] = useState<User | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -50,6 +56,7 @@ function Header() {
       console.error("Error signing out:", error);
     }
   };
+
   return (
     <header className="bg-[#000] w-[100%] flex items-center justify-between py-[10px] px-[15px] gap-[15px] ">
       <div
@@ -69,18 +76,18 @@ function Header() {
           <div className="flex items-center justify-center gap-[25px] max-w-[572px] w-[100%]">
             <Link
               href={`/`}
-              className="p-[12px]  bg-[#1F1F1F] flex items-center justify-center rounded-[50%]"
+              className="p-[12px] bg-[#1F1F1F] flex items-center justify-center rounded-[50%]"
             >
               <HomeIcon classname="w-[20px] h-[20px]" />
             </Link>
-            <div className="bg-[#1F1F1F] max-w-[474px] w-[100%] p-[12px] rounded-[20px] flex items-center justify-between ">
+            <div className="bg-[#1F1F1F] max-w-[474px] w-[100%] p-[12px] rounded-[20px] flex items-center justify-between">
               <div className="flex items-center justify-center">
                 <Search_icon classname="w-[21px] h-[21px]" />
                 <input
                   onChange={(e) => handleHeaderinput(e.target.value)}
-                  className="ml-[12px]  bg-[#1F1F1F] w-[195px] text-[#b3b3b3] outline-none"
+                  className="ml-[12px] bg-[#1F1F1F] w-[210px] text-[#b3b3b3] outline-none"
                   type="text"
-                  placeholder="What do you want to play?"
+                  placeholder={t.searchPlaceholder}
                 />
               </div>
               <div className="flex items-center justify-center gap-[19px]">
@@ -91,22 +98,23 @@ function Header() {
           </div>
         )}
       </div>
+
       {user && (
         <div className="flex items-center justify-center gap-[25px] max-w-[572px] w-[100%]">
           <Link
             href={`/`}
-            className="p-[12px]  bg-[#1F1F1F] flex items-center justify-center rounded-[50%]"
+            className="p-[12px] bg-[#1F1F1F] flex items-center justify-center rounded-[50%]"
           >
             <HomeIcon classname="w-[20px] h-[20px]" />
           </Link>
-          <div className="bg-[#1F1F1F] max-w-[474px] w-[100%] p-[12px] rounded-[20px] flex items-center justify-between ">
+          <div className="bg-[#1F1F1F] max-w-[474px] w-[100%] p-[12px] rounded-[20px] flex items-center justify-between">
             <div className="flex items-center justify-center">
               <Search_icon classname="w-[21px] h-[21px]" />
               <input
                 onChange={(e) => handleHeaderinput(e.target.value)}
-                className="ml-[12px]  bg-[#1F1F1F] w-[195px] text-[#b3b3b3] outline-none"
+                className="ml-[12px] bg-[#1F1F1F] w-[210px] text-[#b3b3b3] outline-none"
                 type="text"
-                placeholder="What do you want to play?"
+                placeholder={t.searchPlaceholder}
               />
             </div>
             <div className="flex items-center justify-center gap-[19px]">
@@ -116,6 +124,7 @@ function Header() {
           </div>
         </div>
       )}
+
       <div className="flex items-center justify-center gap-[20px]">
         {!user && (
           <div className="flex gap-[8px] items-center justify-center">
@@ -123,19 +132,19 @@ function Header() {
               className="text-[#b3b3b3] text-[16px]"
               href={"https://www.spotify.com/ge/premium/"}
             >
-              Premium
+              {t.premium}
             </Link>
             <Link
-              className="text-[#b3b3b3]  text-[16px]"
+              className="text-[#b3b3b3] text-[16px]"
               href={"https://support.spotify.com/ge/"}
             >
-              Support
+              {t.support}
             </Link>
             <Link
-              className="text-[#b3b3b3]  text-[16px]"
+              className="text-[#b3b3b3] text-[16px]"
               href={"https://www.spotify.com/ge/download/mac/"}
             >
-              Download
+              {t.download}
             </Link>
           </div>
         )}
@@ -145,9 +154,9 @@ function Header() {
             <Download_icon classname="w-[16px] h-[16px]" />
             <Link
               href={"https://open.spotify.com/download"}
-              className="text-[#b3b3b3]  text-[14px]"
+              className="text-[#b3b3b3] text-[14px]"
             >
-              Install App
+              {t.installApp}
             </Link>
           </div>
           {user && <Ring_icon classname="w-[16px] h-[16px] cursor-pointer" />}
@@ -165,15 +174,15 @@ function Header() {
             <div className="flex items-center justify-center gap-[10px] relative">
               <Link
                 href={`/signup_page_email`}
-                className="text-[#b3b3b3]  text-[14px]"
+                className="text-[#b3b3b3] text-[14px]"
               >
-                Sign Up
+                {t.signUp}
               </Link>
               <Link
                 href={`/login_page`}
                 className="px-[32px] py-[8px] bg-[#fff] font-[700] text-[16px] text-[#000000] rounded-[20px]"
               >
-                Log in
+                {t.logIn}
               </Link>
               {marked && <Logged_out_alert />}
             </div>

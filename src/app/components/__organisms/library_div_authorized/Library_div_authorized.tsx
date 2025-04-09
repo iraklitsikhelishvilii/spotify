@@ -5,6 +5,7 @@ import Plus_icon from "@/app/common/icons/Plus_icon";
 import Authorized_plus_div from "../../__molecules/authorized_plus_div/Authorized_plus_div";
 import Link from "next/link";
 import SearchIcon from "@/app/common/icons/Search_icon";
+import { translations } from "@/app/common/translation";
 
 function Library_div_authorized() {
   const {
@@ -12,7 +13,9 @@ function Library_div_authorized() {
     handleauthorizedplus,
     targetArray,
     deleteFromTargetByName,
+    language,
   } = useStates();
+  const t = translations[language];
 
   const [searchletter, setsearchletter] = useState("");
 
@@ -37,12 +40,12 @@ function Library_div_authorized() {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-between">
       <div className="flex w-[100%] justify-between items-center mt-[8px] relative">
         <div className="flex items-center gap-[15px]">
           <Library_icons classname="w-[24px] h-[24px]" />
           <p className="text-[16px] text-[#b3b3b3] font-[700] hover:text-[#fff] cursor-pointer">
-            Your Library
+            {t.yourLibrary}
           </p>
         </div>
         <div
@@ -63,55 +66,57 @@ function Library_div_authorized() {
         <input
           onChange={handlesearchletter}
           value={searchletter}
-          placeholder="Search your library"
+          placeholder={t.searchLibrary}
           className="bg-transparent outline-none text-[#b3b3b3] w-full placeholder:text-[#666]"
           type="text"
         />
       </div>
+      <div className="flex flex-col w-[100%] justify-between h-[100%]">
+        <div className="flex flex-col w-full mt-[15px] gap-[10px] overflow-y-auto justify-between">
+          {filteredArray.length > 0 ? (
+            filteredArray.map((item, key) => {
+              const displayName =
+                item.song_name ||
+                item.chart_name ||
+                item.radio_name ||
+                item.show_name ||
+                item.artist ||
+                item.song_name_al;
 
-      {/* Filtered content */}
-      <div className="flex flex-col w-full mt-[15px] gap-[10px] overflow-y-auto">
-        {filteredArray.length > 0 ? (
-          filteredArray.map((item, key) => {
-            const displayName =
-              item.song_name ||
-              item.chart_name ||
-              item.radio_name ||
-              item.show_name ||
-              item.artist ||
-              item.song_name_al;
+              const name = String(displayName);
 
-            const name = String(displayName);
+              const page = item.song_name
+                ? `/alltrendings/${encodeURIComponent(item.song_name)}`
+                : item.chart_name
+                ? `/featured_charts/${encodeURIComponent(item.chart_name)}`
+                : item.radio_name
+                ? `/radios/${encodeURIComponent(item.radio_name)}`
+                : item.song_name_pl
+                ? `/playlists/${item.playlist_name}`
+                : `/all_albums_singles/${item.author_name}`;
 
-            const page = item.song_name
-              ? `/alltrendings/${encodeURIComponent(item.song_name)}`
-              : item.chart_name
-              ? `/featured_charts/${encodeURIComponent(item.chart_name)}`
-              : item.radio_name
-              ? `/radios/${encodeURIComponent(item.radio_name)}`
-              : item.song_name_pl
-              ? `/playlists/${item.playlist_name}`
-              : `/all_albums_singles/${item.author_name}`;
-
-            return (
-              <div className="flex justify-between" key={item.id ?? key}>
-                <Link href={page}>
-                  <p className="text-white text-[20px] font-[700] cursor-pointer hover:text-[#b3b3b3]">
-                    {displayName}
-                  </p>
-                </Link>
-                <button
-                  className="text-white"
-                  onClick={() => handleDelete(name)}
-                >
-                  delete
-                </button>
-              </div>
-            );
-          })
-        ) : (
-          <p className="text-[#999] text-center mt-[20px]">No results found</p>
-        )}
+              return (
+                <div className="flex justify-between" key={item.id ?? key}>
+                  <Link href={page}>
+                    <p className="text-white text-[20px] font-[700] cursor-pointer hover:text-[#b3b3b3]">
+                      {displayName}
+                    </p>
+                  </Link>
+                  <button
+                    className="text-white"
+                    onClick={() => handleDelete(name)}
+                  >
+                    {t.delete}
+                  </button>
+                </div>
+              );
+            })
+          ) : (
+            <p className="text-[#999] text-center mt-[20px]">
+              {t.noResultsFound}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

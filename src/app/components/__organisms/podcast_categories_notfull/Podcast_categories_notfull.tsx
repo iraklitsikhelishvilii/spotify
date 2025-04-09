@@ -2,10 +2,14 @@ import React from "react";
 import Podcasts from "../../../../../json_file/podcasts.json";
 import Arrow_icon from "@/app/common/icons/Arrow_icon";
 import Link from "next/link";
+import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation";
 function Podcast_categories_notfull() {
+  const { language } = useStates();
+  const t = translations[language];
   return (
     <div className="mt-[50px] px-[20px] py-[20px] w-[100%]  max-w-[1700px] ">
-      <p className="text-[24px] text-[#fff] font-[700] ">Categories</p>
+      <p className="text-[24px] text-[#fff] font-[700] ">{t.categories}</p>
       <div className=" grid grid-cols-4 justify-between w-[100%] gap-[30px] cursor-pointer mt-[20px]">
         {Podcasts.map((podcast, key) => (
           <div
@@ -23,7 +27,8 @@ function Podcast_categories_notfull() {
         href={`/Allpodcasts`}
         className="text-[#fff] text-[14px] font-[700] flex items-center justify-between gap-[5px] bg-[#FFFFFF1A] px-[12px] py-[4px] rounded-[20px] mt-[40px]  w-[170px]"
       >
-        See all categories <Arrow_icon classname="w-[12px] h-[12px]" />
+        {t.seeAllCategories}
+        <Arrow_icon classname="w-[12px] h-[12px]" />
       </Link>
     </div>
   );

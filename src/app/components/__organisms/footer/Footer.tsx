@@ -1,90 +1,103 @@
+"use client";
+import React from "react";
+import Link from "next/link";
 import Facebook_icon from "@/app/common/icons/Facebook_icon";
 import Instagram_icon from "@/app/common/icons/Instagram_icon";
 import Twiter_icon from "@/app/common/icons/Twiter_icon";
-import Link from "next/link";
-import React from "react";
+import { translations } from "@/app/common/translation";
+import { useStates } from "@/app/common/store";
+
 function Footer() {
+  const { language } = useStates();
+  const t = translations[language];
+
   return (
     <footer className="w-[100%] px-[20px] mt-[70px] flex-col">
       <div className="flex justify-between">
         <div className="flex flex-col gap-[10px]">
-          <h3 className="text-[#fff] font-[700] text-[16px]">Company</h3>
+          <h3 className="text-[#fff] font-[700] text-[16px]">{t.company}</h3>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://www.spotify.com/ge/about-us/contact/"}
           >
-            About
+            {t.about}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://www.lifeatspotify.com/"}
           >
-            Jobs
+            {t.jobs}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://newsroom.spotify.com/"}
           >
-            For the Record
+            {t.forTheRecord}
           </Link>
         </div>
         <div className="flex flex-col gap-[10px]">
-          <h3 className="text-[#fff] font-[700] text-[16px]">Communities</h3>
+          <h3 className="text-[#fff] font-[700] text-[16px]">
+            {t.communities}
+          </h3>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://artists.spotify.com/home"}
           >
-            For Artists
+            {t.forArtists}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://developer.spotify.com/"}
           >
-            Developers
+            {t.developers}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://ads.spotify.com/en-US/"}
           >
-            Advertising
+            {t.advertising}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://investors.spotify.com/home/default.aspx"}
           >
-            Investors
+            {t.investors}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://spotifyforvendors.com/"}
           >
-            Vendors
+            {t.vendors}
           </Link>
         </div>
         <div className="flex flex-col gap-[10px]">
-          <h3 className="text-[#fff] font-[700] text-[16px]">Useful links</h3>
+          <h3 className="text-[#fff] font-[700] text-[16px]">
+            {t.usefulLinks}
+          </h3>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://support.spotify.com/ge/"}
           >
-            Support
+            {t.support}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://www.spotify.com/ge/free/"}
           >
-            Free Mobile App
+            {t.freeMobileApp}
           </Link>
         </div>
         <div className="flex flex-col gap-[10px]">
-          <h3 className="text-[#fff] font-[700] text-[16px]">Spotify Plans</h3>
+          <h3 className="text-[#fff] font-[700] text-[16px]">
+            {t.spotifyPlans}
+          </h3>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={
               "https://www.spotify.com/ge/premium/#ref=spotifycom_footer_premium_individual"
             }
           >
-            Premium Individual
+            {t.premiumIndividual}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
@@ -92,7 +105,7 @@ function Footer() {
               "https://www.spotify.com/ge/duo/#ref=spotifycom_footer_premium_duo"
             }
           >
-            Premium Duo
+            {t.premiumDuo}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
@@ -100,7 +113,7 @@ function Footer() {
               "http://spotify.com/ge/family/#ref=spotifycom_footer_premium_family"
             }
           >
-            Premium Family
+            {t.premiumFamily}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
@@ -108,13 +121,13 @@ function Footer() {
               "http://spotify.com/ge/student/#ref=spotifycom_footer_premium_student"
             }
           >
-            Premium Student
+            {t.premiumStudent}
           </Link>
           <Link
             className="text-[16px] text-[#B3B3B3]"
             href={"https://www.spotify.com/ge/free/#ref=spotifycom_footer_free"}
           >
-            Spotify Free
+            {t.spotifyFree}
           </Link>
         </div>
         <div className="flex gap-[15px]">

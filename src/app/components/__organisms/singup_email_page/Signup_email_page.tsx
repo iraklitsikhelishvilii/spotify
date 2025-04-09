@@ -6,22 +6,29 @@ import Image from "next/image";
 import Black_logo from "../../../assets/images/logo.png";
 import { useStates } from "@/app/common/store";
 import Error_icon from "@/app/common/icons/Error_icon";
+import { translations } from "@/app/common/translation";
 
 function Signup_email_page() {
-  const { email, setEmail, setvalidemail, emailError, setEmailError } =
-    useStates();
+  const {
+    email,
+    setEmail,
+    setvalidemail,
+    emailError,
+    setEmailError,
+    language,
+  } = useStates();
   const emailRegex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
 
   const handleemail = () => {
     if (!email || !emailRegex.test(email)) {
-      setEmailError(
-        "This email is invalid. Make sure it's written like example@email.com"
-      );
+      setEmailError(t.emailError);
     } else {
       setEmailError("");
       setvalidemail?.();
     }
   };
+
+  const t = translations[language];
 
   return (
     <div className="w-[100%] flex flex-col items-center">
@@ -33,14 +40,14 @@ function Signup_email_page() {
         height={600}
       />
       <h1 className="text-[#fff] text-[48px] font-[800] text-center mt-[20px]">
-        Sign up to <br /> start listening
-      </h1>{" "}
+        {t.signUpStart}
+      </h1>
       <div className="flex flex-col max-w-[324px] w-[100%] justify-center gap-[5px] mt-[32px]">
         <label
           className="text-[14px] text-[#fff] font-[700] cursor-pointer"
           htmlFor="email"
         >
-          Email or username
+          {t.emailOrUsername}
         </label>
         <input
           onChange={(e) => setEmail?.(e.target.value)}
@@ -64,24 +71,24 @@ function Signup_email_page() {
       <Loging_btn_green
         classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]"
         handle={handleemail}
-        text="Next"
+        text={t.next}
       />
       <div className="max-w-[324px] w-[100%] flex items-center mt-[32px]">
         <div className="bg-[#5c5c5c] w-[100%] h-[1px]"></div>
-        <p className="text-[14px] font-[600] text-[#fff] mx-[10px]">or</p>
+        <p className="text-[14px] font-[600] text-[#fff] mx-[10px]">{t.or}</p>
         <div className="bg-[#5c5c5c] w-[100%] h-[1px]"></div>
       </div>
       <Login_btns_div />
       <div className="max-w-[324px] w-[100%] h-[1px] bg-[#5c5c5c] mt-[32px]"></div>
       <div className="flex items-center justify-center mt-[32px] gap-[7px] mb-[50px]">
         <p className="text-[#b3b3b3] text-[16px] font-[600] ">
-          Already have an account?
-        </p>{" "}
+          {t.alreadyHaveAccount}
+        </p>
         <Link
           href={`/login_page`}
           className="text-[#fff] text-[16px] underline hover:text-[#1ed760]"
         >
-          Log in here
+          {t.logInHere}
         </Link>
       </div>
     </div>

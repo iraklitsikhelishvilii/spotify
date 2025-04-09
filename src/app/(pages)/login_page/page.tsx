@@ -9,15 +9,19 @@ import Login_btns_div from "@/app/components/__atoms/login_btns_div/Login_btns_d
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebaseconfig";
 import { useRouter } from "next/navigation";
+import { useStates } from "@/app/common/store"; // Assuming Zustand for state management
+import { translations } from "@/app/common/translation"; // Import translations
 
 function Page() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { language } = useStates(); // Get current language from Zustand
+  const t = translations[language]; // Fetch translations based on language
 
   const handleLogin = async () => {
     if (!email || !password) {
-      alert("Please enter both email and password");
+      alert(t.pleaseEnterEmailPassword);
       return;
     }
     try {
@@ -39,9 +43,7 @@ function Page() {
             width={500}
             height={500}
           />
-          <h1 className="font-[700] text-[#fff] text-[32px]">
-            Log in to Spotify
-          </h1>
+          <h1 className="font-[700] text-[#fff] text-[32px]">{t.loginTitle}</h1>
         </div>
         <Login_btns_div />
         <div className="w-[100%] h-[1px] bg-[#5c5c5c] my-[32px] "></div>
@@ -51,7 +53,7 @@ function Page() {
               className="text-[14px] text-[#fff] font-[700] cursor-pointer"
               htmlFor="email"
             >
-              Email or username
+              {t.emailOrUsername}
             </label>
             <input
               className="bg-transparent max-w-[324px] w-[100%] text-[16px] text-[#fff] font-[700] py-[8px] px-[10px] outline-none  border-solid border-[2px] border-[#5c5c5c] rounded-[5px]"
@@ -67,7 +69,7 @@ function Page() {
               className="text-[14px] text-[#fff] font-[700] cursor-pointer"
               htmlFor="password"
             >
-              Password
+              {t.password}
             </label>
             <div className="w-[100%] flex items-center  border-solid border-[2px] border-[#5c5c5c] rounded-[5px] px-[10px]">
               <input
@@ -84,21 +86,21 @@ function Page() {
         </div>
         <Loging_btn_green
           classname="max-w-[324px] w-[100%] bg-[#1ed760] text-[16px] text-[#000000] flex items-center justify-center py-[8px] font-[700] rounded-[20px] mt-[20px]"
-          text="Log in"
+          text={t.loginButton}
           handle={handleLogin}
         />
         <p className=" underline text-[16px] font-[700] text-[#fff] mt-[32px] hover:text-[#1ed760] cursor-pointer">
-          Forgot your password?
+          {t.forgotPassword}
         </p>
         <div className="flex items-center justify-center mt-[32px] gap-[7px] mb-[50px]">
           <p className="text-[#b3b3b3] text-[16px] font-[600] ">
-            {`Don't have an account?`}
+            {t.dontHaveAccount}
           </p>{" "}
           <Link
             href={`/signup_page_email`}
             className="text-[#fff] text-[16px] underline hover:text-[#1ed760]"
           >
-            Sign up for Spotify
+            {t.signUp}
           </Link>
         </div>
       </div>
@@ -107,3 +109,4 @@ function Page() {
 }
 
 export default Page;
+  

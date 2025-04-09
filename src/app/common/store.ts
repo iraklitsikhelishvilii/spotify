@@ -194,4 +194,10 @@ export const useStates = create<ZustandProps>((set) => ({
   },
   headerinput: "",
   handleHeaderinput: (value) => set({ headerinput: value }),
+  language: "English",
+  toggleLanguage: () =>
+    set((state) => ({
+      language: state.language === "English" ? "ქართული" : "English",
+    })),
+  setLanguage: (lang) => set({ language: lang }),
 }));

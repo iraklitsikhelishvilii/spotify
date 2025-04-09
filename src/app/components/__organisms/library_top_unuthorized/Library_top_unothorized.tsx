@@ -1,24 +1,32 @@
+"use client";
 import React from "react";
 import Create_playlist_allert from "../../__atoms/create_playlist_allert/Create_playlist_allert";
 import Link from "next/link";
 import { useStates } from "@/app/common/store";
 import Plus_icon from "@/app/common/icons/Plus_icon";
 import Music_icon from "@/app/common/icons/Music_icon";
+import { translations } from "@/app/common/translation";
+
+
 function Library_top_unothorized() {
-     const {
-        playlist,
-        HandlePlatlistClick,
-        RemovePlaylistClick,
-        plus,
-        handlePlus,
-        NewPlaylistClick,
-      } = useStates();
+  const {
+    playlist,
+    HandlePlatlistClick,
+    RemovePlaylistClick,
+    plus,
+    handlePlus,
+    NewPlaylistClick,
+    language,
+  } = useStates();
+
+  const t = translations[language];
+
   return (
     <div>
-      <div className="w-[100%] flex items-center justify-between px-[10px]">
-        <p className="text-[16px] font-[700] text-[#fff]">Your Library</p>
+      <div className="w-full flex items-center justify-between px-[10px]">
+        <p className="text-[16px] font-[700] text-[#fff]">{t.yourLibrary}</p>
         <button onClick={handlePlus}>
-          <Plus_icon classname="w-[16px] h-[16px]"></Plus_icon>
+          <Plus_icon classname="w-[16px] h-[16px]" />
         </button>
         {plus && (
           <button
@@ -26,39 +34,36 @@ function Library_top_unothorized() {
             className="flex items-center px-[12px] py-[12px] gap-[10px] rounded-[5px] bg-[#282828] absolute top-[50px] left-[100px]"
           >
             <Music_icon classname="h-[16px] w-[16px]" />
-            <p className="text-[#fff] text-[14px]">Create a new playlist</p>
+            <p className="text-[#fff] text-[14px]">{t.createNewPlaylist}</p>
           </button>
         )}
       </div>
+
       <div
         onClick={HandlePlatlistClick}
-        className="w-[100%] bg-[#1F1F1F] flex flex-col rounded-[8px] py-[16px] pl-[20px] mt-[40px] gap-[10px]"
+        className="w-full bg-[#1F1F1F] flex flex-col rounded-[8px] py-[16px] pl-[10px] mt-[40px] gap-[10px]"
       >
         <p className="text-[16px] font-[700] text-[#fff]">
-          Create your first playlist
+          {t.createFirstPlaylist}
         </p>
-        <p className="text-[14px] text-[#fff] font-[400]">
-          {"  It's easy, we'll help you"}
-        </p>
+        <p className="text-[14px] text-[#fff] font-[400]">{t.easyHelp}</p>
         <button className="py-[4px] px-[16px] bg-[#ffff] max-w-[125px] text-[14px] text-[#000000] rounded-[20px] mt-[10px]">
-          Create playlist
+          {t.createPlaylist}
         </button>
       </div>
+
       {playlist && (
         <Create_playlist_allert RemovePlaylistClick={RemovePlaylistClick} />
       )}
-      <div className="w-[100%] bg-[#1F1F1F] flex flex-col rounded-[8px] py-[16px] pl-[20px] mt-[25px] gap-[10px]">
-        <p className="text-[16px] font-[700] text-[#fff]">
-          {"  Let's find some podcasts to follow"}
-        </p>
-        <p className="text-[14px] text-[#fff] font-[400]">
-          {" We'll keep you updated on new episodes"}
-        </p>
+
+      <div className="w-full bg-[#1F1F1F] flex flex-col rounded-[8px] py-[16px] pl-[10px] mt-[25px] gap-[10px]">
+        <p className="text-[16px] font-[700] text-[#fff]">{t.findPodcasts}</p>
+        <p className="text-[14px] text-[#fff] font-[400]">{t.updateEpisodes}</p>
         <Link
-          href={`/podcasts`}
+          href="/podcasts"
           className="py-[4px] px-[16px] bg-[#ffff] max-w-[148px] text-[14px] text-[#000000] rounded-[20px] mt-[10px]"
         >
-          Browse podcasts
+          {t.browsePodcasts}
         </Link>
       </div>
     </div>

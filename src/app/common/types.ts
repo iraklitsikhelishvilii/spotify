@@ -3,7 +3,11 @@ export interface Icon {
   Hover?: boolean;
   fillcolor?: string;
 }
+type Language = "English" | "ქართული";
 export interface ZustandProps {
+  language: Language;
+  toggleLanguage: () => void;
+  setLanguage: (lang: Language) => void;
   playlist: boolean;
   HandlePlatlistClick: () => void;
   RemovePlaylistClick: () => void;

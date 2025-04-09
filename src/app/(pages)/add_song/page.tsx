@@ -1,9 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation";
 
 export default function UploadSongForm() {
   const { songs, loadSongs, addSong, removeSong } = useStates();
+  const { language } = useStates();
+  const t = translations[language];
 
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
@@ -34,7 +37,7 @@ export default function UploadSongForm() {
       setAuthor("");
       setImage(null);
     } else {
-      alert("Please FILL all fields.");
+      alert(t.alertFillFields);
     }
   };
 
@@ -49,14 +52,12 @@ export default function UploadSongForm() {
   return (
     <div className="h-[100vh] bg-black text-white p-[24px]">
       <div className="max-w-[765px] mx-auto">
-        <h1 className="text-[30px] font-[700] mb-[24px]">
-          🎵 Upload to Your Music Library
-        </h1>
+        <h1 className="text-[30px] font-[700] mb-[24px]">{t.uploadHeader}</h1>
 
         <div className="bg-[#121212] p-[24px] rounded-[1px] shadow-md flex flex-col gap-[20px]">
           <input
             type="text"
-            placeholder="Song name"
+            placeholder={t.songName}
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full p-[12px] rounded-[8px] bg-[#2a2a2a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -64,7 +65,7 @@ export default function UploadSongForm() {
 
           <input
             type="text"
-            placeholder="Author name"
+            placeholder={t.authorName}
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             className="w-full p-[12px] rounded-[8px] bg-[#2a2a2a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -84,14 +85,14 @@ export default function UploadSongForm() {
             onClick={handleSubmit}
             className="w-full bg-green-500 hover:bg-green-600 transition text-white py-[12px] rounded-[8px] font-[600]"
           >
-            Save to Library
+            {t.saveToLibrary}
           </button>
         </div>
 
         {songs.length > 0 && (
           <div className="mt-10">
             <h2 className="text-[24px] font-[600] mb-[16px]">
-              🎧 Your Library
+              {t.libraryHeader}
             </h2>
             <div className="flex gap-[20px] overflow-x-auto scrollbar-thin scrollbar-thumb-[#4caf50] pb-[8px]">
               {songs.map((song) => (
@@ -117,7 +118,7 @@ export default function UploadSongForm() {
                       onClick={() => handleRemoveSong(String(song.id))}
                       className="mt-4 bg-red-500 text-white py-2 px-4 rounded-full"
                     >
-                      Remove
+                      {t.removeButton}
                     </button>
                   </div>
                   <audio controls className="w-full"></audio>

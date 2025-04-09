@@ -6,7 +6,11 @@ import Header from "@/app/components/__organisms/header/Header";
 import Library_div from "@/app/components/__organisms/library_div/Library_div";
 import React from "react";
 import AlbumsData from "../../../../json_file/albums.json";
+import { useStates } from "@/app/common/store";
+import { translations } from "@/app/common/translation";
 function page() {
+  const { language } = useStates();
+  const t = translations[language];
   return (
     <div className=" w-[100%] h-[100vh] bg-[#000000]  flex-col pb-[10px] flex">
       <Header />
@@ -16,7 +20,7 @@ function page() {
           <div className="flex flex-col h-[2000px] items-center">
             <div className="w-full max-w-[1700px] px-[15px]">
               <h1 className="text-[#fff] text-[32px] font-[700] mt-[70px]">
-                Trending songs
+                {t.Popularalbumsandsingles}
               </h1>
               <div className="w-[100$] grid grid-cols-5 mt-[40px] gap-[30px]">
                 {AlbumsData.map((song, key) => (

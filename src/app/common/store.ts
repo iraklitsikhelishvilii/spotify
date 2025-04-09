@@ -5,7 +5,7 @@ import {
   getSongsFromIndexedDB,
   removeSongFromIndexedDB,
 } from "../common/functions";
-type TargetItem = Song | Show;
+
 export const useStates = create<ZustandProps>((set) => ({
   playlist: false,
   HandlePlatlistClick: () => {
@@ -149,41 +149,47 @@ export const useStates = create<ZustandProps>((set) => ({
     }
   },
 
-  targetArray: JSON.parse(
-    localStorage.getItem("targetArray") || "[]"
-  ) as TargetItem[],
+  targetArray:
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("targetArray") || "[]")
+      : [],
 
   addToTarget: (objectToAdd: Song | Show) =>
     set((state) => {
-      const isDuplicate = state.targetArray.some(
-        (item) =>
-          item.id === objectToAdd.id &&
-          item.song_name === objectToAdd.song_name &&
-          item.author_name === objectToAdd.author_name
-      );
+      if (typeof window !== "undefined") {
+        const isDuplicate = state.targetArray.some(
+          (item) =>
+            item.id === objectToAdd.id &&
+            item.song_name === objectToAdd.song_name &&
+            item.author_name === objectToAdd.author_name
+        );
 
-      if (!isDuplicate) {
-        const newArray = [...state.targetArray, objectToAdd];
-        localStorage.setItem("targetArray", JSON.stringify(newArray)); // Save to localStorage
-        return { targetArray: newArray };
+        if (!isDuplicate) {
+          const newArray = [...state.targetArray, objectToAdd];
+          localStorage.setItem("targetArray", JSON.stringify(newArray));
+          return { targetArray: newArray };
+        }
       }
       return state;
     }),
 
   deleteFromTargetByName: (name: string) => {
     set((state) => {
-      const updatedTargetArray = state.targetArray.filter((item) => {
-        const displayName =
-          item.song_name ||
-          item.chart_name ||
-          item.radio_name ||
-          item.show_name ||
-          item.artist ||
-          item.song_name_al;
-        return displayName !== name;
-      });
-      localStorage.setItem("targetArray", JSON.stringify(updatedTargetArray));
-      return { targetArray: updatedTargetArray };
+      if (typeof window !== "undefined") {
+        const updatedTargetArray = state.targetArray.filter((item) => {
+          const displayName =
+            item.song_name ||
+            item.chart_name ||
+            item.radio_name ||
+            item.show_name ||
+            item.artist ||
+            item.song_name_al;
+          return displayName !== name;
+        });
+        localStorage.setItem("targetArray", JSON.stringify(updatedTargetArray));
+        return { targetArray: updatedTargetArray };
+      }
+      return state;
     });
   },
 }));

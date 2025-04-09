@@ -8,7 +8,7 @@ import React from "react";
 import Data from "../../../../json_file/data.json";
 import { useStates } from "@/app/common/store";
 import { translations } from "@/app/common/translation";
-function page() {
+function Page() {
   const Allartists = Data.filter((item) => item.category === "music");
 
   const { language } = useStates();
@@ -46,4 +46,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

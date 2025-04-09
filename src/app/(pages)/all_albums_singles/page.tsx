@@ -8,7 +8,7 @@ import React from "react";
 import AlbumsData from "../../../../json_file/albums.json";
 import { useStates } from "@/app/common/store";
 import { translations } from "@/app/common/translation";
-function page() {
+function Page() {
   const { language } = useStates();
   const t = translations[language];
   return (
@@ -44,4 +44,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -8,7 +8,7 @@ import Data from "../../../../json_file/data.json";
 import Song_divs from "@/app/components/__molecules/song_divs/Song_divs";
 import { useStates } from "@/app/common/store";
 import { translations } from "@/app/common/translation";
-function page() {
+function Page() {
   const AllTrendings = Data.flatMap((item) => item.songs).filter(
     (item) => item?.isTrending
   );
@@ -47,4 +47,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

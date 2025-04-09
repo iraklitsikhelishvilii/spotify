@@ -9,7 +9,7 @@ import FeaturedData from "../../../../json_file/featured.json";
 import Song_divs from "@/app/components/__molecules/song_divs/Song_divs";
 import { useStates } from "@/app/common/store";
 import { translations } from "@/app/common/translation";
-function page() {
+function Page() {
   const { language } = useStates();
   const t = translations[language];
   return (
@@ -45,4 +45,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

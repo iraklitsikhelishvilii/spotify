@@ -15,7 +15,12 @@ import Ring_icon from "@/app/common/icons/Ring_icon";
 import { signOut } from "firebase/auth";
 import Profile_settings_div from "../../__molecules/profile_settings_div/Profile_settings_div";
 function Header() {
-  const { marked, ProfileIconClick, HandleProfileIconClick } = useStates();
+  const {
+    marked,
+    ProfileIconClick,
+    HandleProfileIconClick,
+    handleHeaderinput,
+  } = useStates();
   const Reload = () => {
     window.location.reload();
   };
@@ -72,6 +77,7 @@ function Header() {
               <div className="flex items-center justify-center">
                 <Search_icon classname="w-[21px] h-[21px]" />
                 <input
+                  onChange={(e) => handleHeaderinput(e.target.value)}
                   className="ml-[12px]  bg-[#1F1F1F] w-[195px] text-[#b3b3b3] outline-none"
                   type="text"
                   placeholder="What do you want to play?"
@@ -97,6 +103,7 @@ function Header() {
             <div className="flex items-center justify-center">
               <Search_icon classname="w-[21px] h-[21px]" />
               <input
+                onChange={(e) => handleHeaderinput(e.target.value)}
                 className="ml-[12px]  bg-[#1F1F1F] w-[195px] text-[#b3b3b3] outline-none"
                 type="text"
                 placeholder="What do you want to play?"

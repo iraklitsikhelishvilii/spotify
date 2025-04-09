@@ -79,7 +79,6 @@ export interface ZustandProps {
 
   ProfileIconClick: boolean;
   HandleProfileIconClick: () => void;
-
   libraryMassive: Song2[];
   setlibraryMassive: (items: Song2[]) => void;
 
@@ -89,8 +88,9 @@ export interface ZustandProps {
   removeSong: (songId: string) => Promise<void>;
   targetArray: (Song | Show)[];
   addToTarget: (objectToAdd: Song | Show) => void;
-
   deleteFromTargetByName: (id: string) => void;
+  headerinput: string;
+  handleHeaderinput: (value: string) => void;
 }
 export type Song2 = {
   id: string;
@@ -154,10 +154,10 @@ export interface Params {
 export interface SongDivs {
   href: string;
   key: number;
-  image: string;
-  songname: string;
-  artist: string;
-  imgclass: string;
+  image?: string;
+  songname?: string;
+  artist?: string;
+  imgclass?: string;
   chart_name?: string;
   chart_image?: string;
   description?: string;

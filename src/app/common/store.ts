@@ -192,4 +192,6 @@ export const useStates = create<ZustandProps>((set) => ({
       return state;
     });
   },
+  headerinput: "",
+  handleHeaderinput: (value) => set({ headerinput: value }),
 }));

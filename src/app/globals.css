@@ -6,3 +6,57 @@ html::-webkit-scrollbar {
   width: 8px;
   height: 5px;
 }
+
+input[type="range"] {
+  --track-color: #b3b3b3;
+  --thumb-color: #1db954;
+  --track-color2: #fff;
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  background: var(--track-color);
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px;
+  background: var(--track-color);
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: var(--thumb-color);
+  margin-top: -5px;
+  cursor: pointer;
+  visibility: hidden;
+  transition: visibility 0.2s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  visibility: visible;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 5px;
+  background: var(--track-color);
+  border-radius: 9999px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: var(--thumb-color);
+  border: none;
+  cursor: pointer;
+  visibility: hidden;
+  transition: visibility 0.2s ease;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  visibility: visible;
+}

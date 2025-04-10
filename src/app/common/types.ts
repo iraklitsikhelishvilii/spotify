@@ -3,7 +3,7 @@ export interface Icon {
   Hover?: boolean;
   fillcolor?: string;
 }
-type Language = "English" | "ქართული";
+export type Language = "English" | "ქართული";
 export interface ZustandProps {
   language: Language;
   toggleLanguage: () => void;
